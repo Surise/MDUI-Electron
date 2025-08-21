@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+  height: 100%;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.draggable {
+  -webkit-app-region: drag;
+}
+
+.non-draggable {
+  -webkit-app-region: no-drag;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+html, body {
+  overflow: hidden;
+  height: 100%;
+}
+
+.scrollable-hidden {
+  overflow: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollable-hidden::-webkit-scrollbar {
+  display: none;
+}
+
+.non-draggable, button, [class*="button"] {
+  -webkit-app-region: no-drag;
+}
+
+mdui-button-icon {
+  -webkit-app-region: no-drag !important;
+}
+
+.mdui-theme-dark {
+  --mdui-color-background: #303030;
+  --mdui-color-surface: #424242;
+  --mdui-color-on-background: rgba(255, 255, 255, 0.87);
+  --mdui-color-on-surface: rgba(255, 255, 255, 0.87);
+  --mdui-color-primary: #bb86fc;
+  --mdui-color-on-primary: #000000;
+  --mdui-color-secondary: #03dac6;
+  --mdui-color-on-secondary: #000000;
+}
+
+.mdui-theme-light {
+  --mdui-color-background: #fafafa;
+  --mdui-color-surface: #ffffff;
+  --mdui-color-on-background: rgba(0, 0, 0, 0.87);
+  --mdui-color-on-surface: rgba(0, 0, 0, 0.87);
+  --mdui-color-primary: #6200ee;
+  --mdui-color-on-primary: #ffffff;
+  --mdui-color-secondary: #03dac6;
+  --mdui-color-on-secondary: #000000;
+}

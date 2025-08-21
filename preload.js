@@ -1,0 +1,21 @@
+const { contextBridge, ipcRenderer } = require('electron');
+
+// 安全地暴露 IPC 方法给渲染进程
+contextBridge.exposeInMainWorld('electron', {
+  ipcRenderer: {
+    send: (channel, data) => {
+      // 白名单 channels
+      const validChannels = ['minimize-window', 'maximize-window', 'close-window'];
+      if (validChannels.includes(channel)) {
+        ipcRenderer.send(channel, data);
+      }
+    },
+    on: (channel, func) => {
+      const validChannels = ['minimize-window', 'maximize-window', 'close-window'];
+      if (validChannels.includes(channel)) {
+        // 从 ipcRenderer 接收消息时，使用预先验证过的监听器
+        ipcRenderer.on(channel, (event, ...args) => func(...args));
+      }
+    }
+  }
+});
