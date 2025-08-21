@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import 'mdui/components/icon.js';
 import 'mdui/components/layout.js';
@@ -12,11 +12,30 @@ import SettingsPage from './components/SettingsPage';
 import ProfilePage from './components/ProfilePage';
 import TopBar from './components/TopBar';
 import NavigationRail from './components/NavigationRail';
+import LoginPage from './components/LoginPage';
 
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [activePage, setActivePage] = useState('home');
   const [isDrawerOpen, setIsDrawerOpen] = useState(true);
   const [showLabels, setShowLabels] = useState(true);
+
+  // 检查是否已经登录
+  useEffect(() => {
+    const loggedIn = localStorage.getItem('isLoggedIn') === 'true';
+    setIsLoggedIn(loggedIn);
+  }, []);
+
+  const handleLogin = () => {
+    setIsLoggedIn(true);
+    localStorage.setItem('isLoggedIn', 'true');
+  };
+
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+    setActivePage('home');
+    localStorage.removeItem('isLoggedIn');
+  };
 
   const handlePageChange = (page) => {
     setActivePage(page);
@@ -45,12 +64,17 @@ function App() {
     }
   };
 
+  // 如果未登录，显示登录页面
+  if (!isLoggedIn) {
+    return <LoginPage onLogin={handleLogin} />;
+  }
+
   return (
     <div className="app-container">
       <mdui-layout style={{ height: '100%' }}>
         {/* 顶部应用栏 */}
         <mdui-layout-item>
-          <TopBar />
+          <TopBar onLogout={handleLogout} />
         </mdui-layout-item>
         
         {/* 导航栏 */}

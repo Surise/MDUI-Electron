@@ -9,10 +9,10 @@ const path = require('path');
 const createWindow = () => {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    width: 1000,
+    width: 1110,
     height: 700,
     minWidth: 1000, // 设置最小宽度
-    minHeight: 700, // 设置最小高度
+    minHeight: 500, // 设置最小高度
     autoHideMenuBar: true, // 隐藏菜单栏
     frame: false, // 隐藏窗口边框和标题栏
     roundedCorners: true, // 设置窗口为圆角

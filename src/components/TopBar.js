@@ -3,7 +3,7 @@ import 'mdui/components/top-app-bar.js';
 import 'mdui/components/top-app-bar-title.js';
 import 'mdui/components/button-icon.js';
 
-const TopBar = () => {
+const TopBar = ({ onLogout }) => {
   const [isDarkMode, setIsDarkMode] = useState(true);
 
   useEffect(() => {
@@ -44,6 +44,12 @@ const TopBar = () => {
       <mdui-button-icon 
         icon={isDarkMode ? "light_mode" : "dark_mode"} 
         onClick={toggleTheme}
+        style={{ WebkitAppRegion: 'no-drag' }}
+        ></mdui-button-icon>
+      {/* 退出登录按钮 */}
+      <mdui-button-icon 
+        icon="exit_to_app" 
+        onClick={onLogout}
         style={{ WebkitAppRegion: 'no-drag' }}
         ></mdui-button-icon>
       {/* 窗口控制按钮 */}
