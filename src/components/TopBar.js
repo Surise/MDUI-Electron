@@ -38,7 +38,7 @@ const TopBar = ({ onLogout }) => {
   return (
     <mdui-top-app-bar style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 1000, WebkitAppRegion: 'drag', height: '64px', display: 'flex', alignItems: 'center' }}>
       <mdui-button-icon icon="blur_on"></mdui-button-icon>
-      <mdui-top-app-bar-title>Anre</mdui-top-app-bar-title> 
+      <mdui-top-app-bar-title>KryptonNEL</mdui-top-app-bar-title> 
       <div style={{ flex: '1' }}></div>
       {/* 主题切换按钮 */}
       <mdui-button-icon 

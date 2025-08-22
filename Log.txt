@@ -1,0 +1,2001 @@
+[2025-08-22T10:44:29.800Z] [INFO] 正在启动服务器: dotnet "E:\GitHubDocument\MDUI-Electron\domain\Krypton.LocalServer.dll"
+[2025-08-22T10:44:34.817Z] [INFO] 本地服务器启动成功（无输出）
+[2025-08-22T10:44:35.063Z] [STDOUT] δ�ҵ�ռ�ö˿� 14250 �Ľ��̡�
+
+[2025-08-22T10:44:36.907Z] [STDOUT] [2025/8/22 18:44:36] Running on port => 14250
+
+[2025-08-22T10:44:36.949Z] [STDOUT] [2025/8/22 18:44:36] ������ַ => 192.168.10.6:14250
+[2025/8/22 18:44:36] ������ַ => 127.0.0.1:14250
+
+[2025-08-22T10:44:36.965Z] [STDOUT] [2025/8/22 18:44:36] ����Ŀ¼: C:\Users\suris\AppData\Roaming\Krypton
+
+[2025-08-22T10:44:38.675Z] [STDOUT] [2025/8/22 18:44:38] Server #0 latency: 22ms
+
+[2025-08-22T10:44:38.676Z] [STDOUT] [2025/8/22 18:44:38] Use Server #0
+
+[2025-08-22T10:44:38.805Z] [STDOUT] [2025/8/22 18:44:38] Phase #1
+
+[2025-08-22T10:44:38.806Z] [STDOUT] [2025/8/22 18:44:38] Phase #2, ���һֱ�������볢����������
+
+[2025-08-22T10:44:42.916Z] [STDOUT] info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://[::]:14250
+
+[2025-08-22T10:44:42.916Z] [STDOUT] info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+
+[2025-08-22T10:44:42.917Z] [STDOUT] info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Production
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: E:\GitHubDocument\MDUI-Electron
+
+[2025-08-22T10:44:42.982Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://127.0.0.1:14250/Auth/Login - - -
+
+[2025-08-22T10:44:43.002Z] [STDOUT] info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'Krypton.LocalServer.Controllers.Auth.AuthController.Login (Krypton.LocalServer)'
+
+[2025-08-22T10:44:43.011Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[102]
+      Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Krypton.Entities.ResponseBase`1[System.String]] Login() on controller Krypton.LocalServer.Controllers.Auth.AuthController (Krypton.LocalServer).
+
+[2025-08-22T10:44:43.050Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor[1]
+      Executing ObjectResult, writing value of type 'Krypton.Entities.ResponseBase`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+
+[2025-08-22T10:44:43.061Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[105]
+      Executed action Krypton.LocalServer.Controllers.Auth.AuthController.Login (Krypton.LocalServer) in 45.3858ms
+
+[2025-08-22T10:44:43.061Z] [STDOUT] info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'Krypton.LocalServer.Controllers.Auth.AuthController.Login (Krypton.LocalServer)'
+
+[2025-08-22T10:44:43.063Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://127.0.0.1:14250/Auth/Login - 200 - application/json;+charset=utf-8 80.7232ms
+
+[2025-08-22T10:44:43.747Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://127.0.0.1:14250/favicon.ico - - -
+
+[2025-08-22T10:44:43.750Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://127.0.0.1:14250/favicon.ico - 404 0 - 3.1365ms
+
+[2025-08-22T10:44:43.750Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[16]
+      Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://127.0.0.1:14250/favicon.ico, Response status code: 404
+
+[2025-08-22T10:45:07.973Z] [INFO] 应用关闭，正在终止服务器进程
+[2025-08-22T10:45:07.974Z] [INFO] 应用即将退出
+[2025-08-22T10:47:34.892Z] [INFO] 正在启动服务器: dotnet "E:\GitHubDocument\MDUI-Electron\domain\Krypton.LocalServer.dll"
+[2025-08-22T10:47:39.903Z] [INFO] 本地服务器启动成功（无输出）
+[2025-08-22T10:47:40.315Z] [STDOUT] 未找到占用端口 14250 的进程。
+
+[2025-08-22T10:47:42.147Z] [STDOUT] [2025/8/22 18:47:42] Running on port => 14250
+
+[2025-08-22T10:47:42.186Z] [STDOUT] [2025/8/22 18:47:42] 内网地址 => 192.168.10.6:14250
+[2025/8/22 18:47:42] 本机地址 => 127.0.0.1:14250
+
+[2025-08-22T10:47:42.201Z] [STDOUT] [2025/8/22 18:47:42] 数据目录: C:\Users\suris\AppData\Roaming\Krypton
+
+[2025-08-22T10:47:43.901Z] [STDOUT] [2025/8/22 18:47:43] Server #0 latency: 21ms
+[2025/8/22 18:47:43] Use Server #0
+
+[2025-08-22T10:47:44.021Z] [INFO] 应用关闭，正在终止服务器进程
+[2025-08-22T10:47:44.021Z] [INFO] 应用即将退出
+[2025-08-22T10:49:18.589Z] [INFO] 正在启动服务器: dotnet "E:\GitHubDocument\MDUI-Electron\domain\Krypton.LocalServer.dll"
+[2025-08-22T10:49:23.610Z] [INFO] 本地服务器启动成功（无输出）
+[2025-08-22T10:49:23.738Z] [STDOUT] δ�ҵ�ռ�ö˿� 14250 �Ľ��̡�
+
+[2025-08-22T10:49:25.591Z] [STDOUT] [2025/8/22 18:49:25] Running on port => 14250
+
+[2025-08-22T10:49:25.630Z] [STDOUT] [2025/8/22 18:49:25] ������ַ => 192.168.10.6:14250
+
+[2025-08-22T10:49:25.630Z] [STDOUT] [2025/8/22 18:49:25] ������ַ => 127.0.0.1:14250
+
+[2025-08-22T10:49:25.647Z] [STDOUT] [2025/8/22 18:49:25] ����Ŀ¼: C:\Users\suris\AppData\Roaming\Krypton
+
+[2025-08-22T10:49:27.114Z] [INFO] 应用关闭，正在终止服务器进程
+[2025-08-22T10:49:27.114Z] [INFO] 应用即将退出
+[2025-08-22T10:50:48.994Z] [INFO] 正在启动服务器: dotnet "E:\GitHubDocument\MDUI-Electron\domain\Krypton.LocalServer.dll"
+[2025-08-22T10:50:54.009Z] [INFO] 本地服务器启动成功（无输出）
+[2025-08-22T10:50:54.231Z] [STDOUT] Î´ÕÒµ½Õ¼ÓÃ¶Ë¿Ú 14250 µÄ½ø³Ì¡£
+
+[2025-08-22T10:50:55.431Z] [INFO] 应用关闭，正在终止服务器进程
+[2025-08-22T10:50:55.431Z] [INFO] 应用即将退出
+[2025-08-22T10:50:55.451Z] [INFO] 服务器进程退出，退出码: null
+[2025-08-22T10:52:06.040Z] [INFO] 正在启动服务器: dotnet "E:\GitHubDocument\MDUI-Electron\domain\Krypton.LocalServer.dll"
+[2025-08-22T10:52:11.060Z] [INFO] 本地服务器启动成功（无输出）
+[2025-08-22T10:52:11.187Z] [STDOUT] 듎틕붵볕쏓쮶�ㄠ㈴〵딠뷄돸ꇌඣ
+[2025-08-22T10:52:13.075Z] [STDOUT] ㉛㈰⼵⼸㈲ㄠ㨸㈵ㄺ崳删湵楮杮漠⁮潰瑲㴠‾㐱㔲ര
+[2025-08-22T10:52:13.119Z] [STDOUT] ㉛㈰⼵⼸㈲ㄠ㨸㈵ㄺ崳쐠췚뗸훘₷㸽ㄠ㈹ㄮ㠶ㄮ⸰㨶㐱㔲ര嬊〲㔲㠯㈯′㠱㔺㨲㌱⁝뺱請�럖㴠‾㈱⸷⸰⸰㨱㐱㔲ര
+[2025-08-22T10:52:13.138Z] [STDOUT] ㉛㈰⼵⼸㈲ㄠ㨸㈵ㄺ崳쨠뻽쓝슿㪼䌠尺獕牥屳畳楲屳灁䑰瑡屡潒浡湩屧牋灹潴൮
+[2025-08-22T10:52:14.747Z] [STDOUT] ㉛㈰⼵⼸㈲ㄠ㨸㈵ㄺ崴匠牥敶⁲〣氠瑡湥祣›㠱獭਍
+[2025-08-22T10:52:14.750Z] [STDOUT] ㉛㈰⼵⼸㈲ㄠ㨸㈵ㄺ崴唠敳匠牥敶⁲〣਍
+[2025-08-22T10:52:14.872Z] [STDOUT] ㉛㈰⼵⼸㈲ㄠ㨸㈵ㄺ崴倠慨敳⌠റ嬊〲㔲㠯㈯′㠱㔺㨲㐱⁝桐獡⁥㈣‬﮹믒뇖ꢿ�ꊳ퓊�첳਍
+[2025-08-22T10:52:19.270Z] [STDOUT] 湩潦›楍牣獯景⹴潈瑳湩⹧楌敦楴敭ㅛ崴਍†††潎⁷楬瑳湥湩⁧湯›瑨灴⼺嬯㨺㩝㐱㔲ര椊普㩯䴠捩潲潳瑦䠮獯楴杮䰮晩瑥浩孥崰਍†††灁汰捩瑡潩⁮瑳牡整⹤倠敲獳䌠牴⭬⁃潴猠畨⁴潤湷മ椊普㩯䴠捩潲潳瑦䠮獯楴杮䰮晩瑥浩孥崰਍†††潈瑳湩⁧湥楶潲浮湥㩴倠潲畤瑣潩൮椊普㩯䴠捩潲潳瑦䠮獯楴杮䰮晩瑥浩孥崰਍†††潃瑮湥⁴潲瑯瀠瑡㩨䔠尺楇䡴扵潄畣敭瑮䵜啄ⵉ汅捥牴湯਍
+[2025-08-22T10:52:19.356Z] [STDOUT] 湩潦›楍牣獯景⹴獁买瑥潃敲䠮獯楴杮䐮慩湧獯楴獣ㅛ൝ ††删煥敵瑳猠慴瑲湩⁧呈偔ㄯㄮ䜠呅栠瑴㩰⼯㈱⸷⸰⸰㨱㐱㔲⼰畁桴䰯杯湩ⴠⴠⴠ਍
+[2025-08-22T10:52:19.379Z] [STDOUT] 湩潦›楍牣獯景⹴獁买瑥潃敲刮畯楴杮䔮摮潰湩䵴摩汤睥牡孥崰਍†††硅捥瑵湩⁧湥灤楯瑮✠牋灹潴⹮潌慣卬牥敶⹲潃瑮潲汬牥⹳畁桴䄮瑵䍨湯牴汯敬⹲潌楧⁮䬨祲瑰湯䰮捯污敓癲牥✩਍
+[2025-08-22T10:52:19.389Z] [STDOUT] 湩潦›楍牣獯景⹴獁买瑥潃敲䴮捶䤮普慲瑳畲瑣牵⹥潃瑮潲汬牥捁楴湯湉潶敫孲〱崲਍†††潒瑵⁥慭捴敨⁤楷桴笠捡楴湯㴠∠潌楧≮‬潣瑮潲汬牥㴠∠畁桴索‮硅捥瑵湩⁧潣瑮潲汬牥愠瑣潩⁮楷桴猠杩慮畴敲匠獹整⹭桔敲摡湩⹧慔歳⹳慔歳ㅠ䭛祲瑰湯䔮瑮瑩敩⹳敒灳湯敳慂敳ㅠ卛獹整⹭瑓楲杮嵝䰠杯湩⤨漠⁮潣瑮潲汬牥䬠祲瑰湯䰮捯污敓癲牥䌮湯牴汯敬獲䄮瑵⹨畁桴潃瑮潲汬牥⠠牋灹潴⹮潌慣卬牥敶⥲മ
+[2025-08-22T10:52:19.423Z] [STDOUT] 湩潦›楍牣獯景⹴獁买瑥潃敲䴮捶䤮普慲瑳畲瑣牵⹥扏敪瑣敒畳瑬硅捥瑵牯ㅛ൝ ††䔠數畣楴杮传橢捥剴獥汵ⱴ眠楲楴杮瘠污敵漠⁦祴数✠牋灹潴⹮湅楴楴獥刮獥潰獮䉥獡恥嬱卛獹整⹭瑓楲杮‬祓瑳浥倮楲慶整䌮牯䱥扩‬敖獲潩㵮⸸⸰⸰ⰰ䌠汵畴敲渽略牴污‬畐汢捩敋呹歯湥㜽散㡣搵户慥㜷㠹嵥❝മ
+[2025-08-22T10:52:19.434Z] [STDOUT] 湩潦›楍牣獯景⹴獁买瑥潃敲䴮捶䤮普慲瑳畲瑣牵⹥潃瑮潲汬牥捁楴湯湉潶敫孲〱崵਍†††硅捥瑵摥愠瑣潩⁮牋灹潴⹮潌慣卬牥敶⹲潃瑮潲汬牥⹳畁桴䄮瑵䍨湯牴汯敬⹲潌楧⁮䬨祲瑰湯䰮捯污敓癲牥 湩㌠⸸㜵㠰獭਍
+[2025-08-22T10:52:19.435Z] [STDOUT] 湩潦›楍牣獯景⹴獁买瑥潃敲刮畯楴杮䔮摮潰湩䵴摩汤睥牡孥崱਍†††硅捥瑵摥攠摮潰湩⁴䬧祲瑰湯䰮捯污敓癲牥䌮湯牴汯敬獲䄮瑵⹨畁桴潃瑮潲汬牥䰮杯湩⠠牋灹潴⹮潌慣卬牥敶⥲ധ
+[2025-08-22T10:52:19.438Z] [STDOUT] 湩潦›楍牣獯景⹴獁买瑥潃敲䠮獯楴杮䐮慩湧獯楴獣㉛൝ ††删煥敵瑳映湩獩敨⁤呈偔ㄯㄮ䜠呅栠瑴㩰⼯㈱⸷⸰⸰㨱㐱㔲⼰畁桴䰯杯湩ⴠ㈠〰ⴠ愠灰楬慣楴湯樯潳㭮挫慨獲瑥甽晴㠭㠠⸰㤶㈳獭਍
+[2025-08-22T10:52:24.847Z] [INFO] 应用关闭，正在终止服务器进程
+[2025-08-22T10:52:24.847Z] [INFO] 应用即将退出
+[2025-08-22T10:54:14.776Z] [INFO] 正在启动服务器: dotnet "E:\GitHubDocument\MDUI-Electron\domain\Krypton.LocalServer.dll"
+[2025-08-22T10:54:19.795Z] [INFO] 本地服务器启动成功（无输出）
+[2025-08-22T10:54:20.047Z] [STDOUT] 未找到占用端口 14250 的进程。
+
+[2025-08-22T10:54:21.740Z] [STDOUT] [2025/8/22 18:54:21] Running on port => 14250
+
+[2025-08-22T10:54:21.781Z] [STDOUT] [2025/8/22 18:54:21] 内网地址 => 192.168.10.6:14250
+[2025/8/22 18:54:21] 本机地址 => 127.0.0.1:14250
+
+[2025-08-22T10:54:21.798Z] [STDOUT] [2025/8/22 18:54:21] 数据目录: C:\Users\suris\AppData\Roaming\Krypton
+
+[2025-08-22T10:54:23.278Z] [STDOUT] [2025/8/22 18:54:23] Server #0 latency: 20ms
+[2025/8/22 18:54:23] Use Server #0
+
+[2025-08-22T10:54:23.416Z] [STDOUT] [2025/8/22 18:54:23] Phase #1
+
+[2025-08-22T10:54:23.418Z] [STDOUT] [2025/8/22 18:54:23] Phase #2, 如果一直卡在这请尝试重启程序
+
+[2025-08-22T10:54:25.446Z] [INFO] 应用关闭，正在终止服务器进程
+[2025-08-22T10:54:25.446Z] [INFO] 应用即将退出
+[2025-08-22T10:57:48.778Z] [INFO] 正在启动服务器: dotnet "E:\GitHubDocument\MDUI-Electron\domain\Krypton.LocalServer.dll"
+[2025-08-22T10:57:53.796Z] [INFO] 本地服务器启动成功（无输出）
+[2025-08-22T10:57:53.852Z] [STDOUT] 未找到占用端口 14250 的进程。
+
+[2025-08-22T10:57:55.809Z] [STDOUT] [2025/8/22 18:57:55] Running on port => 14250
+
+[2025-08-22T10:57:55.853Z] [STDOUT] [2025/8/22 18:57:55] 内网地址 => 192.168.10.6:14250
+[2025/8/22 18:57:55] 本机地址 => 127.0.0.1:14250
+
+[2025-08-22T10:57:55.870Z] [STDOUT] [2025/8/22 18:57:55] 数据目录: C:\Users\suris\AppData\Roaming\Krypton
+
+[2025-08-22T10:57:57.512Z] [STDOUT] [2025/8/22 18:57:57] Server #0 latency: 21ms
+[2025/8/22 18:57:57] Use Server #0
+
+[2025-08-22T10:57:57.674Z] [STDOUT] [2025/8/22 18:57:57] Phase #1
+[2025/8/22 18:57:57] Phase #2, 如果一直卡在这请尝试重启程序
+
+[2025-08-22T10:58:02.171Z] [STDOUT] info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Production
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: E:\GitHubDocument\MDUI-Electron
+
+[2025-08-22T10:58:02.169Z] [STDOUT] info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://[::]:14250
+
+[2025-08-22T10:58:02.257Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://127.0.0.1:14250/Auth/Login - - -
+
+[2025-08-22T10:58:02.277Z] [STDOUT] info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'Krypton.LocalServer.Controllers.Auth.AuthController.Login (Krypton.LocalServer)'
+
+[2025-08-22T10:58:02.285Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[102]
+      Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Krypton.Entities.ResponseBase`1[System.String]] Login() on controller Krypton.LocalServer.Controllers.Auth.AuthController (Krypton.LocalServer).
+
+[2025-08-22T10:58:02.323Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor[1]
+      Executing ObjectResult, writing value of type 'Krypton.Entities.ResponseBase`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+
+[2025-08-22T10:58:02.335Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[105]
+      Executed action Krypton.LocalServer.Controllers.Auth.AuthController.Login (Krypton.LocalServer) in 42.8361ms
+
+[2025-08-22T10:58:02.335Z] [STDOUT] info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'Krypton.LocalServer.Controllers.Auth.AuthController.Login (Krypton.LocalServer)'
+
+[2025-08-22T10:58:02.337Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://127.0.0.1:14250/Auth/Login - 200 - application/json;+charset=utf-8 80.0468ms
+
+[2025-08-22T11:00:09.438Z] [INFO] 正在启动服务器: dotnet "E:\GitHubDocument\MDUI-Electron\domain\Krypton.LocalServer.dll"
+[2025-08-22T11:00:14.389Z] [STDOUT] 未找到占用端口 14250 的进程。
+
+[2025-08-22T11:00:16.302Z] [STDOUT] [2025/8/22 19:00:16] Running on port => 14250
+
+[2025-08-22T11:00:16.341Z] [STDOUT] [2025/8/22 19:00:16] 内网地址 => 192.168.10.6:14250
+[2025/8/22 19:00:16] 本机地址 => 127.0.0.1:14250
+
+[2025-08-22T11:00:16.357Z] [STDOUT] [2025/8/22 19:00:16] 数据目录: C:\Users\suris\AppData\Roaming\Krypton
+
+[2025-08-22T11:00:18.320Z] [STDOUT] [2025/8/22 19:00:18] Server #0 latency: 23ms
+
+[2025-08-22T11:00:18.323Z] [STDOUT] [2025/8/22 19:00:18] Use Server #0
+
+[2025-08-22T11:00:18.491Z] [STDOUT] [2025/8/22 19:00:18] Phase #1
+
+[2025-08-22T11:00:18.492Z] [STDOUT] [2025/8/22 19:00:18] Phase #2, 如果一直卡在这请尝试重启程序
+
+[2025-08-22T11:00:23.074Z] [STDOUT] info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Production
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: E:\GitHubDocument\MDUI-Electron
+
+[2025-08-22T11:00:23.072Z] [STDOUT] info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://[::]:14250
+
+[2025-08-22T11:00:23.154Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://127.0.0.1:14250/Auth/Login - - -
+
+[2025-08-22T11:00:23.177Z] [STDOUT] info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'Krypton.LocalServer.Controllers.Auth.AuthController.Login (Krypton.LocalServer)'
+
+[2025-08-22T11:00:23.187Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[102]
+      Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Krypton.Entities.ResponseBase`1[System.String]] Login() on controller Krypton.LocalServer.Controllers.Auth.AuthController (Krypton.LocalServer).
+
+[2025-08-22T11:00:23.227Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor[1]
+      Executing ObjectResult, writing value of type 'Krypton.Entities.ResponseBase`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+
+[2025-08-22T11:00:23.242Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[105]
+      Executed action Krypton.LocalServer.Controllers.Auth.AuthController.Login (Krypton.LocalServer) in 47.5948ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'Krypton.LocalServer.Controllers.Auth.AuthController.Login (Krypton.LocalServer)'
+
+[2025-08-22T11:00:23.243Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://127.0.0.1:14250/Auth/Login - 200 - application/json;+charset=utf-8 88.4488ms
+
+[2025-08-22T11:32:42.544Z] [INFO] 应用关闭，正在终止服务器进程
+[2025-08-22T11:32:42.544Z] [INFO] 应用即将退出
+[2025-08-22T12:04:00.428Z] [INFO] 正在启动服务器: dotnet "E:\GitHubDocument\MDUI-Electron\domain\Krypton.LocalServer.dll"
+[2025-08-22T12:04:05.446Z] [INFO] 本地服务器启动成功（无输出）
+[2025-08-22T12:04:05.563Z] [STDOUT] 未找到占用端口 14250 的进程。
+
+[2025-08-22T12:04:07.365Z] [STDOUT] [2025/8/22 20:04:07] Running on port => 14250
+
+[2025-08-22T12:04:07.405Z] [STDOUT] [2025/8/22 20:04:07] 内网地址 => 192.168.10.6:14250
+[2025/8/22 20:04:07] 本机地址 => 127.0.0.1:14250
+
+[2025-08-22T12:04:07.423Z] [STDOUT] [2025/8/22 20:04:07] 数据目录: C:\Users\suris\AppData\Roaming\Krypton
+
+[2025-08-22T12:04:09.276Z] [STDOUT] [2025/8/22 20:04:09] Server #0 latency: 25ms
+
+[2025-08-22T12:04:09.277Z] [STDOUT] [2025/8/22 20:04:09] Use Server #0
+
+[2025-08-22T12:04:09.397Z] [STDOUT] [2025/8/22 20:04:09] Phase #1
+
+[2025-08-22T12:04:09.398Z] [STDOUT] [2025/8/22 20:04:09] Phase #2, 如果一直卡在这请尝试重启程序
+
+[2025-08-22T12:04:14.148Z] [STDOUT] info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://[::]:14250
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Production
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: E:\GitHubDocument\MDUI-Electron
+
+[2025-08-22T12:04:14.221Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://127.0.0.1:14250/Auth/Login - - -
+
+[2025-08-22T12:04:14.243Z] [STDOUT] info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'Krypton.LocalServer.Controllers.Auth.AuthController.Login (Krypton.LocalServer)'
+
+[2025-08-22T12:04:14.253Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[102]
+      Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Krypton.Entities.ResponseBase`1[System.String]] Login() on controller Krypton.LocalServer.Controllers.Auth.AuthController (Krypton.LocalServer).
+
+[2025-08-22T12:04:14.297Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor[1]
+      Executing ObjectResult, writing value of type 'Krypton.Entities.ResponseBase`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+
+[2025-08-22T12:04:14.309Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[105]
+      Executed action Krypton.LocalServer.Controllers.Auth.AuthController.Login (Krypton.LocalServer) in 49.5182ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'Krypton.LocalServer.Controllers.Auth.AuthController.Login (Krypton.LocalServer)'
+
+[2025-08-22T12:04:14.310Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://127.0.0.1:14250/Auth/Login - 200 - application/json;+charset=utf-8 89.0344ms
+
+[2025-08-22T12:05:14.536Z] [INFO] 应用关闭，正在终止服务器进程
+[2025-08-22T12:05:14.537Z] [INFO] 应用即将退出
+[2025-08-22T12:05:24.159Z] [INFO] 正在启动服务器: dotnet "E:\GitHubDocument\MDUI-Electron\domain\Krypton.LocalServer.dll"
+[2025-08-22T12:05:29.167Z] [INFO] 本地服务器启动成功（无输出）
+[2025-08-22T12:05:29.224Z] [STDOUT] 未找到占用端口 14250 的进程。
+
+[2025-08-22T12:05:31.597Z] [STDOUT] [2025/8/22 20:05:31] Running on port => 14250
+
+[2025-08-22T12:05:31.636Z] [STDOUT] [2025/8/22 20:05:31] 内网地址 => 192.168.10.6:14250
+[2025/8/22 20:05:31] 本机地址 => 127.0.0.1:14250
+
+[2025-08-22T12:05:31.653Z] [STDOUT] [2025/8/22 20:05:31] 数据目录: C:\Users\suris\AppData\Roaming\Krypton
+
+[2025-08-22T12:05:33.435Z] [STDOUT] [2025/8/22 20:05:33] Server #0 latency: 22ms
+
+[2025-08-22T12:05:33.437Z] [STDOUT] [2025/8/22 20:05:33] Use Server #0
+
+[2025-08-22T12:05:33.561Z] [STDOUT] [2025/8/22 20:05:33] Phase #1
+
+[2025-08-22T12:05:33.562Z] [STDOUT] [2025/8/22 20:05:33] Phase #2, 如果一直卡在这请尝试重启程序
+
+[2025-08-22T12:05:37.880Z] [STDOUT] info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://[::]:14250
+
+[2025-08-22T12:05:37.895Z] [STDOUT] info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Production
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: E:\GitHubDocument\MDUI-Electron
+
+[2025-08-22T12:05:37.942Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://127.0.0.1:14250/Auth/Login - - -
+
+[2025-08-22T12:05:37.962Z] [STDOUT] info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'Krypton.LocalServer.Controllers.Auth.AuthController.Login (Krypton.LocalServer)'
+
+[2025-08-22T12:05:37.969Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[102]
+      Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Krypton.Entities.ResponseBase`1[System.String]] Login() on controller Krypton.LocalServer.Controllers.Auth.AuthController (Krypton.LocalServer).
+
+[2025-08-22T12:05:38.000Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor[1]
+      Executing ObjectResult, writing value of type 'Krypton.Entities.ResponseBase`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+
+[2025-08-22T12:05:38.009Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[105]
+      Executed action Krypton.LocalServer.Controllers.Auth.AuthController.Login (Krypton.LocalServer) in 34.7878ms
+
+[2025-08-22T12:05:38.009Z] [STDOUT] info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'Krypton.LocalServer.Controllers.Auth.AuthController.Login (Krypton.LocalServer)'
+
+[2025-08-22T12:05:38.011Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://127.0.0.1:14250/Auth/Login - 200 - application/json;+charset=utf-8 67.7824ms
+
+[2025-08-22T12:55:55.452Z] [INFO] 应用关闭，正在终止服务器进程
+[2025-08-22T12:55:55.452Z] [INFO] 应用即将退出
+[2025-08-22T12:56:08.804Z] [INFO] 正在启动服务器: dotnet "E:\GitHubDocument\MDUI-Electron\domain\Krypton.LocalServer.dll"
+[2025-08-22T12:56:13.817Z] [INFO] 本地服务器启动成功（无输出）
+[2025-08-22T12:56:13.931Z] [STDOUT] 未找到占用端口 14250 的进程。
+
+[2025-08-22T12:56:15.783Z] [STDOUT] [2025/8/22 20:56:15] Running on port => 14250
+
+[2025-08-22T12:56:15.821Z] [STDOUT] [2025/8/22 20:56:15] 内网地址 => 192.168.10.6:14250
+[2025/8/22 20:56:15] 本机地址 => 127.0.0.1:14250
+
+[2025-08-22T12:56:15.837Z] [STDOUT] [2025/8/22 20:56:15] 数据目录: C:\Users\suris\AppData\Roaming\Krypton
+
+[2025-08-22T12:56:18.018Z] [STDOUT] [2025/8/22 20:56:18] Server #0 latency: 21ms
+
+[2025-08-22T12:56:18.019Z] [STDOUT] [2025/8/22 20:56:18] Use Server #0
+
+[2025-08-22T12:56:18.056Z] [INFO] 应用关闭，正在终止服务器进程
+[2025-08-22T12:56:18.056Z] [INFO] 应用即将退出
+[2025-08-22T13:04:56.127Z] [INFO] 正在启动服务器: dotnet "E:\GitHubDocument\MDUI-Electron\domain\Krypton.LocalServer.dll"
+[2025-08-22T13:05:01.141Z] [INFO] 本地服务器启动成功（无输出）
+[2025-08-22T13:05:02.107Z] [STDOUT] 未找到占用端口 14250 的进程。
+
+[2025-08-22T13:05:04.192Z] [STDOUT] [2025/8/22 21:05:04] Running on port => 14250
+
+[2025-08-22T13:05:04.227Z] [STDOUT] [2025/8/22 21:05:04] 内网地址 => 192.168.10.6:14250
+[2025/8/22 21:05:04] 本机地址 => 127.0.0.1:14250
+
+[2025-08-22T13:05:04.244Z] [STDOUT] [2025/8/22 21:05:04] 数据目录: C:\Users\suris\AppData\Roaming\Krypton
+
+[2025-08-22T13:05:06.124Z] [STDOUT] [2025/8/22 21:05:06] Server #0 latency: 21ms
+
+[2025-08-22T13:05:06.125Z] [STDOUT] [2025/8/22 21:05:06] Use Server #0
+
+[2025-08-22T13:05:06.264Z] [STDOUT] [2025/8/22 21:05:06] Phase #1
+
+[2025-08-22T13:05:06.265Z] [STDOUT] [2025/8/22 21:05:06] Phase #2, 如果一直卡在这请尝试重启程序
+
+[2025-08-22T13:05:10.684Z] [STDOUT] info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://[::]:14250
+
+[2025-08-22T13:05:10.685Z] [STDOUT] info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Production
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: E:\GitHubDocument\MDUI-Electron
+
+[2025-08-22T13:05:10.746Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://127.0.0.1:14250/Auth/Login - - -
+
+[2025-08-22T13:05:10.763Z] [STDOUT] info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'Krypton.LocalServer.Controllers.Auth.AuthController.Login (Krypton.LocalServer)'
+
+[2025-08-22T13:05:10.774Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[102]
+      Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Krypton.Entities.ResponseBase`1[System.String]] Login() on controller Krypton.LocalServer.Controllers.Auth.AuthController (Krypton.LocalServer).
+
+[2025-08-22T13:05:10.805Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor[1]
+      Executing ObjectResult, writing value of type 'Krypton.Entities.ResponseBase`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+
+[2025-08-22T13:05:10.814Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[105]
+      Executed action Krypton.LocalServer.Controllers.Auth.AuthController.Login (Krypton.LocalServer) in 35.1298ms
+
+[2025-08-22T13:05:10.816Z] [STDOUT] info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'Krypton.LocalServer.Controllers.Auth.AuthController.Login (Krypton.LocalServer)'
+
+[2025-08-22T13:05:10.816Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://127.0.0.1:14250/Auth/Login - 200 - application/json;+charset=utf-8 69.6622ms
+
+[2025-08-22T13:07:20.064Z] [INFO] 应用关闭，正在终止服务器进程
+[2025-08-22T13:07:20.065Z] [INFO] 应用即将退出
+[2025-08-22T13:07:32.279Z] [INFO] 正在启动服务器: dotnet "E:\GitHubDocument\MDUI-Electron\domain\Krypton.LocalServer.dll"
+[2025-08-22T13:07:37.292Z] [INFO] 本地服务器启动成功（无输出）
+[2025-08-22T13:07:38.018Z] [INFO] 应用关闭，正在终止服务器进程
+[2025-08-22T13:07:38.019Z] [INFO] 应用即将退出
+[2025-08-22T13:07:59.406Z] [INFO] 正在启动服务器: dotnet "E:\GitHubDocument\MDUI-Electron\domain\Krypton.LocalServer.dll"
+[2025-08-22T13:08:04.419Z] [INFO] 本地服务器启动成功（无输出）
+[2025-08-22T13:08:05.320Z] [STDOUT] 未找到占用端口 14250 的进程。
+
+[2025-08-22T13:08:07.736Z] [STDOUT] [2025/8/22 21:08:07] Running on port => 14250
+
+[2025-08-22T13:08:07.778Z] [STDOUT] [2025/8/22 21:08:07] 内网地址 => 192.168.10.6:14250
+[2025/8/22 21:08:07] 本机地址 => 127.0.0.1:14250
+
+[2025-08-22T13:08:07.795Z] [STDOUT] [2025/8/22 21:08:07] 数据目录: C:\Users\suris\AppData\Roaming\Krypton
+
+[2025-08-22T13:08:10.310Z] [STDOUT] [2025/8/22 21:08:10] Server #0 latency: 21ms
+
+[2025-08-22T13:08:10.312Z] [STDOUT] [2025/8/22 21:08:10] Use Server #0
+
+[2025-08-22T13:08:10.440Z] [STDOUT] [2025/8/22 21:08:10] Phase #1
+
+[2025-08-22T13:08:10.441Z] [STDOUT] [2025/8/22 21:08:10] Phase #2, 如果一直卡在这请尝试重启程序
+
+[2025-08-22T13:08:14.940Z] [STDOUT] info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://[::]:14250
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Production
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: E:\GitHubDocument\MDUI-Electron
+
+[2025-08-22T13:08:15.011Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://127.0.0.1:14250/Auth/Login - - -
+
+[2025-08-22T13:08:15.032Z] [STDOUT] info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'Krypton.LocalServer.Controllers.Auth.AuthController.Login (Krypton.LocalServer)'
+
+[2025-08-22T13:08:15.041Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[102]
+      Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Krypton.Entities.ResponseBase`1[System.String]] Login() on controller Krypton.LocalServer.Controllers.Auth.AuthController (Krypton.LocalServer).
+
+[2025-08-22T13:08:15.079Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor[1]
+      Executing ObjectResult, writing value of type 'Krypton.Entities.ResponseBase`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+
+[2025-08-22T13:08:15.090Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[105]
+      Executed action Krypton.LocalServer.Controllers.Auth.AuthController.Login (Krypton.LocalServer) in 42.5229ms
+
+[2025-08-22T13:08:15.091Z] [STDOUT] info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'Krypton.LocalServer.Controllers.Auth.AuthController.Login (Krypton.LocalServer)'
+
+[2025-08-22T13:08:15.092Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://127.0.0.1:14250/Auth/Login - 200 - application/json;+charset=utf-8 80.7625ms
+
+[2025-08-22T13:08:30.725Z] [INFO] 应用关闭，正在终止服务器进程
+[2025-08-22T13:08:30.725Z] [INFO] 应用即将退出
+[2025-08-22T13:09:37.637Z] [INFO] 正在启动服务器: dotnet "E:\GitHubDocument\MDUI-Electron\domain\Krypton.LocalServer.dll"
+[2025-08-22T13:09:42.651Z] [INFO] 本地服务器启动成功（无输出）
+[2025-08-22T13:09:43.437Z] [STDOUT] 未找到占用端口 14250 的进程。
+
+[2025-08-22T13:09:45.161Z] [INFO] 应用关闭，正在终止服务器进程
+[2025-08-22T13:09:45.161Z] [INFO] 应用即将退出
+[2025-08-22T13:10:09.932Z] [INFO] 正在启动服务器: dotnet "E:\GitHubDocument\MDUI-Electron\domain\Krypton.LocalServer.dll"
+[2025-08-22T13:10:14.946Z] [INFO] 本地服务器启动成功（无输出）
+[2025-08-22T13:10:15.532Z] [STDOUT] 未找到占用端口 14250 的进程。
+
+[2025-08-22T13:10:17.577Z] [STDOUT] [2025/8/22 21:10:17] Running on port => 14250
+
+[2025-08-22T13:10:17.616Z] [STDOUT] [2025/8/22 21:10:17] 内网地址 => 192.168.10.6:14250
+[2025/8/22 21:10:17] 本机地址 => 127.0.0.1:14250
+
+[2025-08-22T13:10:17.634Z] [STDOUT] [2025/8/22 21:10:17] 数据目录: C:\Users\suris\AppData\Roaming\Krypton
+
+[2025-08-22T13:10:21.639Z] [STDOUT] [2025/8/22 21:10:21] Server #0 latency: 22ms
+
+[2025-08-22T13:10:21.641Z] [STDOUT] [2025/8/22 21:10:21] Use Server #0
+
+[2025-08-22T13:10:21.798Z] [STDOUT] [2025/8/22 21:10:21] Phase #2, 如果一直卡在这请尝试重启程序
+
+[2025-08-22T13:10:21.797Z] [STDOUT] [2025/8/22 21:10:21] Phase #1
+
+[2025-08-22T13:10:26.475Z] [STDOUT] info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://[::]:14250
+
+[2025-08-22T13:10:26.476Z] [STDOUT] info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+
+[2025-08-22T13:10:26.476Z] [STDOUT] info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Production
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: E:\GitHubDocument\MDUI-Electron
+
+[2025-08-22T13:10:26.543Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://127.0.0.1:14250/Auth/Login - - -
+
+[2025-08-22T13:10:26.562Z] [STDOUT] info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'Krypton.LocalServer.Controllers.Auth.AuthController.Login (Krypton.LocalServer)'
+
+[2025-08-22T13:10:26.570Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[102]
+      Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Krypton.Entities.ResponseBase`1[System.String]] Login() on controller Krypton.LocalServer.Controllers.Auth.AuthController (Krypton.LocalServer).
+
+[2025-08-22T13:10:26.607Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor[1]
+      Executing ObjectResult, writing value of type 'Krypton.Entities.ResponseBase`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+
+[2025-08-22T13:10:26.620Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[105]
+      Executed action Krypton.LocalServer.Controllers.Auth.AuthController.Login (Krypton.LocalServer) in 42.7355ms
+
+[2025-08-22T13:10:26.621Z] [STDOUT] info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'Krypton.LocalServer.Controllers.Auth.AuthController.Login (Krypton.LocalServer)'
+
+[2025-08-22T13:10:26.622Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://127.0.0.1:14250/Auth/Login - 200 - application/json;+charset=utf-8 79.7076ms
+
+[2025-08-22T13:11:04.939Z] [INFO] 应用关闭，正在终止服务器进程
+[2025-08-22T13:11:04.940Z] [INFO] 应用即将退出
+[2025-08-22T13:16:33.770Z] [INFO] 正在启动服务器: dotnet "E:\GitHubDocument\MDUI-Electron\domain\Krypton.LocalServer.dll"
+[2025-08-22T13:16:38.785Z] [INFO] 本地服务器启动成功（无输出）
+[2025-08-22T13:16:39.453Z] [STDOUT] 未找到占用端口 14250 的进程。
+
+[2025-08-22T13:16:41.221Z] [STDOUT] [2025/8/22 21:16:41] Running on port => 14250
+
+[2025-08-22T13:16:41.258Z] [STDOUT] [2025/8/22 21:16:41] 内网地址 => 192.168.10.6:14250
+[2025/8/22 21:16:41] 本机地址 => 127.0.0.1:14250
+
+[2025-08-22T13:16:41.276Z] [STDOUT] [2025/8/22 21:16:41] 数据目录: C:\Users\suris\AppData\Roaming\Krypton
+
+[2025-08-22T13:16:44.955Z] [STDOUT] [2025/8/22 21:16:44] Server #0 latency: 30ms
+
+[2025-08-22T13:16:44.956Z] [STDOUT] [2025/8/22 21:16:44] Use Server #0
+
+[2025-08-22T13:16:45.123Z] [STDOUT] [2025/8/22 21:16:45] Phase #1
+[2025/8/22 21:16:45] Phase #2, 如果一直卡在这请尝试重启程序
+
+[2025-08-22T13:16:49.735Z] [STDOUT] info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://[::]:14250
+
+[2025-08-22T13:16:49.736Z] [STDOUT] info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Production
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: E:\GitHubDocument\MDUI-Electron
+
+[2025-08-22T13:16:49.784Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://127.0.0.1:14250/Auth/Login - - -
+
+[2025-08-22T13:16:49.802Z] [STDOUT] info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'Krypton.LocalServer.Controllers.Auth.AuthController.Login (Krypton.LocalServer)'
+
+[2025-08-22T13:16:49.809Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[102]
+      Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Krypton.Entities.ResponseBase`1[System.String]] Login() on controller Krypton.LocalServer.Controllers.Auth.AuthController (Krypton.LocalServer).
+
+[2025-08-22T13:16:49.843Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor[1]
+      Executing ObjectResult, writing value of type 'Krypton.Entities.ResponseBase`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+
+[2025-08-22T13:16:49.854Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[105]
+      Executed action Krypton.LocalServer.Controllers.Auth.AuthController.Login (Krypton.LocalServer) in 38.9488ms
+
+[2025-08-22T13:16:49.855Z] [STDOUT] info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'Krypton.LocalServer.Controllers.Auth.AuthController.Login (Krypton.LocalServer)'
+
+[2025-08-22T13:16:49.856Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://127.0.0.1:14250/Auth/Login - 200 - application/json;+charset=utf-8 72.1776ms
+
+[2025-08-22T13:16:56.938Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://127.0.0.1:14250/Oauth2/Redirect?code=VTdvqAbbzsQlUpwnCIDrPT9l3d5IPoFfo8c2vRBzwJoZRrqBOG1vsbxKpzi3&state=53bc52dd-8e12-4dde-8e45-fbd5d73dfe6f - - -
+
+[2025-08-22T13:16:56.939Z] [STDOUT] info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'Krypton.LocalServer.Controllers.Oauth.Oauth2Controller.RedirectAsync (Krypton.LocalServer)'
+
+[2025-08-22T13:16:56.954Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[102]
+      Route matched with {action = "Redirect", controller = "Oauth2"}. Executing controller action with signature System.Threading.Tasks.Task`1[Krypton.Entities.ResponseBase`1[System.String]] RedirectAsync(System.String, System.String) on controller Krypton.LocalServer.Controllers.Oauth.Oauth2Controller (Krypton.LocalServer).
+
+[2025-08-22T13:16:58.141Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor[1]
+      Executing ObjectResult, writing value of type 'Krypton.Entities.ResponseBase`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+
+[2025-08-22T13:16:58.142Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[105]
+      Executed action Krypton.LocalServer.Controllers.Oauth.Oauth2Controller.RedirectAsync (Krypton.LocalServer) in 1188.5342ms
+
+[2025-08-22T13:16:58.142Z] [STDOUT] info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'Krypton.LocalServer.Controllers.Oauth.Oauth2Controller.RedirectAsync (Krypton.LocalServer)'
+
+[2025-08-22T13:16:58.145Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://127.0.0.1:14250/Oauth2/Redirect?code=VTdvqAbbzsQlUpwnCIDrPT9l3d5IPoFfo8c2vRBzwJoZRrqBOG1vsbxKpzi3&state=53bc52dd-8e12-4dde-8e45-fbd5d73dfe6f - 200 - application/json;+charset=utf-8 1208.4773ms
+
+[2025-08-22T13:19:56.808Z] [INFO] 正在启动服务器: dotnet "E:\GitHubDocument\MDUI-Electron\domain\Krypton.LocalServer.dll"
+[2025-08-22T13:20:01.827Z] [INFO] 本地服务器启动成功（无输出）
+[2025-08-22T13:20:02.126Z] [STDOUT] 无法终止 PID 19532: Process with an Id of 19532 is not running.
+
+[2025-08-22T13:20:02.127Z] [STDOUT] 成功终止占用端口 14250 的进程，PID: 34276
+
+[2025-08-22T13:20:04.026Z] [STDOUT] [2025/8/22 21:20:04] Running on port => 14250
+
+[2025-08-22T13:20:04.064Z] [STDOUT] [2025/8/22 21:20:04] 内网地址 => 192.168.10.6:14250
+[2025/8/22 21:20:04] 本机地址 => 127.0.0.1:14250
+
+[2025-08-22T13:20:04.080Z] [STDOUT] [2025/8/22 21:20:04] 数据目录: C:\Users\suris\AppData\Roaming\Krypton
+
+[2025-08-22T13:20:06.480Z] [STDOUT] [2025/8/22 21:20:06] Server #0 latency: 20ms
+
+[2025-08-22T13:20:06.483Z] [STDOUT] [2025/8/22 21:20:06] Use Server #0
+
+[2025-08-22T13:20:06.638Z] [STDOUT] [2025/8/22 21:20:06] Phase #1
+[2025/8/22 21:20:06] Phase #2, 如果一直卡在这请尝试重启程序
+
+[2025-08-22T13:20:12.592Z] [STDOUT] info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://[::]:14250
+
+[2025-08-22T13:20:12.594Z] [STDOUT] info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+
+[2025-08-22T13:20:12.594Z] [STDOUT] info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Production
+
+[2025-08-22T13:20:12.595Z] [STDOUT] info: Microsoft.Hosting.Lifetime[0]
+      Content root path: E:\GitHubDocument\MDUI-Electron
+
+[2025-08-22T13:20:12.866Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://127.0.0.1:14250/Auth/Login - - -
+
+[2025-08-22T13:20:12.897Z] [STDOUT] info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'Krypton.LocalServer.Controllers.Auth.AuthController.Login (Krypton.LocalServer)'
+
+[2025-08-22T13:20:12.911Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[102]
+      Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Krypton.Entities.ResponseBase`1[System.String]] Login() on controller Krypton.LocalServer.Controllers.Auth.AuthController (Krypton.LocalServer).
+
+[2025-08-22T13:20:12.970Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor[1]
+      Executing ObjectResult, writing value of type 'Krypton.Entities.ResponseBase`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+
+[2025-08-22T13:20:12.989Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[105]
+      Executed action Krypton.LocalServer.Controllers.Auth.AuthController.Login (Krypton.LocalServer) in 66.1961ms
+
+[2025-08-22T13:20:12.989Z] [STDOUT] info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'Krypton.LocalServer.Controllers.Auth.AuthController.Login (Krypton.LocalServer)'
+
+[2025-08-22T13:20:12.991Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://127.0.0.1:14250/Auth/Login - 200 - application/json;+charset=utf-8 124.9178ms
+
+[2025-08-22T13:20:14.625Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://127.0.0.1:14250/Oauth2/Redirect?code=piWAU8jY8VNkFMkXEwzvjlPvNwBEvl66qcOQdgglWyYZkHnrg1RpX7yEmYwU&state=c8026144-9615-48ef-a914-e62dfca13d2b - - -
+
+[2025-08-22T13:20:14.630Z] [STDOUT] info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'Krypton.LocalServer.Controllers.Oauth.Oauth2Controller.RedirectAsync (Krypton.LocalServer)'
+
+[2025-08-22T13:20:14.644Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[102]
+      Route matched with {action = "Redirect", controller = "Oauth2"}. Executing controller action with signature System.Threading.Tasks.Task`1[Krypton.Entities.ResponseBase`1[Syst
+[2025-08-22T13:20:14.647Z] [STDOUT] em.String]] RedirectAsync(System.String, System.String) on controller Krypton.LocalServer.Controllers.Oauth.Oauth2Controller (Krypton.LocalServer).
+
+[2025-08-22T13:20:19.003Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor[1]
+      Executing ObjectResult, writing value of type 'Krypton.Entities.ResponseBase`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+
+[2025-08-22T13:20:19.033Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[105]
+      Executed action Krypton.LocalServer.Controllers.Oauth.Oauth2Controller.RedirectAsync (Krypton.LocalServer) in 4385.5862ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'Krypton.LocalServer.Controllers.Oauth.Oauth2Controller.RedirectAsync (Krypton.LocalServer)'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://127.0.0.1:14250/Oauth2/Redirect?code=piWAU8jY8VNkFMkXEwzvjlPvNwBEvl66qcOQdgglWyYZkHnrg1RpX7yEmYwU&state=c8026144-9615-48ef-a914-e62dfca13d2b - 499 - application/json;+charset=utf-8 4406.4476ms
+
+[2025-08-22T13:20:19.442Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://127.0.0.1:14250/Base/Announcement - - -
+
+[2025-08-22T13:20:19.451Z] [STDOUT] info: Microsoft.AspNetCore.Cors.Infrastructure.CorsService[4]
+      CORS policy execution successful.
+
+[2025-08-22T13:20:19.453Z] [STDOUT] info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'Krypton.LocalServer.Controllers.Base.BaseController.GetAnnouncement (Krypton.LocalServer)'
+
+[2025-08-22T13:20:19.457Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[102]
+      Route matched with {action = "GetAnnouncement", controller = "Base"}. Executing controller action with signature System.Threading.Tasks.Task`1[Krypton.Entities.ResponseBase`1[System.String]] GetAnnouncement() on controller Krypton.LocalServer.Controllers.Base.BaseController (Krypton.LocalServer).
+
+[2025-08-22T13:20:20.020Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor[1]
+      Executing ObjectResult, writing value of type 'Krypton.Entities.ResponseBase`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+
+[2025-08-22T13:20:20.021Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[105]
+      Executed action Krypton.LocalServer.Controllers.Base.BaseController.GetAnnouncement (Krypton.LocalServer) in 563.8504ms
+
+[2025-08-22T13:20:20.022Z] [STDOUT] info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'Krypton.LocalServer.Controllers.Base.BaseController.GetAnnouncement (Krypton.LocalServer)'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://127.0.0.1:14250/Base/Announcement - 200 - application/json;+charset=utf-8 579.2101ms
+
+[2025-08-22T13:34:51.122Z] [INFO] 应用关闭，正在终止服务器进程
+[2025-08-22T13:34:51.122Z] [INFO] 应用即将退出
+[2025-08-22T13:35:01.534Z] [INFO] 正在启动服务器: dotnet "E:\GitHubDocument\MDUI-Electron\domain\Krypton.LocalServer.dll"
+[2025-08-22T13:35:06.545Z] [INFO] 本地服务器启动成功（无输出）
+[2025-08-22T13:35:06.992Z] [STDOUT] 未找到占用端口 14250 的进程。
+
+[2025-08-22T13:35:09.305Z] [STDOUT] [2025/8/22 21:35:09] Running on port => 14250
+
+[2025-08-22T13:35:09.343Z] [STDOUT] [2025/8/22 21:35:09] 内网地址 => 192.168.10.6:14250
+[2025/8/22 21:35:09] 本机地址 => 127.0.0.1:14250
+
+[2025-08-22T13:35:09.359Z] [STDOUT] [2025/8/22 21:35:09] 数据目录: C:\Users\suris\AppData\Roaming\Krypton
+
+[2025-08-22T13:35:11.937Z] [STDOUT] [2025/8/22 21:35:11] Server #0 latency: 24ms
+
+[2025-08-22T13:35:11.938Z] [STDOUT] [2025/8/22 21:35:11] Use Server #0
+
+[2025-08-22T13:35:12.071Z] [STDOUT] [2025/8/22 21:35:12] Phase #1
+[2025/8/22 21:35:12] Phase #2, 如果一直卡在这请尝试重启程序
+
+[2025-08-22T13:35:16.778Z] [STDOUT] info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://[::]:14250
+
+[2025-08-22T13:35:16.779Z] [STDOUT] info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+
+[2025-08-22T13:35:16.780Z] [STDOUT] info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Production
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: E:\GitHubDocument\MDUI-Electron
+
+[2025-08-22T13:35:16.845Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://127.0.0.1:14250/Auth/Login - - -
+
+[2025-08-22T13:35:16.865Z] [STDOUT] info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'Krypton.LocalServer.Controllers.Auth.AuthController.Login (Krypton.LocalServer)'
+
+[2025-08-22T13:35:16.875Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[102]
+      Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Krypton.Entities.ResponseBase`1[System.String]] Login() on controller Krypton.LocalServer.Controllers.Auth.AuthController (Krypton.LocalServer).
+
+[2025-08-22T13:35:16.908Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor[1]
+      Executing ObjectResult, writing value of type 'Krypton.Entities.ResponseBase`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+
+[2025-08-22T13:35:16.920Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[105]
+      Executed action Krypton.LocalServer.Controllers.Auth.AuthController.Login (Krypton.LocalServer) in 38.2045ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'Krypton.LocalServer.Controllers.Auth.AuthController.Login (Krypton.LocalServer)'
+
+[2025-08-22T13:35:16.922Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://127.0.0.1:14250/Auth/Login - 200 - application/json;+charset=utf-8 76.8208ms
+
+[2025-08-22T13:35:18.267Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://127.0.0.1:14250/Oauth2/Redirect?code=lNllp0YDstCjozV3rTWzJYq4ZWa27ujTxqR1EZl1DZgtAVl1Qlb8PiZopHNc&state=93daeebe-163f-470b-a5ba-f12def425dca - - -
+
+[2025-08-22T13:35:18.269Z] [STDOUT] info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'Krypton.LocalServer.Controllers.Oauth.Oauth2Controller.RedirectAsync (Krypton.LocalServer)'
+
+[2025-08-22T13:35:18.276Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[102]
+      Route matched with {action = "Redirect", controller = "Oauth2"}. Executing controller action with signature System.Threading.Tasks.Task`1[Krypton.Entities.ResponseBase`1[System.String]] RedirectAsync(System.String, System.String) on controller Krypton.LocalServer.Controllers.Oauth.Oauth2Controller (Krypton.LocalServer).
+
+[2025-08-22T13:35:22.040Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor[1]
+      Executing ObjectResult, writing value of type 'Krypton.Entities.ResponseBase`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+
+[2025-08-22T13:35:22.040Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[105]
+      Executed action Krypton.LocalServer.Controllers.Oauth.Oauth2Controller.RedirectAsync (Krypton.LocalServer) in 3765.3363ms
+
+[2025-08-22T13:35:22.041Z] [STDOUT] info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'Krypton.LocalServer.Controllers.Oauth.Oauth2Controller.RedirectAsync (Krypton.LocalServer)'
+
+[2025-08-22T13:35:22.044Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://127.0.0.1:14250/Oauth2/Redirect?code=lNllp0YDstCjozV3rTWzJYq4ZWa27ujTxqR1EZl1DZgtAVl1Qlb8PiZopHNc&state=93daeebe-163f-470b-a5ba-f12def425dca - 200 - application/json;+charset=utf-8 3775.9173ms
+
+[2025-08-22T13:35:22.465Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://127.0.0.1:14250/Base/Announcement - - -
+
+[2025-08-22T13:35:22.470Z] [STDOUT] info: Microsoft.AspNetCore.Cors.Infrastructure.CorsService[4]
+      CORS policy execution successful.
+
+[2025-08-22T13:35:22.472Z] [STDOUT] info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'Krypton.LocalServer.Controllers.Base.BaseController.GetAnnouncement (Krypton.LocalServer)'
+
+[2025-08-22T13:35:22.477Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[102]
+      Route matched with {action = "GetAnnouncement", controller = "Base"}. Executing controller action with signature System.Threading.Tasks.Task`1[Krypton.Entities.ResponseBase`1[System.String]] GetAnnouncement() on controller Krypton.LocalServer.Controllers.Base.BaseController (Krypton.LocalServer).
+
+[2025-08-22T13:35:23.235Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor[1]
+      Executing ObjectResult, writing value of type 'Krypton.Entities.ResponseBase`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+
+[2025-08-22T13:35:23.236Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[105]
+      Executed action Krypton.LocalServer.Controllers.Base.BaseController.GetAnnouncement (Krypton.LocalServer) in 758.9897ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'Krypton.LocalServer.Controllers.Base.BaseController.GetAnnouncement (Krypton.LocalServer)'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://127.0.0.1:14250/Base/Announcement - 200 - application/json;+charset=utf-8 771.6038ms
+
+[2025-08-22T13:45:18.203Z] [INFO] 应用关闭，正在终止服务器进程
+[2025-08-22T13:45:18.204Z] [INFO] 应用即将退出
+[2025-08-22T13:45:32.707Z] [INFO] 正在启动服务器: dotnet "E:\GitHubDocument\MDUI-Electron\domain\Krypton.LocalServer.dll"
+[2025-08-22T13:45:37.721Z] [INFO] 本地服务器启动成功（无输出）
+[2025-08-22T13:45:39.266Z] [STDOUT] 未找到占用端口 14250 的进程。
+
+[2025-08-22T13:45:42.139Z] [STDOUT] [2025/8/22 21:45:42] Running on port => 14250
+
+[2025-08-22T13:45:42.175Z] [STDOUT] [2025/8/22 21:45:42] 内网地址 => 192.168.10.6:14250
+[2025/8/22 21:45:42] 本机地址 => 127.0.0.1:14250
+
+[2025-08-22T13:45:42.192Z] [STDOUT] [2025/8/22 21:45:42] 数据目录: C:\Users\suris\AppData\Roaming\Krypton
+
+[2025-08-22T13:45:44.444Z] [STDOUT] [2025/8/22 21:45:44] Server #0 latency: 39ms
+
+[2025-08-22T13:45:44.446Z] [STDOUT] [2025/8/22 21:45:44] Use Server #0
+
+[2025-08-22T13:45:44.580Z] [STDOUT] [2025/8/22 21:45:44] Phase #1
+[2025/8/22 21:45:44] Phase #2, 如果一直卡在这请尝试重启程序
+
+[2025-08-22T13:45:50.556Z] [STDOUT] info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://[::]:14250
+
+[2025-08-22T13:45:50.556Z] [STDOUT] info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+
+[2025-08-22T13:45:50.557Z] [STDOUT] info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Production
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: E:\GitHubDocument\MDUI-Electron
+
+[2025-08-22T13:45:50.831Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://127.0.0.1:14250/Auth/Login - - -
+
+[2025-08-22T13:45:50.856Z] [STDOUT] info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'Krypton.LocalServer.Controllers.Auth.AuthController.Login (Krypton.LocalServer)'
+
+[2025-08-22T13:45:50.864Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[102]
+      Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Krypton.Entities.ResponseBase`1[System.String]] Login() on controller Krypton.LocalServer.Controllers.Auth.AuthController (Krypton.LocalServer).
+
+[2025-08-22T13:45:50.909Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor[1]
+      Executing ObjectResult, writing value of type 'Krypton.Entities.ResponseBase`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+
+[2025-08-22T13:45:50.925Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[105]
+      Executed action Krypton.LocalServer.Controllers.Auth.AuthController.Login (Krypton.LocalServer) in 52.504ms
+
+[2025-08-22T13:45:50.926Z] [STDOUT] info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'Krypton.LocalServer.Controllers.Auth.AuthController.Login (Krypton.LocalServer)'
+
+[2025-08-22T13:45:50.928Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://127.0.0.1:14250/Auth/Login - 200 - application/json;+charset=utf-8 96.4261ms
+
+[2025-08-22T13:45:51.540Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://127.0.0.1:14250/Oauth2/Redirect?code=34yvQDx48KFu9Ivfx7gRkcGgOELIZQF2TZrqVf0JhFJIC2GNZyU9H68AYWto&state=51b20654-3bc1-4f29-94a9-813ba355a8e3 - - -
+
+[2025-08-22T13:45:51.543Z] [STDOUT] info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'Krypton.LocalServer.Controllers.Oauth.Oauth2Controller.RedirectAsync (Krypton.LocalServer)'
+
+[2025-08-22T13:45:51.551Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[102]
+      Route matched with {action = "Redirect", controller = "Oauth2"}. Executing controller action with signature System.Threading.Tasks.Task`1[Krypton.Entities.ResponseBase`1[System.String]] RedirectAsync(System.String, System.String) on controller Krypton.LocalServer.Controllers.Oauth.Oauth2Controller (Krypton.LocalServer).
+
+[2025-08-22T13:45:51.642Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://127.0.0.1:14250/favicon.ico - - -
+
+[2025-08-22T13:45:51.645Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://127.0.0.1:14250/favicon.ico - 404 0 - 2.1664ms
+
+[2025-08-22T13:45:51.645Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[16]
+      Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://127.0.0.1:14250/favicon.ico, Response status code: 404
+
+[2025-08-22T13:45:52.454Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor[1]
+      Executing ObjectResult, writing value of type 'Krypton.Entities.ResponseBase`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[105]
+      Executed action Krypton.LocalServer.Controllers.Oauth.Oauth2Controller.RedirectAsync (Krypton.LocalServer) in 902.9053ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'Krypton.LocalServer.Controllers.Oauth.Oauth2Controller.RedirectAsync (Krypton.LocalServer)'
+
+[2025-08-22T13:45:52.455Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://127.0.0.1:14250/Oauth2/Redirect?code=34yvQDx48KFu9Ivfx7gRkcGgOELIZQF2TZrqVf0JhFJIC2GNZyU9H68AYWto&state=51b20654-3bc1-4f29-94a9-813ba355a8e3 - 200 - application/json;+charset=utf-8 914.8612ms
+
+[2025-08-22T13:45:52.895Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://127.0.0.1:14250/Base/Announcement - - -
+
+[2025-08-22T13:45:52.898Z] [STDOUT] info: Microsoft.AspNetCore.Cors.Infrastructure.CorsService[4]
+      CORS policy execution successful.
+
+[2025-08-22T13:45:52.899Z] [STDOUT] info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'Krypton.LocalServer.Controllers.Base.BaseController.GetAnnouncement (Krypton.LocalServer)'
+
+[2025-08-22T13:45:52.902Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[102]
+      Route matched with {action = "GetAnnouncement", controller = "Base"}. Executing controller action with signature System.Threading.Tasks.Task`1[Krypton.Entities.ResponseBase`1[System.String]] GetAnnouncement() on controller Krypton.LocalServer.Controllers.Base.BaseController (Krypton.LocalServer).
+
+[2025-08-22T13:45:53.655Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor[1]
+      Executing ObjectResult, writing value of type 'Krypton.Entities.ResponseBase`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+
+[2025-08-22T13:45:53.656Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[105]
+      Executed action Krypton.LocalServer.Controllers.Base.BaseController.GetAnnouncement (Krypton.LocalServer) in 753.4481ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'Krypton.LocalServer.Controllers.Base.BaseController.GetAnnouncement (Krypton.LocalServer)'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://127.0.0.1:14250/Base/Announcement - 200 - application/json;+charset=utf-8 760.3656ms
+
+[2025-08-22T13:47:55.870Z] [INFO] 应用关闭，正在终止服务器进程
+[2025-08-22T13:47:55.871Z] [INFO] 应用即将退出
+[2025-08-22T13:48:06.501Z] [INFO] 正在启动服务器: dotnet "E:\GitHubDocument\MDUI-Electron\domain\Krypton.LocalServer.dll"
+[2025-08-22T13:48:11.508Z] [INFO] 本地服务器启动成功（无输出）
+[2025-08-22T13:48:12.088Z] [STDOUT] 未找到占用端口 14250 的进程。
+
+[2025-08-22T13:48:14.233Z] [STDOUT] [2025/8/22 21:48:14] Running on port => 14250
+
+[2025-08-22T13:48:14.278Z] [STDOUT] [2025/8/22 21:48:14] 内网地址 => 192.168.10.6:14250
+[2025/8/22 21:48:14] 本机地址 => 127.0.0.1:14250
+
+[2025-08-22T13:48:14.295Z] [STDOUT] [2025/8/22 21:48:14] 数据目录: C:\Users\suris\AppData\Roaming\Krypton
+
+[2025-08-22T13:48:16.247Z] [STDOUT] [2025/8/22 21:48:16] Server #0 latency: 36ms
+
+[2025-08-22T13:48:16.249Z] [STDOUT] [2025/8/22 21:48:16] Use Server #0
+
+[2025-08-22T13:48:16.401Z] [STDOUT] [2025/8/22 21:48:16] Phase #1
+
+[2025-08-22T13:48:16.402Z] [STDOUT] [2025/8/22 21:48:16] Phase #2, 如果一直卡在这请尝试重启程序
+
+[2025-08-22T13:48:20.600Z] [STDOUT] info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://[::]:14250
+
+[2025-08-22T13:48:20.615Z] [STDOUT] info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Production
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: E:\GitHubDocument\MDUI-Electron
+
+[2025-08-22T13:48:20.657Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://127.0.0.1:14250/Auth/Login - - -
+
+[2025-08-22T13:48:20.676Z] [STDOUT] info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'Krypton.LocalServer.Controllers.Auth.AuthController.Login (Krypton.LocalServer)'
+
+[2025-08-22T13:48:20.683Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[102]
+      Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Krypton.Entities.ResponseBase`1[System.String]] Login() on controller Krypton.LocalServer.Controllers.Auth.AuthController (Krypton.LocalServer).
+
+[2025-08-22T13:48:20.721Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor[1]
+      Executing ObjectResult, writing value of type 'Krypton.Entities.ResponseBase`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+
+[2025-08-22T13:48:20.734Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[105]
+      Executed action Krypton.LocalServer.Controllers.Auth.AuthController.Login (Krypton.LocalServer) in 42.8923ms
+
+[2025-08-22T13:48:20.735Z] [STDOUT] info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'Krypton.LocalServer.Controllers.Auth.AuthController.Login (Krypton.LocalServer)'
+
+[2025-08-22T13:48:20.737Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://127.0.0.1:14250/Auth/Login - 200 - application/json;+charset=utf-8 78.9699ms
+
+[2025-08-22T13:48:21.507Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://127.0.0.1:14250/favicon.ico - - -
+
+[2025-08-22T13:48:21.510Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://127.0.0.1:14250/favicon.ico - 404 0 - 2.8781ms
+
+[2025-08-22T13:48:21.511Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[16]
+      Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://127.0.0.1:14250/favicon.ico, Response status code: 404
+
+[2025-08-22T13:48:21.540Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://127.0.0.1:14250/Oauth2/Redirect?code=598Zwe9wnqg2DfrUyCgxIBCkm5zefZ3rWfGJCrZMugMGQcnzgX0GnFexHXKR&state=fef400e6-2267-49e0-814e-b690d1c89ae1 - - -
+
+[2025-08-22T13:48:21.541Z] [STDOUT] info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'Krypton.LocalServer.Controllers.Oauth.Oauth2Controller.RedirectAsync (Krypton.LocalServer)'
+
+[2025-08-22T13:48:21.547Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[102]
+      Route matched with {action = "Redirect", controller = "Oauth2"}. Executing controller action with signature System.Threading.Tasks.Task`1[Krypton.Entities.ResponseBase`1[System.String]] RedirectAsync(System.String, System.String) on controller Krypton.LocalServer.Controllers.Oauth.Oauth2Controller (Krypton.LocalServer).
+
+[2025-08-22T13:48:23.262Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor[1]
+      Executing ObjectResult, writing value of type 'Krypton.Entities.ResponseBase`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+
+[2025-08-22T13:48:23.263Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[105]
+      Executed action Krypton.LocalServer.Controllers.Oauth.Oauth2Controller.RedirectAsync (Krypton.LocalServer) in 1716.543ms
+
+[2025-08-22T13:48:23.264Z] [STDOUT] info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'Krypton.LocalServer.Controllers.Oauth.Oauth2Controller.RedirectAsync (Krypton.LocalServer)'
+
+[2025-08-22T13:48:23.265Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://127.0.0.1:14250/Oauth2/Redirect?code=598Zwe9wnqg2DfrUyCgxIBCkm5zefZ3rWfGJCrZMugMGQcnzgX0GnFexHXKR&state=fef400e6-2267-49e0-814e-b690d1c89ae1 - 200 - application/json;+charset=utf-8 1725.2259ms
+
+[2025-08-22T13:49:52.470Z] [INFO] 应用关闭，正在终止服务器进程
+[2025-08-22T13:49:52.471Z] [INFO] 应用即将退出
+[2025-08-22T13:50:03.904Z] [INFO] 正在启动服务器: dotnet "E:\GitHubDocument\MDUI-Electron\domain\Krypton.LocalServer.dll"
+[2025-08-22T13:50:08.924Z] [INFO] 本地服务器启动成功（无输出）
+[2025-08-22T13:50:09.442Z] [STDOUT] 无法终止 PID 0: 拒绝访问。
+
+[2025-08-22T13:50:11.662Z] [STDOUT] [2025/8/22 21:50:11] Running on port => 14250
+
+[2025-08-22T13:50:11.708Z] [STDOUT] [2025/8/22 21:50:11] 内网地址 => 192.168.10.6:14250
+[2025/8/22 21:50:11] 本机地址 => 127.0.0.1:14250
+
+[2025-08-22T13:50:11.724Z] [STDOUT] [2025/8/22 21:50:11] 数据目录: C:\Users\suris\AppData\Roaming\Krypton
+
+[2025-08-22T13:50:13.745Z] [STDOUT] [2025/8/22 21:50:13] Server #0 latency: 38ms
+
+[2025-08-22T13:50:13.748Z] [STDOUT] [2025/8/22 21:50:13] Use Server #0
+
+[2025-08-22T13:50:13.942Z] [STDOUT] [2025/8/22 21:50:13] Phase #1
+
+[2025-08-22T13:50:13.942Z] [STDOUT] [2025/8/22 21:50:13] Phase #2, 如果一直卡在这请尝试重启程序
+
+[2025-08-22T13:50:18.598Z] [STDOUT] info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://[::]:14250
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+
+[2025-08-22T13:50:18.600Z] [STDOUT] info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Production
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: E:\GitHubDocument\MDUI-Electron
+
+[2025-08-22T13:50:18.857Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://127.0.0.1:14250/Auth/Login - - -
+
+[2025-08-22T13:50:18.885Z] [STDOUT] info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'Krypton.LocalServer.Controllers.Auth.AuthController.Login (Krypton.LocalServer)'
+
+[2025-08-22T13:50:18.894Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[102]
+      Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Krypton.Entities.ResponseBase`1[System.String]] Login() on controller Krypton.LocalServer.Controllers.Auth.AuthController (Krypton.LocalServer).
+
+[2025-08-22T13:50:18.933Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor[1]
+      Executing ObjectResult, writing value of type 'Krypton.Entities.ResponseBase`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+
+[2025-08-22T13:50:18.944Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[105]
+      Executed action Krypton.LocalServer.Controllers.Auth.AuthController.Login (Krypton.LocalServer) in 43.9543ms
+
+[2025-08-22T13:50:18.946Z] [STDOUT] info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'Krypton.LocalServer.Controllers.Auth.AuthController.Login (Krypton.LocalServer)'
+
+[2025-08-22T13:50:18.947Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://127.0.0.1:14250/Auth/Login - 200 - application/json;+charset=utf-8 90.2203ms
+
+[2025-08-22T13:50:19.398Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://127.0.0.1:14250/Oauth2/Redirect?code=yWhQidnnM5lN5h272sfr2mRy3YKk3Q4JGqPULBMNjHRusYM4sTmWzX2YJoyb&state=51c007cb-bb92-45fc-9661-669f2ee9f240 - - -
+
+[2025-08-22T13:50:19.401Z] [STDOUT] info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'Krypton.LocalServer.Controllers.Oauth.Oauth2Controller.RedirectAsync (Krypton.LocalServer)'
+
+[2025-08-22T13:50:19.407Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[102]
+      Route matched with {action = "Redirect", controller = "Oauth2"}. Executing controller action with signature System.Threading.Tasks.Task`1[Krypton.Entities.ResponseBase`1[System.String]] RedirectAsync(System.String, System.String) on controller Krypton.LocalServer.Controllers.Oauth.Oauth2Controller (Krypton.LocalServer).
+
+[2025-08-22T13:50:19.646Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://127.0.0.1:14250/favicon.ico - - -
+
+[2025-08-22T13:50:19.648Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://127.0.0.1:14250/favicon.ico - 404 0 - 1.5626ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[16]
+      Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://127.0.0.1:14250/favicon.ico, Response status code: 404
+
+[2025-08-22T13:50:21.445Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor[1]
+      Executing ObjectResult, writing value of type 'Krypton.Entities.ResponseBase`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[105]
+      Executed action Krypton.LocalServer.Controllers.Oauth.Oauth2Controller.RedirectAsync (Krypton.LocalServer) in 2035.6966ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'Krypton.LocalServer.Controllers.Oauth.Oauth2Controller.RedirectAsync (Krypton.LocalServer)'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://127.0.0.1:14250/Oauth2/Redirect?code=yWhQidnnM5lN5h272sfr2mRy3YKk3Q4JGqPULBMNjHRusYM4sTmWzX2YJoyb&state=51c007cb-bb92-45fc-9661-669f2ee9f240 - 200 - application/json;+charset=utf-8 2045.8401ms
+
+[2025-08-22T13:50:21.899Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://127.0.0.1:14250/Base/Announcement - - -
+
+[2025-08-22T13:50:21.901Z] [STDOUT] info: Microsoft.AspNetCore.Cors.Infrastructure.CorsService[4]
+      CORS policy execution successful.
+
+[2025-08-22T13:50:21.902Z] [STDOUT] info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'Krypton.LocalServer.Controllers.Base.BaseController.GetAnnouncement (Krypton.LocalServer)'
+
+[2025-08-22T13:50:21.905Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[102]
+      Route matched with {action = "GetAnnouncement", controller = "Base"}. Executing controller action with signature System.Threading.Tasks.Task`1[Krypton.Entities.ResponseBase`1[System.String]] GetAnnouncement() on controller Krypton.LocalServer.Controllers.Base.BaseController (Krypton.LocalServer).
+
+[2025-08-22T13:50:22.257Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor[1]
+      Executing ObjectResult, writing value of type 'Krypton.Entities.ResponseBase`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+
+[2025-08-22T13:50:22.258Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[105]
+      Executed action Krypton.LocalServer.Controllers.Base.BaseController.GetAnnouncement (Krypton.LocalServer) in 353.2006ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'Krypton.LocalServer.Controllers.Base.BaseController.GetAnnouncement (Krypton.LocalServer)'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://127.0.0.1:14250/Base/Announcement - 200 - application/json;+charset=utf-8 358.8778ms
+
+[2025-08-22T13:58:52.417Z] [INFO] 正在启动服务器: dotnet "E:\GitHubDocument\MDUI-Electron\domain\Krypton.LocalServer.dll"
+[2025-08-22T13:58:57.439Z] [INFO] 本地服务器启动成功（无输出）
+[2025-08-22T13:58:57.828Z] [STDOUT] 未找到占用端口 14250 的进程。
+
+[2025-08-22T13:58:59.856Z] [STDOUT] [2025/8/22 21:58:59] Running on port => 14250
+
+[2025-08-22T13:58:59.896Z] [STDOUT] [2025/8/22 21:58:59] 内网地址 => 192.168.10.6:14250
+[2025/8/22 21:58:59] 本机地址 => 127.0.0.1:14250
+
+[2025-08-22T13:58:59.916Z] [STDOUT] [2025/8/22 21:58:59] 数据目录: C:\Users\suris\AppData\Roaming\Krypton
+
+[2025-08-22T13:59:03.702Z] [STDOUT] [2025/8/22 21:59:03] Server #0 latency: 34ms
+
+[2025-08-22T13:59:03.702Z] [STDOUT] [2025/8/22 21:59:03] Use Server #0
+
+[2025-08-22T13:59:03.824Z] [STDOUT] [2025/8/22 21:59:03] Phase #1
+[2025/8/22 21:59:03] Phase #2, 如果一直卡在这请尝试重启程序
+
+[2025-08-22T13:59:09.633Z] [STDOUT] info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://[::]:14250
+
+[2025-08-22T13:59:09.634Z] [STDOUT] info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Production
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: E:\GitHubDocument\MDUI-Electron
+
+[2025-08-22T13:59:09.936Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://127.0.0.1:14250/Auth/Login - - -
+
+[2025-08-22T13:59:09.963Z] [STDOUT] info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'Krypton.LocalServer.Controllers.Auth.AuthController.Login (Krypton.LocalServer)'
+
+[2025-08-22T13:59:09.972Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[102]
+      Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Krypton.Entities.ResponseBase`1[System.String]] Login() on controller Krypton.LocalServer.Controllers.Auth.AuthController (Krypton.LocalServer).
+
+[2025-08-22T13:59:10.015Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor[1]
+      Executing ObjectResult, writing value of type 'Krypton.Entities.ResponseBase`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+
+[2025-08-22T13:59:10.030Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[105]
+      Executed action Krypton.LocalServer.Controllers.Auth.AuthController.Login (Krypton.LocalServer) in 50.5674ms
+
+[2025-08-22T13:59:10.031Z] [STDOUT] info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'Krypton.LocalServer.Controllers.Auth.AuthController.Login (Krypton.LocalServer)'
+
+[2025-08-22T13:59:10.033Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://127.0.0.1:14250/Auth/Login - 200 - application/json;+charset=utf-8 97.1202ms
+
+[2025-08-22T13:59:10.489Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://127.0.0.1:14250/Oauth2/Redirect?code=Ny2km7h0CSUvMPpeTmsGhQoguwUoi7KorYf7WALyjvlhAiqwcMBmh0drHOSg&state=60f87382-9276-4167-b6fb-bee0d745c672 - - -
+
+[2025-08-22T13:59:10.491Z] [STDOUT] info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'Krypton.LocalServer.Controllers.Oauth.Oauth2Controller.RedirectAsync (Krypton.LocalServer)'
+
+[2025-08-22T13:59:10.499Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[102]
+      Route matched with {action = "Redirect", controller = "Oauth2"}. Executing controller action with signature System.Threading.Tasks.Task`1[Krypton.Entities.ResponseBase`1[System.String]] RedirectAsync(System.String, System.String) on controller Krypton.LocalServer.Controllers.Oauth.Oauth2Controller (Krypton.LocalServer).
+
+[2025-08-22T13:59:10.742Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://127.0.0.1:14250/favicon.ico - - -
+
+[2025-08-22T13:59:10.744Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://127.0.0.1:14250/favicon.ico - 404 0 - 2.3933ms
+
+[2025-08-22T13:59:10.744Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[16]
+      Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://127.0.0.1:14250/favicon.ico, Response status code: 404
+
+[2025-08-22T13:59:12.429Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor[1]
+      Executing ObjectResult, writing value of type 'Krypton.Entities.ResponseBase`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+
+[2025-08-22T13:59:12.430Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[105]
+      Executed action Krypton.LocalServer.Controllers.Oauth.Oauth2Controller.RedirectAsync (Krypton.LocalServer) in 1930.4296ms
+
+[2025-08-22T13:59:12.431Z] [STDOUT] info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'Krypton.LocalServer.Controllers.Oauth.Oauth2Controller.RedirectAsync (Krypton.LocalServer)'
+
+[2025-08-22T13:59:12.431Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://127.0.0.1:14250/Oauth2/Redirect?code=Ny2km7h0CSUvMPpeTmsGhQoguwUoi7KorYf7WALyjvlhAiqwcMBmh0drHOSg&state=60f87382-9276-4167-b6fb-bee0d745c672 - 200 - application/json;+charset=utf-8 1941.5276ms
+
+[2025-08-22T13:59:12.874Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://127.0.0.1:14250/Base/Announcement - - -
+
+[2025-08-22T13:59:12.877Z] [STDOUT] info: Microsoft.AspNetCore.Cors.Infrastructure.CorsService[4]
+      CORS policy execution successful.
+
+[2025-08-22T13:59:12.878Z] [STDOUT] info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'Krypton.LocalServer.Controllers.Base.BaseController.GetAnnouncement (Krypton.LocalServer)'
+
+[2025-08-22T13:59:12.882Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[102]
+      Route matched with {action = "GetAnnouncement", controller = "Base"}. Executing controller action with signature System.Threading.Tasks.Task`1[Krypton.Entities.ResponseBase`1[System.String]] GetAnnouncement() on controller Krypton.LocalServer.Controllers.Base.BaseController (Krypton.LocalServer).
+
+[2025-08-22T13:59:13.635Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor[1]
+      Executing ObjectResult, writing value of type 'Krypton.Entities.ResponseBase`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+
+[2025-08-22T13:59:13.636Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[105]
+      Executed action Krypton.LocalServer.Controllers.Base.BaseController.GetAnnouncement (Krypton.LocalServer) in 754.269ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'Krypton.LocalServer.Controllers.Base.BaseController.GetAnnouncement (Krypton.LocalServer)'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://127.0.0.1:14250/Base/Announcement - 200 - application/json;+charset=utf-8 761.4751ms
+
+[2025-08-22T13:59:53.171Z] [INFO] 应用关闭，正在终止服务器进程
+[2025-08-22T13:59:53.172Z] [INFO] 应用即将退出
+[2025-08-22T14:02:07.959Z] [INFO] 正在启动服务器: dotnet "E:\GitHubDocument\MDUI-Electron\domain\Krypton.LocalServer.dll"
+[2025-08-22T14:02:12.970Z] [INFO] 本地服务器启动成功（无输出）
+[2025-08-22T14:02:13.448Z] [STDOUT] 未找到占用端口 14250 的进程。
+
+[2025-08-22T14:02:15.509Z] [STDOUT] [2025/8/22 22:02:15] Running on port => 14250
+
+[2025-08-22T14:02:15.547Z] [STDOUT] [2025/8/22 22:02:15] 内网地址 => 192.168.10.6:14250
+[2025/8/22 22:02:15] 本机地址 => 127.0.0.1:14250
+
+[2025-08-22T14:02:15.565Z] [STDOUT] [2025/8/22 22:02:15] 数据目录: C:\Users\suris\AppData\Roaming\Krypton
+
+[2025-08-22T14:02:17.433Z] [STDOUT] [2025/8/22 22:02:17] Server #0 latency: 31ms
+
+[2025-08-22T14:02:17.434Z] [STDOUT] [2025/8/22 22:02:17] Use Server #0
+
+[2025-08-22T14:02:17.577Z] [STDOUT] [2025/8/22 22:02:17] Phase #1
+[2025/8/22 22:02:17] Phase #2, 如果一直卡在这请尝试重启程序
+
+[2025-08-22T14:02:21.862Z] [STDOUT] info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://[::]:14250
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Production
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: E:\GitHubDocument\MDUI-Electron
+
+[2025-08-22T14:02:22.043Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://127.0.0.1:14250/Auth/Login - - -
+
+[2025-08-22T14:02:22.070Z] [STDOUT] info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'Krypton.LocalServer.Controllers.Auth.AuthController.Login (Krypton.LocalServer)'
+
+[2025-08-22T14:02:22.077Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[102]
+      Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Krypton.Entities.ResponseBase`1[System.String]] Login() on controller Krypton.LocalServer.Controllers.Auth.AuthController (Krypton.LocalServer).
+
+[2025-08-22T14:02:22.113Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor[1]
+      Executing ObjectResult, writing value of type 'Krypton.Entities.ResponseBase`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+
+[2025-08-22T14:02:22.127Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[105]
+      Executed action Krypton.LocalServer.Controllers.Auth.AuthController.Login (Krypton.LocalServer) in 42.0816ms
+
+[2025-08-22T14:02:22.127Z] [STDOUT] info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'Krypton.LocalServer.Controllers.Auth.AuthController.Login (Krypton.LocalServer)'
+
+[2025-08-22T14:02:22.129Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://127.0.0.1:14250/Auth/Login - 200 - application/json;+charset=utf-8 85.9495ms
+
+[2025-08-22T14:02:22.846Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://127.0.0.1:14250/favicon.ico - - -
+
+[2025-08-22T14:02:22.849Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://127.0.0.1:14250/favicon.ico - 404 0 - 2.4167ms
+info: Microsoft.AspNetCore.Hosting.Diagnostics[16]
+      Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://127.0.0.1:14250/favicon.ico, Response status code: 404
+
+[2025-08-22T14:02:25.232Z] [INFO] 应用关闭，正在终止服务器进程
+[2025-08-22T14:02:25.232Z] [INFO] 应用即将退出
+[2025-08-22T14:11:04.661Z] [INFO] 正在启动服务器: dotnet "E:\GitHubDocument\MDUI-Electron\domain\Krypton.LocalServer.dll"
+[2025-08-22T14:11:09.678Z] [INFO] 本地服务器启动成功（无输出）
+[2025-08-22T14:11:10.439Z] [STDOUT] 未找到占用端口 14250 的进程。
+
+[2025-08-22T14:11:12.710Z] [STDOUT] [2025/8/22 22:11:12] Running on port => 14250
+
+[2025-08-22T14:11:12.746Z] [STDOUT] [2025/8/22 22:11:12] 内网地址 => 192.168.10.6:14250
+[2025/8/22 22:11:12] 本机地址 => 127.0.0.1:14250
+
+[2025-08-22T14:11:12.763Z] [STDOUT] [2025/8/22 22:11:12] 数据目录: C:\Users\suris\AppData\Roaming\Krypton
+
+[2025-08-22T14:11:14.209Z] [STDOUT] [2025/8/22 22:11:14] Server #0 latency: 31ms
+
+[2025-08-22T14:11:14.210Z] [STDOUT] [2025/8/22 22:11:14] Use Server #0
+
+[2025-08-22T14:11:14.360Z] [STDOUT] [2025/8/22 22:11:14] Phase #1
+[2025/8/22 22:11:14] Phase #2, 如果一直卡在这请尝试重启程序
+
+[2025-08-22T14:11:19.587Z] [STDOUT] info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://[::]:14250
+
+[2025-08-22T14:11:19.588Z] [STDOUT] info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Production
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: E:\GitHubDocument\MDUI-Electron
+
+[2025-08-22T14:11:19.651Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://127.0.0.1:14250/Auth/Login - - -
+
+[2025-08-22T14:11:19.675Z] [STDOUT] info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'Krypton.LocalServer.Controllers.Auth.AuthController.Login (Krypton.LocalServer)'
+
+[2025-08-22T14:11:19.685Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[102]
+      Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Krypton.Entities.ResponseBase`1[System.String]] Login() on controller Krypton.LocalServer.Controllers.Auth.AuthController (Krypton.LocalServer).
+
+[2025-08-22T14:11:19.719Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor[1]
+      Executing ObjectResult, writing value of type 'Krypton.Entities.ResponseBase`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+
+[2025-08-22T14:11:19.729Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[105]
+      Executed action Krypton.LocalServer.Controllers.Auth.AuthController.Login (Krypton.LocalServer) in 39.0226ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'Krypton.LocalServer.Controllers.Auth.AuthController.Login (Krypton.LocalServer)'
+
+[2025-08-22T14:11:19.730Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://127.0.0.1:14250/Auth/Login - 200 - application/json;+charset=utf-8 79.2695ms
+
+[2025-08-22T14:11:20.012Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://127.0.0.1:14250/favicon.ico - - -
+
+[2025-08-22T14:11:20.014Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://127.0.0.1:14250/favicon.ico - 404 0 - 2.3841ms
+
+[2025-08-22T14:11:20.015Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[16]
+      Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://127.0.0.1:14250/favicon.ico, Response status code: 404
+
+[2025-08-22T14:11:20.191Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://127.0.0.1:14250/Oauth2/Redirect?code=dPQpJapLG3T9aWQxKMP8IYjM3AwSN4QoQ5KNYm0R2Y7L7CQGsU6LXN2g4EyM&state=77453937-0f2d-445a-934e-4316bf40d3ce - - -
+
+[2025-08-22T14:11:20.192Z] [STDOUT] info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'Krypton.LocalServer.Controllers.Oauth.Oauth2Controller.RedirectAsync (Krypton.LocalServer)'
+
+[2025-08-22T14:11:20.197Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[102]
+      Route matched with {action = "Redirect", controller = "Oauth2"}. Executing controller action with signature System.Threading.Tasks.Task`1[Krypton.Entities.ResponseBase`1[System.String]] RedirectAsync(System.String, System.String) on controller Krypton.LocalServer.Controllers.Oauth.Oauth2Controller (Krypton.LocalServer).
+
+[2025-08-22T14:11:20.919Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor[1]
+      Executing ObjectResult, writing value of type 'Krypton.Entities.ResponseBase`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[105]
+      Executed action Krypton.LocalServer.Controllers.Oauth.Oauth2Controller.RedirectAsync (Krypton.LocalServer) in 718.7714ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'Krypton.LocalServer.Controllers.Oauth.Oauth2Controller.RedirectAsync (Krypton.LocalServer)'
+
+[2025-08-22T14:11:20.920Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://127.0.0.1:14250/Oauth2/Redirect?code=dPQpJapLG3T9aWQxKMP8IYjM3AwSN4QoQ5KNYm0R2Y7L7CQGsU6LXN2g4EyM&state=77453937-0f2d-445a-934e-4316bf40d3ce - 200 - application/json;+charset=utf-8 725.9106ms
+
+[2025-08-22T14:11:21.363Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://127.0.0.1:14250/Base/Announcement - - -
+info: Microsoft.AspNetCore.Cors.Infrastructure.CorsService[4]
+      CORS policy execution successful.
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'Krypton.LocalServer.Controllers.Base.BaseController.GetAnnouncement (Krypton.LocalServer)'
+
+[2025-08-22T14:11:21.366Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[102]
+      Route matched with {action = "GetAnnouncement", controller = "Base"}. Executing controller action with signature System.Threading.Tasks.Task`1[Krypton.Entities.ResponseBase`1[System.String]] GetAnnouncement() on controller Krypton.LocalServer.Controllers.Base.BaseController (Krypton.LocalServer).
+
+[2025-08-22T14:11:21.658Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor[1]
+      Executing ObjectResult, writing value of type 'Krypton.Entities.ResponseBase`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+
+[2025-08-22T14:11:21.659Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[105]
+      Executed action Krypton.LocalServer.Controllers.Base.BaseController.GetAnnouncement (Krypton.LocalServer) in 292.4364ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'Krypton.LocalServer.Controllers.Base.BaseController.GetAnnouncement (Krypton.LocalServer)'
+
+[2025-08-22T14:11:21.659Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://127.0.0.1:14250/Base/Announcement - 200 - application/json;+charset=utf-8 298.8646ms
+
+[2025-08-22T14:12:26.082Z] [INFO] 应用关闭，正在终止服务器进程
+[2025-08-22T14:12:26.083Z] [INFO] 应用即将退出
+[2025-08-22T14:12:37.442Z] [INFO] 正在启动服务器: dotnet "E:\GitHubDocument\MDUI-Electron\domain\Krypton.LocalServer.dll"
+[2025-08-22T14:12:42.453Z] [INFO] 本地服务器启动成功（无输出）
+[2025-08-22T14:12:44.207Z] [STDOUT] 未找到占用端口 14250 的进程。
+
+[2025-08-22T14:12:46.175Z] [STDOUT] [2025/8/22 22:12:46] Running on port => 14250
+
+[2025-08-22T14:12:46.214Z] [STDOUT] [2025/8/22 22:12:46] 内网地址 => 192.168.10.6:14250
+[2025/8/22 22:12:46] 本机地址 => 127.0.0.1:14250
+
+[2025-08-22T14:12:46.231Z] [STDOUT] [2025/8/22 22:12:46] 数据目录: C:\Users\suris\AppData\Roaming\Krypton
+
+[2025-08-22T14:12:48.663Z] [STDOUT] [2025/8/22 22:12:48] Server #0 latency: 37ms
+[2025/8/22 22:12:48] Use Server #0
+
+[2025-08-22T14:12:48.855Z] [STDOUT] [2025/8/22 22:12:48] Phase #1
+
+[2025-08-22T14:12:48.856Z] [STDOUT] [2025/8/22 22:12:48] Phase #2, 如果一直卡在这请尝试重启程序
+
+[2025-08-22T14:12:53.885Z] [STDOUT] info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://[::]:14250
+
+[2025-08-22T14:12:53.886Z] [STDOUT] info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+
+[2025-08-22T14:12:53.887Z] [STDOUT] info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Production
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: E:\GitHubDocument\MDUI-Electron
+
+[2025-08-22T14:12:53.973Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://127.0.0.1:14250/Auth/Login - - -
+
+[2025-08-22T14:12:53.994Z] [STDOUT] info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'Krypton.LocalServer.Controllers.Auth.AuthController.Login (Krypton.LocalServer)'
+
+[2025-08-22T14:12:54.003Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[102]
+      Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Krypton.Entities.ResponseBase`1[System.String]] Login() on controller Krypton.LocalServer.Controllers.Auth.AuthController (Krypton.LocalServer).
+
+[2025-08-22T14:12:54.048Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor[1]
+      Executing ObjectResult, writing value of type 'Krypton.Entities.ResponseBase`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+
+[2025-08-22T14:12:54.060Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[105]
+      Executed action Krypton.LocalServer.Controllers.Auth.AuthController.Login (Krypton.LocalServer) in 50.3642ms
+
+[2025-08-22T14:12:54.062Z] [STDOUT] info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'Krypton.LocalServer.Controllers.Auth.AuthController.Login (Krypton.LocalServer)'
+
+[2025-08-22T14:12:54.064Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://127.0.0.1:14250/Auth/Login - 200 - application/json;+charset=utf-8 89.5734ms
+
+[2025-08-22T14:12:56.605Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://127.0.0.1:14250/Oauth2/Redirect?code=0VyxRQQq08Rpo1QC1FBZ1EXQsQN2IbjF5OBUY0mSo4kDFYYCpuT2nwq9LrEO&state=7e5b35c5-66c3-4f09-8144-3350880a2d0d - - -
+
+[2025-08-22T14:12:56.606Z] [STDOUT] info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'Krypton.LocalServer.Controllers.Oauth.Oauth2Controller.RedirectAsync (Krypton.LocalServer)'
+
+[2025-08-22T14:12:56.611Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[102]
+      Route matched with {action = "Redirect", controller = "Oauth2"}. Executing controller action with signature System.Threading.Tasks.Task`1[Krypton.Entities.ResponseBase`1[System.String]] RedirectAsync(System.String, System.String) on controller Krypton.LocalServer.Controllers.Oauth.Oauth2Controller (Krypton.LocalServer).
+
+[2025-08-22T14:12:57.970Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor[1]
+      Executing ObjectResult, writing value of type 'Krypton.Entities.ResponseBase`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+
+[2025-08-22T14:12:57.970Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[105]
+      Executed action Krypton.LocalServer.Controllers.Oauth.Oauth2Controller.RedirectAsync (Krypton.LocalServer) in 1358.8314ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'Krypton.LocalServer.Controllers.Oauth.Oauth2Controller.RedirectAsync (Krypton.LocalServer)'
+
+[2025-08-22T14:12:57.971Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://127.0.0.1:14250/Oauth2/Redirect?code=0VyxRQQq08Rpo1QC1FBZ1EXQsQN2IbjF5OBUY0mSo4kDFYYCpuT2nwq9LrEO&state=7e5b35c5-66c3-4f09-8144-3350880a2d0d - 200 - application/json;+charset=utf-8 1366.9649ms
+
+[2025-08-22T14:12:58.427Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://127.0.0.1:14250/Base/Announcement - - -
+
+[2025-08-22T14:12:58.431Z] [STDOUT] info: Microsoft.AspNetCore.Cors.Infrastructure.CorsService[4]
+      CORS policy execution successful.
+
+[2025-08-22T14:12:58.434Z] [STDOUT] info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'Krypton.LocalServer.Controllers.Base.BaseController.GetAnnouncement (Krypton.LocalServer)'
+
+[2025-08-22T14:12:58.441Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[102]
+      Route matched with {action = "GetAnnouncement", controller = "Base"}. Executing controller action with signature System.Threading.Tasks.Task`1[Krypton.Entities.ResponseBase`1[System.String]] GetAnnouncement() on controller Krypton.LocalServer.Controllers.Base.BaseController (Krypton.LocalServer).
+
+[2025-08-22T14:12:58.750Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor[1]
+      Executing ObjectResult, writing value of type 'Krypton.Entities.ResponseBase`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+
+[2025-08-22T14:12:58.750Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[105]
+      Executed action Krypton.LocalServer.Controllers.Base.BaseController.GetAnnouncement (Krypton.LocalServer) in 309.9123ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'Krypton.LocalServer.Controllers.Base.BaseController.GetAnnouncement (Krypton.LocalServer)'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://127.0.0.1:14250/Base/Announcement - 200 - application/json;+charset=utf-8 323.5417ms
+
+[2025-08-22T14:13:04.841Z] [INFO] 应用关闭，正在终止服务器进程
+[2025-08-22T14:13:04.841Z] [INFO] 应用即将退出
+[2025-08-22T14:16:54.802Z] [INFO] 正在启动服务器: dotnet "E:\GitHubDocument\MDUI-Electron\domain\Krypton.LocalServer.dll"
+[2025-08-22T14:16:59.823Z] [INFO] 本地服务器启动成功（无输出）
+[2025-08-22T14:17:00.987Z] [INFO] 应用关闭，正在终止服务器进程
+[2025-08-22T14:17:00.988Z] [INFO] 应用即将退出
+[2025-08-22T14:18:07.218Z] [INFO] 正在启动服务器: dotnet "E:\GitHubDocument\MDUI-Electron\domain\Krypton.LocalServer.dll"
+[2025-08-22T14:18:12.236Z] [INFO] 本地服务器启动成功（无输出）
+[2025-08-22T14:18:14.305Z] [STDOUT] 未找到占用端口 14250 的进程。
+
+[2025-08-22T14:18:15.318Z] [INFO] 应用关闭，正在终止服务器进程
+[2025-08-22T14:18:15.318Z] [INFO] 应用即将退出
+[2025-08-22T14:18:15.340Z] [INFO] 服务器进程退出，退出码: null
+[2025-08-22T14:18:27.297Z] [INFO] 正在启动服务器: dotnet "E:\GitHubDocument\MDUI-Electron\domain\Krypton.LocalServer.dll"
+[2025-08-22T14:18:32.309Z] [INFO] 本地服务器启动成功（无输出）
+[2025-08-22T14:18:35.157Z] [STDOUT] 未找到占用端口 14250 的进程。
+
+[2025-08-22T14:18:37.703Z] [STDOUT] [2025/8/22 22:18:37] Running on port => 14250
+
+[2025-08-22T14:18:37.749Z] [STDOUT] [2025/8/22 22:18:37] 内网地址 => 192.168.10.6:14250
+[2025/8/22 22:18:37] 本机地址 => 127.0.0.1:14250
+
+[2025-08-22T14:18:37.770Z] [STDOUT] [2025/8/22 22:18:37] 数据目录: C:\Users\suris\AppData\Roaming\Krypton
+
+[2025-08-22T14:18:40.619Z] [STDOUT] [2025/8/22 22:18:40] Server #0 latency: 25ms
+
+[2025-08-22T14:18:40.620Z] [STDOUT] [2025/8/22 22:18:40] Use Server #0
+
+[2025-08-22T14:18:40.767Z] [STDOUT] [2025/8/22 22:18:40] Phase #1
+
+[2025-08-22T14:18:40.768Z] [STDOUT] [2025/8/22 22:18:40] Phase #2, 如果一直卡在这请尝试重启程序
+
+[2025-08-22T14:18:45.272Z] [STDOUT] info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://[::]:14250
+
+[2025-08-22T14:18:45.273Z] [STDOUT] info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+
+[2025-08-22T14:18:45.274Z] [STDOUT] info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Production
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: E:\GitHubDocument\MDUI-Electron
+
+[2025-08-22T14:18:45.361Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://127.0.0.1:14250/Auth/Login - - -
+
+[2025-08-22T14:18:45.388Z] [STDOUT] info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'Krypton.LocalServer.Controllers.Auth.AuthController.Login (Krypton.LocalServer)'
+
+[2025-08-22T14:18:45.397Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[102]
+      Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Krypton.Entities.ResponseBase`1[System.String]] Login() on controller Krypton.LocalServer.Controllers.Auth.AuthController (Krypton.LocalServer).
+
+[2025-08-22T14:18:45.435Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor[1]
+      Executing ObjectResult, writing value of type 'Krypton.Entities.ResponseBase`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+
+[2025-08-22T14:18:45.446Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[105]
+      Executed action Krypton.LocalServer.Controllers.Auth.AuthController.Login (Krypton.LocalServer) in 43.0747ms
+
+[2025-08-22T14:18:45.446Z] [STDOUT] info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'Krypton.LocalServer.Controllers.Auth.AuthController.Login (Krypton.LocalServer)'
+
+[2025-08-22T14:18:45.447Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://127.0.0.1:14250/Auth/Login - 200 - application/json;+charset=utf-8 87.1629ms
+
+[2025-08-22T14:19:57.499Z] [INFO] 应用关闭，正在终止服务器进程
+[2025-08-22T14:19:57.500Z] [INFO] 应用即将退出
+[2025-08-22T14:20:29.979Z] [INFO] 正在启动服务器: dotnet "E:\GitHubDocument\MDUI-Electron\domain\Krypton.LocalServer.dll"
+[2025-08-22T14:20:35.000Z] [INFO] 本地服务器启动成功（无输出）
+[2025-08-22T14:20:36.010Z] [STDOUT] 未找到占用端口 14250 的进程。
+
+[2025-08-22T14:20:36.989Z] [INFO] 应用关闭，正在终止服务器进程
+[2025-08-22T14:20:36.990Z] [INFO] 应用即将退出
+[2025-08-22T14:22:24.113Z] [INFO] 正在启动服务器: dotnet "E:\GitHubDocument\MDUI-Electron\domain\Krypton.LocalServer.dll"
+[2025-08-22T14:22:29.128Z] [INFO] 本地服务器启动成功（无输出）
+[2025-08-22T14:22:29.673Z] [STDOUT] 未找到占用端口 14250 的进程。
+
+[2025-08-22T14:22:31.706Z] [STDOUT] [2025/8/22 22:22:31] Running on port => 14250
+
+[2025-08-22T14:22:31.753Z] [STDOUT] [2025/8/22 22:22:31] 内网地址 => 192.168.10.6:14250
+[2025/8/22 22:22:31] 本机地址 => 127.0.0.1:14250
+
+[2025-08-22T14:22:31.768Z] [STDOUT] [2025/8/22 22:22:31] 数据目录: C:\Users\suris\AppData\Roaming\Krypton
+
+[2025-08-22T14:22:34.160Z] [STDOUT] [2025/8/22 22:22:34] Server #0 latency: 24ms
+
+[2025-08-22T14:22:34.161Z] [STDOUT] [2025/8/22 22:22:34] Use Server #0
+
+[2025-08-22T14:22:34.301Z] [STDOUT] [2025/8/22 22:22:34] Phase #1
+
+[2025-08-22T14:22:34.301Z] [STDOUT] [2025/8/22 22:22:34] Phase #2, 如果一直卡在这请尝试重启程序
+
+[2025-08-22T14:22:38.528Z] [INFO] 应用关闭，正在终止服务器进程
+[2025-08-22T14:22:38.529Z] [INFO] 应用即将退出
+[2025-08-22T14:25:42.854Z] [INFO] 正在启动服务器: dotnet "E:\GitHubDocument\MDUI-Electron\domain\Krypton.LocalServer.dll"
+[2025-08-22T14:25:47.872Z] [INFO] 本地服务器启动成功（无输出）
+[2025-08-22T14:25:49.577Z] [STDOUT] 未找到占用端口 14250 的进程。
+
+[2025-08-22T14:25:51.868Z] [STDOUT] [2025/8/22 22:25:51] Running on port => 14250
+
+[2025-08-22T14:25:51.906Z] [STDOUT] [2025/8/22 22:25:51] 内网地址 => 192.168.10.6:14250
+[2025/8/22 22:25:51] 本机地址 => 127.0.0.1:14250
+
+[2025-08-22T14:25:51.926Z] [STDOUT] [2025/8/22 22:25:51] 数据目录: C:\Users\suris\AppData\Roaming\Krypton
+
+[2025-08-22T14:25:56.687Z] [STDOUT] [2025/8/22 22:25:56] Server #0 latency: 20ms
+
+[2025-08-22T14:25:56.694Z] [STDOUT] [2025/8/22 22:25:56] Use Server #0
+
+[2025-08-22T14:25:56.819Z] [STDOUT] [2025/8/22 22:25:56] Phase #1
+
+[2025-08-22T14:25:56.819Z] [STDOUT] [2025/8/22 22:25:56] Phase #2, 如果一直卡在这请尝试重启程序
+
+[2025-08-22T14:26:02.043Z] [STDOUT] info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://[::]:14250
+
+[2025-08-22T14:26:02.044Z] [STDOUT] info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Production
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: E:\GitHubDocument\MDUI-Electron
+
+[2025-08-22T14:26:02.137Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://127.0.0.1:14250/Auth/Login - - -
+
+[2025-08-22T14:26:02.170Z] [STDOUT] info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'Krypton.LocalServer.Controllers.Auth.AuthController.Login (Krypton.LocalServer)'
+
+[2025-08-22T14:26:02.180Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[102]
+      Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Krypton.Entities.ResponseBase`1[System.String]] Login() on controller Krypton.LocalServer.Controllers.Auth.AuthController (Krypton.LocalServer).
+
+[2025-08-22T14:26:02.216Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor[1]
+      Executing ObjectResult, writing value of type 'Krypton.Entities.ResponseBase`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+
+[2025-08-22T14:26:02.229Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[105]
+      Executed action Krypton.LocalServer.Controllers.Auth.AuthController.Login (Krypton.LocalServer) in 42.3437ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'Krypton.LocalServer.Controllers.Auth.AuthController.Login (Krypton.LocalServer)'
+
+[2025-08-22T14:26:02.231Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://127.0.0.1:14250/Auth/Login - 200 - application/json;+charset=utf-8 93.6183ms
+
+[2025-08-22T14:26:02.895Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://127.0.0.1:14250/Oauth2/Redirect?code=2HFNlKShHCDlMenTje1w55dbgiucu6z6ejnThvDdSrqcqxbDM23rzgLmjUB8&state=358c42eb-5529-4ef5-b5a5-7436d75e9ab2 - - -
+
+[2025-08-22T14:26:02.898Z] [STDOUT] info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'Krypton.LocalServer.Controllers.Oauth.Oauth2Controller.RedirectAsync (Krypton.LocalServer)'
+
+[2025-08-22T14:26:02.910Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[102]
+      Route matched with {action = "Redirect", controller = "Oauth2"}. Executing controller action with signature System.Threading.Tasks.Task`1[Krypton.Entities.ResponseBase`1[System.String]] RedirectAsync(System.String, System.String) on controller Krypton.LocalServer.Controllers.Oauth.Oauth2Controller (Krypton.LocalServer).
+
+[2025-08-22T14:26:05.014Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor[1]
+      Executing ObjectResult, writing value of type 'Krypton.Entities.ResponseBase`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+
+[2025-08-22T14:26:05.024Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[105]
+      Executed action Krypton.LocalServer.Controllers.Oauth.Oauth2Controller.RedirectAsync (Krypton.LocalServer) in 2104.5792ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'Krypton.LocalServer.Controllers.Oauth.Oauth2Controller.RedirectAsync (Krypton.LocalServer)'
+
+[2025-08-22T14:26:05.025Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://127.0.0.1:14250/Oauth2/Redirect?code=2HFNlKShHCDlMenTje1w55dbgiucu6z6ejnThvDdSrqcqxbDM23rzgLmjUB8&state=358c42eb-5529-4ef5-b5a5-7436d75e9ab2 - 499 - application/json;+charset=utf-8 2119.8035ms
+
+[2025-08-22T14:26:05.394Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://127.0.0.1:14250/Base/Announcement - - -
+
+[2025-08-22T14:26:05.398Z] [STDOUT] info: Microsoft.AspNetCore.Cors.Infrastructure.CorsService[4]
+      CORS policy execution successful.
+
+[2025-08-22T14:26:05.399Z] [STDOUT] info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'Krypton.LocalServer.Controllers.Base.BaseController.GetAnnouncement (Krypton.LocalServer)'
+
+[2025-08-22T14:26:05.402Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[102]
+      Route matched with {action = "GetAnnouncement", controller = "Base"}. Executing controller action with signature System.Threading.Tasks.Task`1[Krypton.Entities.ResponseBase`1[System.String]] GetAnnouncement() on controller Krypton.LocalServer.Controllers.Base.BaseController (Krypton.LocalServer).
+
+[2025-08-22T14:26:06.035Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor[1]
+      Executing ObjectResult, writing value of type 'Krypton.Entities.ResponseBase`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+
+[2025-08-22T14:26:06.036Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[105]
+      Executed action Krypton.LocalServer.Controllers.Base.BaseController.GetAnnouncement (Krypton.LocalServer) in 633.6663ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'Krypton.LocalServer.Controllers.Base.BaseController.GetAnnouncement (Krypton.LocalServer)'
+
+[2025-08-22T14:26:06.036Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://127.0.0.1:14250/Base/Announcement - 200 - application/json;+charset=utf-8 642.4576ms
+
+[2025-08-22T14:30:55.626Z] [INFO] 应用关闭，正在终止服务器进程
+[2025-08-22T14:30:55.626Z] [INFO] 应用即将退出
+[2025-08-22T14:31:10.241Z] [INFO] 正在启动服务器: dotnet "E:\GitHubDocument\MDUI-Electron\domain\Krypton.LocalServer.dll"
+[2025-08-22T14:31:15.260Z] [INFO] 本地服务器启动成功（无输出）
+[2025-08-22T14:31:17.667Z] [STDOUT] 未找到占用端口 14250 的进程。
+
+[2025-08-22T14:31:20.490Z] [STDOUT] [2025/8/22 22:31:20] Running on port => 14250
+
+[2025-08-22T14:31:20.531Z] [STDOUT] [2025/8/22 22:31:20] 内网地址 => 192.168.10.6:14250
+[2025/8/22 22:31:20] 本机地址 => 127.0.0.1:14250
+
+[2025-08-22T14:31:20.549Z] [STDOUT] [2025/8/22 22:31:20] 数据目录: C:\Users\suris\AppData\Roaming\Krypton
+
+[2025-08-22T14:31:22.713Z] [STDOUT] [2025/8/22 22:31:22] Server #0 latency: 20ms
+
+[2025-08-22T14:31:22.714Z] [STDOUT] [2025/8/22 22:31:22] Use Server #0
+
+[2025-08-22T14:31:22.841Z] [STDOUT] [2025/8/22 22:31:22] Phase #1
+[2025/8/22 22:31:22] Phase #2, 如果一直卡在这请尝试重启程序
+
+[2025-08-22T14:31:27.370Z] [STDOUT] info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://[::]:14250
+
+[2025-08-22T14:31:27.372Z] [STDOUT] info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+
+[2025-08-22T14:31:27.388Z] [STDOUT] info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Production
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: E:\GitHubDocument\MDUI-Electron
+
+[2025-08-22T14:31:27.444Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://127.0.0.1:14250/Auth/Login - - -
+
+[2025-08-22T14:31:27.463Z] [STDOUT] info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'Krypton.LocalServer.Controllers.Auth.AuthController.Login (Krypton.LocalServer)'
+
+[2025-08-22T14:31:27.471Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[102]
+      Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Krypton.Entities.ResponseBase`1[System.String]] Login() on controller Krypton.LocalServer.Controllers.Auth.AuthController (Krypton.LocalServer).
+
+[2025-08-22T14:31:27.505Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor[1]
+      Executing ObjectResult, writing value of type 'Krypton.Entities.ResponseBase`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+
+[2025-08-22T14:31:27.516Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[105]
+      Executed action Krypton.LocalServer.Controllers.Auth.AuthController.Login (Krypton.LocalServer) in 38.3154ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'Krypton.LocalServer.Controllers.Auth.AuthController.Login (Krypton.LocalServer)'
+
+[2025-08-22T14:31:27.518Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://127.0.0.1:14250/Auth/Login - 200 - application/json;+charset=utf-8 73.1847ms
+
+[2025-08-22T14:31:28.538Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://127.0.0.1:14250/Oauth2/Redirect?code=YhUUUJ7ObAMoJqsHWTDa5Q53O8psEAxq3TrkQUIWQ8Kh41VP0rpi5cGOGtv6&state=4e244163-ff46-49fd-9185-ad0386586207 - - -
+
+[2025-08-22T14:31:28.541Z] [STDOUT] info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'Krypton.LocalServer.Controllers.Oauth.Oauth2Controller.RedirectAsync (Krypton.LocalServer)'
+
+[2025-08-22T14:31:28.546Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[102]
+      Route matched with {action = "Redirect", controller = "Oauth2"}. Executing controller action with signature System.Threading.Tasks.Task`1[Krypton.Entities.ResponseBase`1[System.String]] RedirectAsync(System.String, System.String) on controller Krypton.LocalServer.Controllers.Oauth.Oauth2Controller (Krypton.LocalServer).
+
+[2025-08-22T14:31:31.322Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor[1]
+      Executing ObjectResult, writing value of type 'Krypton.Entities.ResponseBase`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+
+[2025-08-22T14:31:31.323Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[105]
+      Executed action Krypton.LocalServer.Controllers.Oauth.Oauth2Controller.RedirectAsync (Krypton.LocalServer) in 2777.5643ms
+
+[2025-08-22T14:31:31.323Z] [STDOUT] info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'Krypton.LocalServer.Controllers.Oauth.Oauth2Controller.RedirectAsync (Krypton.LocalServer)'
+
+[2025-08-22T14:31:31.324Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://127.0.0.1:14250/Oauth2/Redirect?code=YhUUUJ7ObAMoJqsHWTDa5Q53O8psEAxq3TrkQUIWQ8Kh41VP0rpi5cGOGtv6&state=4e244163-ff46-49fd-9185-ad0386586207 - 499 - application/json;+charset=utf-8 2785.7721ms
+
+[2025-08-22T14:31:31.707Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://127.0.0.1:14250/Base/Announcement - - -
+
+[2025-08-22T14:31:31.709Z] [STDOUT] info: Microsoft.AspNetCore.Cors.Infrastructure.CorsService[4]
+      CORS policy execution successful.
+
+[2025-08-22T14:31:31.710Z] [STDOUT] info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'Krypton.LocalServer.Controllers.Base.BaseController.GetAnnouncement (Krypton.LocalServer)'
+
+[2025-08-22T14:31:31.712Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[102]
+      Route matched with {action = "GetAnnouncement", controller = "Base"}. Executing controller action with signature System.Threading.Tasks.Task`1[Krypton.Entities.ResponseBase`1[System.String]] GetAnnouncement() on controller Krypton.LocalServer.Controllers.Base.BaseController (Krypton.LocalServer).
+
+[2025-08-22T14:31:32.170Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor[1]
+      Executing ObjectResult, writing value of type 'Krypton.Entities.ResponseBase`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+
+[2025-08-22T14:31:32.170Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[105]
+      Executed action Krypton.LocalServer.Controllers.Base.BaseController.GetAnnouncement (Krypton.LocalServer) in 458.3255ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'Krypton.LocalServer.Controllers.Base.BaseController.GetAnnouncement (Krypton.LocalServer)'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://127.0.0.1:14250/Base/Announcement - 200 - application/json;+charset=utf-8 464.4879ms
+
+[2025-08-22T14:31:37.963Z] [INFO] 应用关闭，正在终止服务器进程
+[2025-08-22T14:31:37.963Z] [INFO] 应用即将退出
+[2025-08-22T14:32:03.800Z] [INFO] 正在启动服务器: dotnet "E:\GitHubDocument\MDUI-Electron\domain\Krypton.LocalServer.dll"
+[2025-08-22T14:32:08.809Z] [INFO] 本地服务器启动成功（无输出）
+[2025-08-22T14:32:10.215Z] [STDOUT] 无法终止 PID 0: 拒绝访问。
+
+[2025-08-22T14:32:12.876Z] [STDOUT] [2025/8/22 22:32:12] Running on port => 14250
+
+[2025-08-22T14:32:12.919Z] [STDOUT] [2025/8/22 22:32:12] 内网地址 => 192.168.10.6:14250
+[2025/8/22 22:32:12] 本机地址 => 127.0.0.1:14250
+
+[2025-08-22T14:32:12.936Z] [STDOUT] [2025/8/22 22:32:12] 数据目录: C:\Users\suris\AppData\Roaming\Krypton
+
+[2025-08-22T14:32:15.067Z] [STDOUT] [2025/8/22 22:32:15] Server #0 latency: 21ms
+
+[2025-08-22T14:32:15.068Z] [STDOUT] [2025/8/22 22:32:15] Use Server #0
+
+[2025-08-22T14:32:15.203Z] [STDOUT] [2025/8/22 22:32:15] Phase #1
+[2025/8/22 22:32:15] Phase #2, 如果一直卡在这请尝试重启程序
+
+[2025-08-22T14:32:20.424Z] [STDOUT] info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://[::]:14250
+
+[2025-08-22T14:32:20.424Z] [STDOUT] info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+
+[2025-08-22T14:32:20.425Z] [STDOUT] info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Production
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: E:\GitHubDocument\MDUI-Electron
+
+[2025-08-22T14:32:20.491Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://127.0.0.1:14250/Auth/Login - - -
+
+[2025-08-22T14:32:20.511Z] [STDOUT] info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'Krypton.LocalServer.Controllers.Auth.AuthController.Login (Krypton.LocalServer)'
+
+[2025-08-22T14:32:20.520Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[102]
+      Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Krypton.Entities.ResponseBase`1[System.String]] Login() on controller Krypton.LocalServer.Controllers.Auth.AuthController (Krypton.LocalServer).
+
+[2025-08-22T14:32:20.561Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor[1]
+      Executing ObjectResult, writing value of type 'Krypton.Entities.ResponseBase`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+
+[2025-08-22T14:32:20.574Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[105]
+      Executed action Krypton.LocalServer.Controllers.Auth.AuthController.Login (Krypton.LocalServer) in 47.6602ms
+
+[2025-08-22T14:32:20.575Z] [STDOUT] info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'Krypton.LocalServer.Controllers.Auth.AuthController.Login (Krypton.LocalServer)'
+
+[2025-08-22T14:32:20.578Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://127.0.0.1:14250/Auth/Login - 200 - application/json;+charset=utf-8 86.6926ms
+
+[2025-08-22T14:32:21.004Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://127.0.0.1:14250/Oauth2/Redirect?code=ytds3uQFLMT2YBWiAKl9QJHx1hFZId3RwrsdgB1P2vSzo1KMitKZPzmHU6xZ&state=471055a4-c1ba-4d2c-9ed8-83260531d031 - - -
+
+[2025-08-22T14:32:21.006Z] [STDOUT] info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'Krypton.LocalServer.Controllers.Oauth.Oauth2Controller.RedirectAsync (Krypton.LocalServer)'
+
+[2025-08-22T14:32:21.011Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[102]
+      Route matched with {action = "Redirect", controller = "Oauth2"}. Executing controller action with signature System.Threading.Tasks.Task`1[Krypton.Entities.ResponseBase`1[System.String]] RedirectAsync(System.String, System.String) on controller Krypton.LocalServer.Controllers.Oauth.Oauth2Controller (Krypton.LocalServer).
+
+[2025-08-22T14:32:22.103Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor[1]
+      Executing ObjectResult, writing value of type 'Krypton.Entities.ResponseBase`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+
+[2025-08-22T14:32:22.103Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[105]
+      Executed action Krypton.LocalServer.Controllers.Oauth.Oauth2Controller.RedirectAsync (Krypton.LocalServer) in 1091.7528ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'Krypton.LocalServer.Controllers.Oauth.Oauth2Controller.RedirectAsync (Krypton.LocalServer)'
+
+[2025-08-22T14:32:22.104Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://127.0.0.1:14250/Oauth2/Redirect?code=ytds3uQFLMT2YBWiAKl9QJHx1hFZId3RwrsdgB1P2vSzo1KMitKZPzmHU6xZ&state=471055a4-c1ba-4d2c-9ed8-83260531d031 - 200 - application/json;+charset=utf-8 1100.5530ms
+
+[2025-08-22T14:32:22.532Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://127.0.0.1:14250/Base/Announcement - - -
+
+[2025-08-22T14:32:22.536Z] [STDOUT] info: Microsoft.AspNetCore.Cors.Infrastructure.CorsService[4]
+      CORS policy execution successful.
+
+[2025-08-22T14:32:22.537Z] [STDOUT] info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'Krypton.LocalServer.Controllers.Base.BaseController.GetAnnouncement (Krypton.LocalServer)'
+
+[2025-08-22T14:32:22.543Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[102]
+      Route matched with {action = "GetAnnouncement", controller = "Base"}. Executing controller action with signature System.Threading.Tasks.Task`1[Krypton.Entities.ResponseBase`1[System.String]] GetAnnouncement() on controller Krypton.LocalServer.Controllers.Base.BaseController (Krypton.LocalServer).
+
+[2025-08-22T14:32:22.796Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor[1]
+      Executing ObjectResult, writing value of type 'Krypton.Entities.ResponseBase`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+
+[2025-08-22T14:32:22.796Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[105]
+      Executed action Krypton.LocalServer.Controllers.Base.BaseController.GetAnnouncement (Krypton.LocalServer) in 253.7145ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'Krypton.LocalServer.Controllers.Base.BaseController.GetAnnouncement (Krypton.LocalServer)'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://127.0.0.1:14250/Base/Announcement - 200 - application/json;+charset=utf-8 264.1994ms
+
+[2025-08-22T14:35:14.446Z] [INFO] 应用关闭，正在终止服务器进程
+[2025-08-22T14:35:14.447Z] [INFO] 应用即将退出
+[2025-08-22T14:35:26.323Z] [INFO] 正在启动服务器: dotnet "E:\GitHubDocument\MDUI-Electron\domain\Krypton.LocalServer.dll"
+[2025-08-22T14:35:31.340Z] [INFO] 本地服务器启动成功（无输出）
+[2025-08-22T14:35:32.710Z] [STDOUT] 无法终止 PID 32108: Process with an Id of 32108 is not running.
+
+[2025-08-22T14:35:32.711Z] [STDOUT] 成功终止占用端口 14250 的进程，PID: 30464
+
+[2025-08-22T14:35:34.858Z] [STDOUT] [2025/8/22 22:35:34] Running on port => 14250
+
+[2025-08-22T14:35:34.900Z] [STDOUT] [2025/8/22 22:35:34] 内网地址 => 192.168.10.6:14250
+[2025/8/22 22:35:34] 本机地址 => 127.0.0.1:14250
+
+[2025-08-22T14:35:34.914Z] [STDOUT] [2025/8/22 22:35:34] 数据目录: C:\Users\suris\AppData\Roaming\Krypton
+
+[2025-08-22T14:35:37.246Z] [STDOUT] [2025/8/22 22:35:37] Server #0 latency: 23ms
+
+[2025-08-22T14:35:37.248Z] [STDOUT] [2025/8/22 22:35:37] Use Server #0
+
+[2025-08-22T14:35:37.404Z] [STDOUT] [2025/8/22 22:35:37] Phase #1
+[2025/8/22 22:35:37] Phase #2, 如果一直卡在这请尝试重启程序
+
+[2025-08-22T14:35:42.139Z] [STDOUT] info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://[::]:14250
+
+[2025-08-22T14:35:42.140Z] [STDOUT] info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Production
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: E:\GitHubDocument\MDUI-Electron
+
+[2025-08-22T14:35:42.224Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://127.0.0.1:14250/Auth/Login - - -
+
+[2025-08-22T14:35:42.245Z] [STDOUT] info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'Krypton.LocalServer.Controllers.Auth.AuthController.Login (Krypton.LocalServer)'
+
+[2025-08-22T14:35:42.252Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[102]
+      Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Krypton.Entities.ResponseBase`1[System.String]] Login() on controller Krypton.LocalServer.Controllers.Auth.AuthController (Krypton.LocalServer).
+
+[2025-08-22T14:35:42.289Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor[1]
+      Executing ObjectResult, writing value of type 'Krypton.Entities.ResponseBase`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+
+[2025-08-22T14:35:42.301Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[105]
+      Executed action Krypton.LocalServer.Controllers.Auth.AuthController.Login (Krypton.LocalServer) in 42.4921ms
+
+[2025-08-22T14:35:42.302Z] [STDOUT] info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'Krypton.LocalServer.Controllers.Auth.AuthController.Login (Krypton.LocalServer)'
+
+[2025-08-22T14:35:42.304Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://127.0.0.1:14250/Auth/Login - 200 - application/json;+charset=utf-8 79.8790ms
+
+[2025-08-22T14:35:44.083Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://127.0.0.1:14250/Oauth2/Redirect?code=QvbEcclqPIMZhef71DrSQS7LzMqc0mqJrlnUWtRZ5QvLsKlWM6quIEXyYQYO&state=e6d76568-9063-4f2c-a650-4fd128d84290 - - -
+
+[2025-08-22T14:35:44.086Z] [STDOUT] info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'Krypton.LocalServer.Controllers.Oauth.Oauth2Controller.RedirectAsync (Krypton.LocalServer)'
+
+[2025-08-22T14:35:44.094Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[102]
+      Route matched with {action = "Redirect", controller = "Oauth2"}. Executing controller action with signature System.Threading.Tasks.Task`1[Krypton.Entities.ResponseBase`1[System.String]] RedirectAsync(System.String, System.String) on controller Krypton.LocalServer.Controllers.Oauth.Oauth2Controller (Krypton.LocalServer).
+
+[2025-08-22T14:35:45.431Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor[1]
+      Executing ObjectResult, writing value of type 'Krypton.Entities.ResponseBase`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+
+[2025-08-22T14:35:45.432Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[105]
+      Executed action Krypton.LocalServer.Controllers.Oauth.Oauth2Controller.RedirectAsync (Krypton.LocalServer) in 1338.2012ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'Krypton.LocalServer.Controllers.Oauth.Oauth2Controller.RedirectAsync (Krypton.LocalServer)'
+
+[2025-08-22T14:35:45.437Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://127.0.0.1:14250/Oauth2/Redirect?code=QvbEcclqPIMZhef71DrSQS7LzMqc0mqJrlnUWtRZ5QvLsKlWM6quIEXyYQYO&state=e6d76568-9063-4f2c-a650-4fd128d84290 - 499 - application/json;+charset=utf-8 1349.0511ms
+
+[2025-08-22T14:35:45.808Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://127.0.0.1:14250/Base/Announcement - - -
+
+[2025-08-22T14:35:45.810Z] [STDOUT] info: Microsoft.AspNetCore.Cors.Infrastructure.CorsService[4]
+      CORS policy execution successful.
+
+[2025-08-22T14:35:45.811Z] [STDOUT] info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'Krypton.LocalServer.Controllers.Base.BaseController.GetAnnouncement (Krypton.LocalServer)'
+
+[2025-08-22T14:35:45.813Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[102]
+      Route matched with {action = "GetAnnouncement", controller = "Base"}. Executing controller action with signature System.Threading.Tasks.Task`1[Krypton.Entities.ResponseBase`1[System.String]] GetAnnouncement() on controller Krypton.LocalServer.Controllers.Base.BaseController (Krypton.LocalServer).
+
+[2025-08-22T14:35:47.121Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor[1]
+      Executing ObjectResult, writing value of type 'Krypton.Entities.ResponseBase`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+
+[2025-08-22T14:35:47.121Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[105]
+      Executed action Krypton.LocalServer.Controllers.Base.BaseController.GetAnnouncement (Krypton.LocalServer) in 1308.0441ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'Krypton.LocalServer.Controllers.Base.BaseController.GetAnnouncement (Krypton.LocalServer)'
+
+[2025-08-22T14:35:47.122Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://127.0.0.1:14250/Base/Announcement - 499 - application/json;+charset=utf-8 1314.4645ms
+
+[2025-08-22T14:35:58.388Z] [INFO] 应用即将退出
+[2025-08-22T14:35:58.388Z] [INFO] 应用关闭，正在终止服务器进程
+[2025-08-22T14:37:23.253Z] [INFO] 正在启动服务器: dotnet "E:\GitHubDocument\MDUI-Electron\domain\Krypton.LocalServer.dll"
+[2025-08-22T14:37:28.267Z] [INFO] 本地服务器启动成功（无输出）
+[2025-08-22T14:37:28.762Z] [STDOUT] 无法终止 PID 0: 拒绝访问。
+
+[2025-08-22T14:37:30.857Z] [STDOUT] [2025/8/22 22:37:30] Running on port => 14250
+
+[2025-08-22T14:37:30.895Z] [STDOUT] [2025/8/22 22:37:30] 内网地址 => 192.168.10.6:14250
+[2025/8/22 22:37:30] 本机地址 => 127.0.0.1:14250
+
+[2025-08-22T14:37:30.911Z] [STDOUT] [2025/8/22 22:37:30] 数据目录: C:\Users\suris\AppData\Roaming\Krypton
+
+[2025-08-22T14:37:34.392Z] [STDOUT] [2025/8/22 22:37:34] Server #0 latency: 18ms
+
+[2025-08-22T14:37:34.394Z] [STDOUT] [2025/8/22 22:37:34] Use Server #0
+
+[2025-08-22T14:37:34.687Z] [STDOUT] [2025/8/22 22:37:34] Phase #1
+[2025/8/22 22:37:34] Phase #2, 如果一直卡在这请尝试重启程序
+
+[2025-08-22T14:37:39.424Z] [STDOUT] info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://[::]:14250
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+
+[2025-08-22T14:37:39.424Z] [STDOUT] info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Production
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: E:\GitHubDocument\MDUI-Electron
+
+[2025-08-22T14:37:39.501Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://127.0.0.1:14250/Auth/Login - - -
+
+[2025-08-22T14:37:39.521Z] [STDOUT] info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'Krypton.LocalServer.Controllers.Auth.AuthController.Login (Krypton.LocalServer)'
+
+[2025-08-22T14:37:39.528Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[102]
+      Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Krypton.Entities.ResponseBase`1[System.String]] Login() on controller Krypton.LocalServer.Controllers.Auth.AuthController (Krypton.LocalServer).
+
+[2025-08-22T14:37:39.562Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor[1]
+      Executing ObjectResult, writing value of type 'Krypton.Entities.ResponseBase`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+
+[2025-08-22T14:37:39.572Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[105]
+      Executed action Krypton.LocalServer.Controllers.Auth.AuthController.Login (Krypton.LocalServer) in 38.189ms
+
+[2025-08-22T14:37:39.573Z] [STDOUT] info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'Krypton.LocalServer.Controllers.Auth.AuthController.Login (Krypton.LocalServer)'
+
+[2025-08-22T14:37:39.573Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://127.0.0.1:14250/Auth/Login - 200 - application/json;+charset=utf-8 72.4321ms
+
+[2025-08-22T14:37:40.261Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://127.0.0.1:14250/Oauth2/Redirect?code=7Adnd9CGgu4OR5Gx2XmyXfICV6zcvrPp0yLyL0As04QNH8SkqfL170qy9nsj&state=858974d1-d315-4a36-b57a-5e4c3567b135 - - -
+
+[2025-08-22T14:37:40.262Z] [STDOUT] info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'Krypton.LocalServer.Controllers.Oauth.Oauth2Controller.RedirectAsync (Krypton.LocalServer)'
+
+[2025-08-22T14:37:40.268Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[102]
+      Route matched with {action = "Redirect", controller = "Oauth2"}. Executing controller action with signature System.Threading.Tasks.Task`1[Krypton.Entities.ResponseBase`1[System.String]] RedirectAsync(System.String, System.String) on controller Krypton.LocalServer.Controllers.Oauth.Oauth2Controller (Krypton.LocalServer).
+
+[2025-08-22T14:37:41.827Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor[1]
+      Executing ObjectResult, writing value of type 'Krypton.Entities.ResponseBase`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+
+[2025-08-22T14:37:41.828Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[105]
+      Executed action Krypton.LocalServer.Controllers.Oauth.Oauth2Controller.RedirectAsync (Krypton.LocalServer) in 1559.5127ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'Krypton.LocalServer.Controllers.Oauth.Oauth2Controller.RedirectAsync (Krypton.LocalServer)'
+
+[2025-08-22T14:37:41.829Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://127.0.0.1:14250/Oauth2/Redirect?code=7Adnd9CGgu4OR5Gx2XmyXfICV6zcvrPp0yLyL0As04QNH8SkqfL170qy9nsj&state=858974d1-d315-4a36-b57a-5e4c3567b135 - 200 - application/json;+charset=utf-8 1567.7212ms
+
+[2025-08-22T14:37:42.264Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://127.0.0.1:14250/Base/Announcement - - -
+
+[2025-08-22T14:37:42.266Z] [STDOUT] info: Microsoft.AspNetCore.Cors.Infrastructure.CorsService[4]
+      CORS policy execution successful.
+
+[2025-08-22T14:37:42.268Z] [STDOUT] info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'Krypton.LocalServer.Controllers.Base.BaseController.GetAnnouncement (Krypton.LocalServer)'
+
+[2025-08-22T14:37:42.270Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[102]
+      Route matched with {action = "GetAnnouncement", controller = "Base"}. Executing controller action with signature System.Threading.Tasks.Task`1[Krypton.Entities.ResponseBase`1[System.String]] GetAnnouncement() on controller Krypton.LocalServer.Controllers.Base.BaseController (Krypton.LocalServer).
+
+[2025-08-22T14:37:42.891Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor[1]
+      Executing ObjectResult, writing value of type 'Krypton.Entities.ResponseBase`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+
+[2025-08-22T14:37:42.891Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[105]
+      Executed action Krypton.LocalServer.Controllers.Base.BaseController.GetAnnouncement (Krypton.LocalServer) in 621.541ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'Krypton.LocalServer.Controllers.Base.BaseController.GetAnnouncement (Krypton.LocalServer)'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://127.0.0.1:14250/Base/Announcement - 200 - application/json;+charset=utf-8 627.1858ms
+
+[2025-08-22T14:39:58.730Z] [STDOUT] info: Microsoft.AspNetCore.Hosting.Diagnostics[1]
+      Request starting HTTP/1.1 GET http://127.0.0.1:14250/Base/Announcement - - -
+
+[2025-08-22T14:39:58.730Z] [STDOUT] info: Microsoft.AspNetCore.Cors.Infrastructure.CorsService[4]
+      CORS policy execution successful.
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[0]
+      Executing endpoint 'Krypton.LocalServer.Controllers.Base.BaseController.GetAnnouncement (Krypton.LocalServer)'
+
+[2025-08-22T14:39:58.731Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[102]
+      Route matched with {action = "GetAnnouncement", controller = "Base"}. Executing controller action with signature System.Threading.Tasks.Task`1[Krypton.Entities.ResponseBase`1[System.String]] GetAnnouncement() on controller Krypton.LocalServer.Controllers.Base.BaseController (Krypton.LocalServer).
+
+[2025-08-22T14:39:59.482Z] [STDOUT] info: Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor[1]
+      Executing ObjectResult, writing value of type 'Krypton.Entities.ResponseBase`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+info: Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker[105]
+      Executed action Krypton.LocalServer.Controllers.Base.BaseController.GetAnnouncement (Krypton.LocalServer) in 751.4856ms
+info: Microsoft.AspNetCore.Routing.EndpointMiddleware[1]
+      Executed endpoint 'Krypton.LocalServer.Controllers.Base.BaseController.GetAnnouncement (Krypton.LocalServer)'
+info: Microsoft.AspNetCore.Hosting.Diagnostics[2]
+      Request finished HTTP/1.1 GET http://127.0.0.1:14250/Base/Announcement - 200 - application/json;+charset=utf-8 752.3359ms
+
+[2025-08-22T14:40:17.991Z] [INFO] 应用关闭，正在终止服务器进程
+[2025-08-22T14:40:17.991Z] [INFO] 应用即将退出

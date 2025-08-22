@@ -5,12 +5,14 @@ import 'mdui/components/icon.js';
 import 'mdui/components/top-app-bar.js';
 import 'mdui/components/top-app-bar-title.js';
 import 'mdui/components/button-icon.js';
+import { snackbar } from 'mdui/functions/snackbar.js';
 
 const LoginPage = ({ onLogin }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [hitokoto, setHitokoto] = useState('');
+  const [serverStatus, setServerStatus] = useState('checking');
 
   useEffect(() => {
     // 设置黑夜模式主题
@@ -18,7 +20,60 @@ const LoginPage = ({ onLogin }) => {
     
     // 获取一言
     fetchHitokoto();
+    
+    // 检查并启动本地服务器
+    checkAndStartServer();
   }, []);
+
+  const checkAndStartServer = async () => {
+    try {
+      setServerStatus('checking');
+      
+      // 检查本地服务器DLL是否存在
+      const checkResult = await window.electron.ipcRenderer.invoke('check-local-server');
+      
+      if (!checkResult.exists) {
+        setServerStatus('not-found');
+        showSnackbar(`本地服务器文件不存在: ${checkResult.error}`, 'error');
+        return;
+      }
+      
+      setServerStatus('starting');
+      showSnackbar('正在启动本地服务器...', 'info');
+      
+      // 发送启动服务器的请求到主进程
+      window.electron.ipcRenderer.send('start-local-server');
+      
+      // 监听启动结果
+      const handleServerResult = (result) => {
+        if (result.success) {
+          setServerStatus('running');
+          showSnackbar('本地服务器启动成功', 'success');
+        } else {
+          setServerStatus('error');
+          showSnackbar(`本地服务器启动失败: ${result.error}`, 'error');
+        }
+        
+        // 清理监听器
+        window.electron.ipcRenderer.removeAllListeners('local-server-result');
+      };
+      
+      window.electron.ipcRenderer.on('local-server-result', handleServerResult);
+    } catch (error) {
+      setServerStatus('error');
+      showSnackbar(`检查本地服务器时出错: ${error.message}`, 'error');
+    }
+  };
+
+  const showSnackbar = (message, type) => {
+    // 使用 MDUI 的 snackbar 函数显示消息
+    snackbar({
+      message: message,
+      placement: 'bottom-end',
+      closeable: true,
+      variant: type === 'error' ? 'error' : type === 'success' ? 'success' : undefined
+    });
+  };
 
   const fetchHitokoto = () => {
     fetch('https://v1.hitokoto.cn')
@@ -102,7 +157,7 @@ const LoginPage = ({ onLogin }) => {
         backgroundColor: 'var(--mdui-color-surface-container)'
       }}>
         <mdui-button-icon icon="blur_on"></mdui-button-icon>
-        <mdui-top-app-bar-title>Anre</mdui-top-app-bar-title> 
+        <mdui-top-app-bar-title>KryptonNEL</mdui-top-app-bar-title> 
         <div style={{ flex: '1' }}></div>
         {/* 窗口控制按钮 */}
         <mdui-button-icon icon="remove" onClick={minimizeWindow} style={{ WebkitAppRegion: 'no-drag' }}></mdui-button-icon>
@@ -130,6 +185,40 @@ const LoginPage = ({ onLogin }) => {
               marginBottom: '24px',
               color: 'var(--mdui-color-on-surface)'
             }}>用户登录</h1>
+            
+            {/* 服务器状态显示 */}
+            <div style={{ 
+              padding: '10px', 
+              marginBottom: '16px', 
+              borderRadius: '4px',
+              backgroundColor: 
+                serverStatus === 'running' ? 'var(--mdui-color-success-container)' : 
+                serverStatus === 'error' || serverStatus === 'not-found' ? 'var(--mdui-color-error-container)' : 
+                'var(--mdui-color-surface-variant)',
+              color: 
+                serverStatus === 'running' ? 'var(--mdui-color-on-success-container)' : 
+                serverStatus === 'error' || serverStatus === 'not-found' ? 'var(--mdui-color-on-error-container)' : 
+                'var(--mdui-color-on-surface-variant)',
+              fontSize: '14px',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center' // 添加居中对齐
+            }}>
+              <span style={{ marginRight: '8px' }}>
+                {serverStatus === 'checking' && '🔍'}
+                {serverStatus === 'starting' && '⏳'}
+                {serverStatus === 'running' && '✅'}
+                {(serverStatus === 'error' || serverStatus === 'not-found') && '❌'}
+              </span>
+              <span>
+                {serverStatus === 'checking' && '正在检查本地服务器...'}
+                {serverStatus === 'not-found' && '本地服务器文件未找到'}
+                {serverStatus === 'starting' && '正在启动本地服务器...'}
+                {serverStatus === 'running' && '本地服务器运行中'}
+                {serverStatus === 'error' && '本地服务器启动失败'}
+              </span>
+            </div>
+            
             <form onSubmit={handleLogin}>
               <mdui-text-field
                 label="用户名"
@@ -167,8 +256,9 @@ const LoginPage = ({ onLogin }) => {
                   type="submit"
                   variant="filled"
                   style={{ width: '100%' }}
+                  disabled={serverStatus === 'checking' || serverStatus === 'starting'}
                 >
-                  登录
+                  {(serverStatus === 'checking' || serverStatus === 'starting') ? '请稍候...' : '登录'}
                 </mdui-button>
               </div>
               

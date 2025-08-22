@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import 'mdui/components/tabs.js';
 import 'mdui/components/tab.js';
 import 'mdui/components/tab-panel.js';
 import SuCard from './SuCard';
+
 const SettingsPage = () => {
   return (
     <div style={{ padding: '24px', width: '100%', height: '100%' }}>
