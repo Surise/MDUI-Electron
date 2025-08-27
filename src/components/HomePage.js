@@ -27,6 +27,8 @@ const HomePage = ({ serverPort }) => {
   const [captchaImage, setCaptchaImage] = useState('');
   const [captchaValue, setCaptchaValue] = useState('');
   const [pendingLoginData, setPendingLoginData] = useState({ username: '', password: '' });
+  // 登录按钮加载状态
+  const [isLoginButtonLoading, setIsLoginButtonLoading] = useState(false);
 
   useEffect(() => {
     if (serverPort) {
@@ -77,6 +79,7 @@ const HomePage = ({ serverPort }) => {
       return;
     }
     
+    setIsLoginButtonLoading(true);
     try {
       let result;
       
@@ -90,6 +93,7 @@ const HomePage = ({ serverPort }) => {
             setCaptchaImage(result.data);
             setPendingLoginData({ username, password });
             setShowCaptchaDialog(true);
+            setIsLoginButtonLoading(false);
             return;
           }
           break;
@@ -111,6 +115,7 @@ const HomePage = ({ serverPort }) => {
             closeable: true,
             variant: 'error'
           });
+          setIsLoginButtonLoading(false);
           return;
       }
       
@@ -123,6 +128,8 @@ const HomePage = ({ serverPort }) => {
         closeable: true,
         variant: 'error'
       });
+    } finally {
+      setIsLoginButtonLoading(false);
     }
   };
 
@@ -170,6 +177,7 @@ const HomePage = ({ serverPort }) => {
   };
 
   const handleCaptchaSubmit = async () => {
+    setIsLoginButtonLoading(true);
     try {
       // 使用存储的用户名和密码以及用户输入的验证码进行登录
       const result = await login4399(
@@ -189,6 +197,8 @@ const HomePage = ({ serverPort }) => {
         closeable: true,
         variant: 'error'
       });
+    } finally {
+      setIsLoginButtonLoading(false);
     }
   };
 
@@ -212,6 +222,7 @@ const HomePage = ({ serverPort }) => {
       return;
     }
 
+    setIsLoginButtonLoading(true);
     try {
       let result;
       
@@ -223,6 +234,16 @@ const HomePage = ({ serverPort }) => {
       } else {
         // 4399账户登录
         result = await login4399(serverPort, account.account, account.password);
+      }
+
+      // 检查是否需要验证码（仅适用于4399账户）
+      if (!account.account.includes('@') && result.code !== 0 && result.msg === '需要输入验证码') {
+        // 显示验证码对话框
+        setCaptchaImage(result.data);
+        setPendingLoginData({ username: account.account, password: account.password });
+        setShowCaptchaDialog(true);
+        setIsLoginButtonLoading(false);
+        return;
       }
 
       if (result.code === 0) {
@@ -253,6 +274,8 @@ const HomePage = ({ serverPort }) => {
         closeable: true,
         variant: 'error'
       });
+    } finally {
+      setIsLoginButtonLoading(false);
     }
   };
 
@@ -267,6 +290,7 @@ const HomePage = ({ serverPort }) => {
       return;
     }
 
+    setIsLoginButtonLoading(true);
     try {
       // 获取随机4399账户
       const response = await fetch(`http://127.0.0.1:${serverPort}/Func/CloudAlt/Get`);
@@ -283,6 +307,7 @@ const HomePage = ({ serverPort }) => {
           setCaptchaImage(loginResult.data);
           setPendingLoginData({ username, password });
           setShowCaptchaDialog(true);
+          setIsLoginButtonLoading(false);
           return;
         }
         
@@ -305,6 +330,8 @@ const HomePage = ({ serverPort }) => {
         closeable: true,
         variant: 'error'
       });
+    } finally {
+      setIsLoginButtonLoading(false);
     }
   };
 
@@ -420,7 +447,15 @@ const HomePage = ({ serverPort }) => {
                         style={{ width: '100%' }}
                       ></mdui-text-field>
                       
-                      <mdui-button type="submit" variant="filled" style={{ marginTop: '8px', width: '100%' }}>登录</mdui-button>
+                      <mdui-button 
+                        type="submit" 
+                        variant="filled" 
+                        style={{ marginTop: '8px', width: '100%' }}
+                        disabled={isLoginButtonLoading}
+                      >
+                        {isLoginButtonLoading ? '登录中...' : '登录'}
+                      </mdui-button>
+
                     </div>
                     </form>
                   </mdui-tab-panel>
@@ -468,8 +503,16 @@ const HomePage = ({ serverPort }) => {
                   <mdui-tab-panel slot="panel" value="range">
                     <form onSubmit={(e) => { e.preventDefault(); handleRandom4399Login(); }}>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', padding: '20px' }}>
-                      <mdui-button type="submit" variant="filled" style={{ marginTop: '8px', width: '100%' }}>登录随机4399</mdui-button>
+                      <mdui-button 
+                        type="submit" 
+                        variant="filled" 
+                        style={{ marginTop: '8px', width: '100%' }}
+                        disabled={isLoginButtonLoading}
+                      >
+                        {isLoginButtonLoading ? '登录中...' : '登录随机4399'}
+                      </mdui-button>
                     </div>
+
                     </form>
                   </mdui-tab-panel>
 
