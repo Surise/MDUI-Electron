@@ -19,11 +19,13 @@ function App() {
   const [activePage, setActivePage] = useState('home');
   const [isDrawerOpen, setIsDrawerOpen] = useState(true);
   const [showLabels, setShowLabels] = useState(true);
+  const [serverPort, setServerPort] = useState(null); // 添加服务器端口状态
 
   // 检查是否已经登录
   useEffect(() => {
-    const loggedIn = localStorage.getItem('isLoggedIn') === 'true';
-    setIsLoggedIn(loggedIn);
+    // 移除自动登录检查，总是显示登录页面
+    // const loggedIn = localStorage.getItem('isLoggedIn') === 'true';
+    // setIsLoggedIn(loggedIn);
   }, []);
 
   const handleLogin = () => {
@@ -52,21 +54,21 @@ function App() {
   const renderPage = () => {
     switch (activePage) {
       case 'home':
-        return <HomePage />;
+        return <HomePage serverPort={serverPort} />;
       case 'connect':
-        return <ConnectPage />;
+        return <ConnectPage serverPort={serverPort} />;
       case 'settings':
-        return <SettingsPage />;
+        return <SettingsPage serverPort={serverPort} />;
       case 'profile':
-        return <ProfilePage />;
+        return <ProfilePage serverPort={serverPort} />;
       default:
-        return <HomePage />;
+        return <HomePage serverPort={serverPort} />;
     }
   };
 
   // 如果未登录，显示登录页面
   if (!isLoggedIn) {
-    return <LoginPage onLogin={handleLogin} />;
+    return <LoginPage onLogin={handleLogin} setServerPort={setServerPort} />;
   }
 
   return (
@@ -98,10 +100,12 @@ function App() {
           
           {/* FAB 按钮 */}
           {activePage === 'home' && (
-            <mdui-fab 
-              icon="start" 
-              style={{ position: 'fixed', right: '24px', bottom: '24px' }}>
-            </mdui-fab>
+            <mdui-fab
+              icon="add"
+              variant="primary"
+              className="floating-button"
+              onClick={() => window.electron.ipcRenderer.send('open-dev-tools')}
+            ></mdui-fab>
           )}
         </mdui-layout-main>
       </mdui-layout>
