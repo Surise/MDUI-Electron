@@ -1,4 +1,4 @@
-const { app, BrowserWindow, ipcMain } = require('electron');
+const { app, BrowserWindow, ipcMain, shell } = require('electron');
 const path = require('path');
 const { spawn } = require('child_process');
 const fs = require('fs');
@@ -9,9 +9,11 @@ const iconv = require('iconv-lite');
 //   app.quit();
 // }
 
+let mainWindow = null;
+
 const createWindow = () => {
   // Create the browser window.
-  const mainWindow = new BrowserWindow({
+  mainWindow = new BrowserWindow({
     width: 1110,
     height: 700,
     minWidth: 1000, // 设置最小宽度
@@ -65,6 +67,11 @@ ipcMain.on('close-window', (event) => {
   }
 });
 
+// IPC事件监听器，处理打开外部URL请求
+ipcMain.on('open-external-url', (event, url) => {
+  shell.openExternal(url);
+});
+
 // IPC事件监听器，检查本地服务器DLL是否存在
 ipcMain.handle('check-local-server', (event) => {
   const domainPath = path.join(__dirname, 'domain');
@@ -101,6 +108,17 @@ const writeLogToFile = (message) => {
   const logPath = path.join(__dirname, 'Log.txt');
   const timestamp = new Date().toISOString();
   const logEntry = `[${timestamp}] ${message}\n`;
+  
+  // 检查是否包含端口信息，使用更宽松的正则表达式
+  const portMatch = message.match(/Running on port\s*=>\s*(\d+)/);
+  if (portMatch && portMatch[1]) {
+    const port = portMatch[1];
+    console.log(`本地服务器运行在端口: ${port}`);
+    // 通知渲染进程端口信息
+    if (mainWindow) {
+      mainWindow.webContents.send('local-server-output', message);
+    }
+  }
   
   // 以追加模式写入日志
   fs.appendFile(logPath, logEntry, (err) => {
@@ -188,6 +206,16 @@ ipcMain.on('start-local-server', (event) => {
       console.log(`服务器输出: ${message}`);
       writeLogToFile(`[STDOUT] ${message}`);
       
+      // 检查是否包含端口信息并通知渲染进程，使用更宽松的正则表达式
+      const portMatch = message.match(/Running on port\s*=>\s*(\d+)/);
+      if (portMatch && portMatch[1]) {
+        const port = portMatch[1];
+        console.log(`本地服务器运行在端口: ${port}`);
+        if (mainWindow) {
+          mainWindow.webContents.send('local-server-output', message);
+        }
+      }
+      
       // 一旦有输出数据，就认为服务器已启动
       if (!started) {
         started = true;
@@ -205,6 +233,16 @@ ipcMain.on('start-local-server', (event) => {
       const message = decodeData(data);
       console.error(`服务器错误: ${message}`);
       writeLogToFile(`[STDERR] ${message}`);
+      
+      // 检查是否包含端口信息并通知渲染进程，使用更宽松的正则表达式
+      const portMatch = message.match(/Running on port\s*=>\s*(\d+)/);
+      if (portMatch && portMatch[1]) {
+        const port = portMatch[1];
+        console.log(`本地服务器运行在端口: ${port}`);
+        if (mainWindow) {
+          mainWindow.webContents.send('local-server-output', message);
+        }
+      }
       
       // 如果在启动前就有错误输出，则认为启动失败
       if (!started) {

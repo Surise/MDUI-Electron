@@ -47,11 +47,11 @@ const TopBar = ({ onLogout }) => {
         style={{ WebkitAppRegion: 'no-drag' }}
         ></mdui-button-icon>
       {/* 退出登录按钮 */}
-      <mdui-button-icon 
+      {/* <mdui-button-icon 
         icon="exit_to_app" 
         onClick={onLogout}
         style={{ WebkitAppRegion: 'no-drag' }}
-        ></mdui-button-icon>
+        ></mdui-button-icon> */}
       {/* 窗口控制按钮 */}
       <mdui-button-icon icon="remove" onClick={minimizeWindow} style={{ WebkitAppRegion: 'no-drag' }}></mdui-button-icon>
       <mdui-button-icon icon="crop_square" onClick={maximizeWindow} style={{ WebkitAppRegion: 'no-drag' }}></mdui-button-icon>

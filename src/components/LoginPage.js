@@ -7,31 +7,25 @@ import 'mdui/components/top-app-bar-title.js';
 import 'mdui/components/button-icon.js';
 import { snackbar } from 'mdui/functions/snackbar.js';
 
-const LoginPage = ({ onLogin }) => {
+const LoginPage = ({ onLogin, setServerPort: setAppServerPort }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [hitokoto, setHitokoto] = useState('');
   const [serverStatus, setServerStatus] = useState('checking');
+  const [serverPort, setServerPort] = useState(null);
+  const [isAuthenticating, setIsAuthenticating] = useState(false);
 
   useEffect(() => {
-    // 设置黑夜模式主题
     document.body.setAttribute('class', 'mdui-theme-dark');
-    
-    // 获取一言
     fetchHitokoto();
-    
-    // 检查并启动本地服务器
     checkAndStartServer();
   }, []);
 
   const checkAndStartServer = async () => {
     try {
       setServerStatus('checking');
-      
-      // 检查本地服务器DLL是否存在
       const checkResult = await window.electron.ipcRenderer.invoke('check-local-server');
-      
       if (!checkResult.exists) {
         setServerStatus('not-found');
         showSnackbar(`本地服务器文件不存在: ${checkResult.error}`, 'error');
@@ -40,33 +34,59 @@ const LoginPage = ({ onLogin }) => {
       
       setServerStatus('starting');
       showSnackbar('正在启动本地服务器...', 'info');
-      
-      // 发送启动服务器的请求到主进程
       window.electron.ipcRenderer.send('start-local-server');
-      
-      // 监听启动结果
       const handleServerResult = (result) => {
         if (result.success) {
-          setServerStatus('running');
-          showSnackbar('本地服务器启动成功', 'success');
         } else {
           setServerStatus('error');
           showSnackbar(`本地服务器启动失败: ${result.error}`, 'error');
         }
-        
-        // 清理监听器
         window.electron.ipcRenderer.removeAllListeners('local-server-result');
       };
       
+      // 添加对服务器输出的监听
+      const handleServerOutput = (output) => {
+        console.log('服务器输出:', output);
+        // 检查是否包含端口信息，使用更宽松的正则表达式
+        const portMatch = output.match(/Running on port\s*=>\s*(\d+)/);
+        if (portMatch && portMatch[1]) {
+          const port = portMatch[1];
+          setServerPort(port);
+          setAppServerPort(port);
+          // 启动定期检查服务器状态
+          startServerHealthCheck(port);
+          showSnackbar(`本地服务器启动成功 | 端口:${port}`, 'success');
+          console.log(`本地服务器运行在端口: ${port}`);
+        }
+      };
+      
       window.electron.ipcRenderer.on('local-server-result', handleServerResult);
+      window.electron.ipcRenderer.on('local-server-output', handleServerOutput);
     } catch (error) {
       setServerStatus('error');
       showSnackbar(`检查本地服务器时出错: ${error.message}`, 'error');
     }
   };
 
+  const startServerHealthCheck = (port) => {
+    // 每3秒检查一次服务器状态
+    const healthCheckInterval = setInterval(async () => {
+      try {
+        const response = await fetch(`http://127.0.0.1:${port}/Base/Ping`);
+        const data = await response.json();
+        
+        if (data.msg === 'Pong') {
+          setServerStatus('running');
+          clearInterval(healthCheckInterval); // 一旦确认运行，停止检查
+        }
+      } catch (error) {
+        console.log('服务器健康检查失败:', error);
+        // 继续检查，不改变状态
+      }
+    }, 3000);
+  };
+
   const showSnackbar = (message, type) => {
-    // 使用 MDUI 的 snackbar 函数显示消息
     snackbar({
       message: message,
       placement: 'bottom-end',
@@ -87,14 +107,32 @@ const LoginPage = ({ onLogin }) => {
       });
   };
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
     
-    // 简单验证 - 用户名和密码都为 admin
-    if (username === 'admin' && password === 'admin') {
-      onLogin();
-    } else {
-      setError('用户名或密码错误');
+    if (!serverPort) {
+      showSnackbar('服务器尚未启动完成，请稍后再试', 'error');
+      return;
+    }
+    
+    setIsAuthenticating(true);
+    try {
+      const response = await fetch(`http://127.0.0.1:${serverPort}/Auth/Status`);
+      const data = await response.json();
+      
+      if (data.data === true) {
+        // 登录成功
+        onLogin();
+      } else {
+        // 需要在浏览器中打开登录页面
+        showSnackbar('请先在网页中登录账号，然后重试', 'info');
+        // 在默认浏览器中打开登录页面
+        window.electron.ipcRenderer.send('open-external-url', `http://127.0.0.1:${serverPort}/Auth/Login`);
+      }
+    } catch (error) {
+      showSnackbar(`登录检查失败: ${error.message}`, 'error');
+    } finally {
+      setIsAuthenticating(false);
     }
   };
 
@@ -110,11 +148,8 @@ const LoginPage = ({ onLogin }) => {
     window.electron.ipcRenderer.send('close-window');
   };
 
-  // 渲染带换行的一言文本，并用『』框起来
   const renderHitokoto = () => {
     if (!hitokoto) return '';
-    
-    // 按要求处理换行：每8个字符且剩余长度大于3个字符时换行
     const lines = [];
     let currentLine = '';
     
@@ -127,12 +162,10 @@ const LoginPage = ({ onLogin }) => {
       }
     }
     
-    // 添加最后一行（如果有内容）
     if (currentLine) {
       lines.push(currentLine);
     }
     
-    // 用『』框起每一行
     return lines.map((line, index) => (
       <React.Fragment key={index}>
         {line}
@@ -220,7 +253,7 @@ const LoginPage = ({ onLogin }) => {
             </div>
             
             <form onSubmit={handleLogin}>
-              <mdui-text-field
+              {/* <mdui-text-field
                 label="用户名"
                 value={username}
                 onInput={(e) => setUsername(e.target.value)}
@@ -239,7 +272,7 @@ const LoginPage = ({ onLogin }) => {
                 style={{ marginBottom: '16px' }}
                 icon="lock"
                 variant="outlined"
-              ></mdui-text-field>
+              ></mdui-text-field> */}
               
               {error && (
                 <div style={{ 
@@ -256,9 +289,9 @@ const LoginPage = ({ onLogin }) => {
                   type="submit"
                   variant="filled"
                   style={{ width: '100%' }}
-                  disabled={serverStatus === 'checking' || serverStatus === 'starting'}
+                  disabled={serverStatus !== 'running' || isAuthenticating}
                 >
-                  {(serverStatus === 'checking' || serverStatus === 'starting') ? '请稍候...' : '登录'}
+                  {isAuthenticating ? '验证中...' : (serverStatus !== 'running' ? '请稍候...' : '登录')}
                 </mdui-button>
               </div>
               
@@ -268,7 +301,6 @@ const LoginPage = ({ onLogin }) => {
                 color: 'var(--mdui-color-on-surface-variant)',
                 textAlign: 'center'
               }}>
-                <p>默认账号密码: admin / admin</p>
               </div>
             </form>
           </div>
