@@ -10,6 +10,7 @@ import 'mdui/components/list.js';
 import 'mdui/components/list-item.js';
 import 'mdui/components/icon.js';
 import 'mdui/components/dialog.js';
+import 'mdui/components/circular-progress.js';
 import { snackbar } from 'mdui/functions/snackbar.js';
 import { login4399, loginSAuth, loginOfficial } from './AuthService';
 
@@ -21,6 +22,7 @@ const HomePage = ({ serverPort }) => {
   const [accounts4399, setAccounts4399] = useState([]);
   const [accountsOfficial, setAccountsOfficial] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [loadingAccounts, setLoadingAccounts] = useState({});
   const [activeTab, setActiveTab] = useState('4399');
   // 验证码相关状态
   const [showCaptchaDialog, setShowCaptchaDialog] = useState(false);
@@ -222,32 +224,30 @@ const HomePage = ({ serverPort }) => {
       return;
     }
 
-    setIsLoginButtonLoading(true);
+    // 设置账户加载状态
+    const accountKey = `account-${account.id}`;
+    setLoadingAccounts(prev => ({ ...prev, [accountKey]: true }));
+    
     try {
       let result;
-      
-      // 根据账户名特征判断账户类型
-      // 如果账户名包含@，则为网易官方账户，否则是4399账户
       if (account.account.includes('@')) {
-        // 网易官方账户登录
         result = await loginOfficial(serverPort, account.account, account.password);
       } else {
-        // 4399账户登录
         result = await login4399(serverPort, account.account, account.password);
       }
-
-      // 检查是否需要验证码（仅适用于4399账户）
       if (!account.account.includes('@') && result.code !== 0 && result.msg === '需要输入验证码') {
-        // 显示验证码对话框
         setCaptchaImage(result.data);
         setPendingLoginData({ username: account.account, password: account.password });
         setShowCaptchaDialog(true);
-        setIsLoginButtonLoading(false);
+        setLoadingAccounts(prev => {
+          const newState = { ...prev };
+          delete newState[accountKey];
+          return newState;
+        });
         return;
       }
 
       if (result.code === 0) {
-        // 登录成功
         setIsLoggedIn(true);
         snackbar({
           message: '登录成功',
@@ -255,10 +255,8 @@ const HomePage = ({ serverPort }) => {
           closeable: true,
           variant: 'success'
         });
-        // 重新获取账户数据
         fetchAccountData();
       } else {
-        // 登录失败
         snackbar({
           message: `登录失败: ${result.msg}`,
           placement: 'bottom-end',
@@ -275,7 +273,11 @@ const HomePage = ({ serverPort }) => {
         variant: 'error'
       });
     } finally {
-      setIsLoginButtonLoading(false);
+      setLoadingAccounts(prev => {
+        const newState = { ...prev };
+        delete newState[accountKey];
+        return newState;
+      });
     }
   };
 
@@ -292,18 +294,14 @@ const HomePage = ({ serverPort }) => {
 
     setIsLoginButtonLoading(true);
     try {
-      // 获取随机4399账户
       const response = await fetch(`http://127.0.0.1:${serverPort}/Func/CloudAlt/Get`);
       const result = await response.json();
 
       if (result.code === 0 && result.data) {
-        // 成功获取账户信息，进行4399登录
         const { username, password } = result.data;
         const loginResult = await login4399(serverPort, username, password);
         
-        // 检查是否需要验证码
         if (loginResult.code !== 0 && loginResult.msg === '需要输入验证码') {
-          // 显示验证码对话框
           setCaptchaImage(loginResult.data);
           setPendingLoginData({ username, password });
           setShowCaptchaDialog(true);
@@ -311,10 +309,8 @@ const HomePage = ({ serverPort }) => {
           return;
         }
         
-        // 处理登录结果
         handleLoginResult(loginResult);
       } else {
-        // 获取账户失败，显示错误信息
         snackbar({
           message: result.msg || '获取随机账户失败',
           placement: 'bottom-end',
@@ -391,9 +387,14 @@ const HomePage = ({ serverPort }) => {
                       description="点我登录该账号"
                       onClick={() => handleAccountLogin(account)}
                       style={{ cursor: 'pointer' }}
+                      disabled={loadingAccounts[`account-${account.id}`]}
                     >
+                      {loadingAccounts[`account-${account.id}`] ? (
+                        <mdui-circular-progress slot="icon"></mdui-circular-progress>
+                      ) : (
+                        <mdui-icon slot="icon" name="people"></mdui-icon>
+                      )}
                       {account.account}
-                      <mdui-icon slot="icon" name="people"></mdui-icon>
                     </mdui-list-item>
                   ))}
                 </mdui-list>
