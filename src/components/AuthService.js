@@ -78,6 +78,28 @@ export async function fetchGameList(serverPort, total = 250, batchSize = 50, onP
 }
 
 /**
+ * 获取可用区域列表
+ * @param {string} serverPort - 服务器端口
+ * @returns {Promise<Array>} 可用区域数据
+ */
+export async function getAvailableRegions(serverPort) {
+  try {
+    const response = await fetch(`http://127.0.0.1:${serverPort}/Func/CloudProxy/GetAvailableRegions`);
+    const result = await response.json();
+    
+    // 检查响应是否成功并返回数据
+    if (result.code === 0 && result.data && Array.isArray(result.data)) {
+      return result.data;
+    }
+    
+    return [];
+  } catch (error) {
+    console.error('获取可用区域列表失败:', error);
+    return [];
+  }
+}
+
+/**
  * 4399登录认证
  * @param {string} serverPort - 服务器端口
  * @param {string} account - 账号
