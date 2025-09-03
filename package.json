@@ -1,5 +1,5 @@
 {
-  "name": "vpscontrol",
+  "name": "kryptonnel",
   "version": "1.0.0",
   "description": "",
   "main": "main.js",
@@ -9,11 +9,61 @@
     "build": "webpack --mode production",
     "build-and-start": "npm run build && npm run start",
     "surise": "npm run build && npm run start",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "dist:china": "cross-env ELECTRON_MIRROR=https://npmmirror.com/mirrors/electron/ ELECTRON_BUILDER_BINARIES_MIRROR=https://npmmirror.com/mirrors/electron-builder-binaries/ electron-builder",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Surise",
   "license": "ISC",
+  "build": {
+    "appId": "com.surise.kryptonnel",
+    "productName": "KryptonNEL",
+    "directories": {
+      "output": "pack"
+    },
+    "files": [
+      "dist/**/*",
+      "main.js",
+      "preload.js"
+    ],
+    "extraResources": [
+      {
+        "from": "dotnet",
+        "to": "dotnet"
+      },
+      {
+        "from": "domain",
+        "to": "domain"
+      }
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "signAndEditExecutable": false,
+      "requestedExecutionLevel": "asInvoker"
+    },
+    "mac": {
+      "category": "public.app-category.utilities"
+    },
+    "linux": {
+      "target": "AppImage"
+    },
+    "asar": true,
+    "forceCodeSigning": false,
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    },
+    "npmRebuild": false
+  },
   "devDependencies": {
     "@babel/core": "^7.25.2",
     "@babel/preset-env": "^7.25.3",
@@ -21,8 +71,10 @@
     "@tailwindcss/postcss": "^4.1.12",
     "autoprefixer": "^10.4.21",
     "babel-loader": "^9.1.3",
+    "cross-env": "^10.0.0",
     "css-loader": "^7.1.2",
     "electron": "^32.1.0",
+    "electron-builder": "^26.0.12",
     "html-webpack-plugin": "^5.6.0",
     "postcss": "^8.5.6",
     "postcss-loader": "^8.1.1",

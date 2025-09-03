@@ -35,10 +35,38 @@ const createWindow = () => {
     mainWindow.loadFile(path.join(__dirname, 'dist/index.html'));
   }
 
-  // Open the DevTools.
-  mainWindow.webContents.openDevTools();
+  // Open the DevTools only in development mode.
+  if (process.env.NODE_ENV === 'development') {
+    mainWindow.webContents.openDevTools();
+  }
   
   return mainWindow;
+};
+
+// 写入日志到文件
+const writeLogToFile = (message) => {
+  // 确保日志文件在可写目录中
+  const logPath = path.join(process.cwd(), 'Log.txt');
+  const timestamp = new Date().toISOString();
+  const logEntry = `[${timestamp}] ${message}\n`;
+  
+  // 检查是否包含端口信息，使用更宽松的正则表达式
+  const portMatch = message.match(/Running on port\s*=>\s*(\d+)/);
+  if (portMatch && portMatch[1]) {
+    const port = portMatch[1];
+    console.log(`本地服务器运行在端口: ${port}`);
+    // 通知渲染进程端口信息
+    if (mainWindow) {
+      mainWindow.webContents.send('local-server-output', message);
+    }
+  }
+  
+  // 以追加模式写入日志
+  fs.appendFile(logPath, logEntry, (err) => {
+    if (err) {
+      console.error('写入日志文件失败:', err);
+    }
+  });
 };
 
 // IPC事件监听器，处理窗口控制请求
@@ -74,9 +102,10 @@ ipcMain.on('open-external-url', (event, url) => {
 
 // IPC事件监听器，检查本地服务器DLL是否存在
 ipcMain.handle('check-local-server', (event) => {
-  const domainPath = path.join(__dirname, 'domain');
+  const basePath = process.resourcesPath || path.join(__dirname, 'resources');
+  const domainPath = path.join(basePath, 'domain');
   const dllPath = path.join(domainPath, 'Krypton.LocalServer.dll');
-  
+
   // 检查domain目录是否存在
   if (!fs.existsSync(domainPath)) {
     return {
@@ -102,31 +131,6 @@ ipcMain.handle('check-local-server', (event) => {
 });
 
 let serverProcess = null;
-
-// 写入日志到文件
-const writeLogToFile = (message) => {
-  const logPath = path.join(__dirname, 'Log.txt');
-  const timestamp = new Date().toISOString();
-  const logEntry = `[${timestamp}] ${message}\n`;
-  
-  // 检查是否包含端口信息，使用更宽松的正则表达式
-  const portMatch = message.match(/Running on port\s*=>\s*(\d+)/);
-  if (portMatch && portMatch[1]) {
-    const port = portMatch[1];
-    console.log(`本地服务器运行在端口: ${port}`);
-    // 通知渲染进程端口信息
-    if (mainWindow) {
-      mainWindow.webContents.send('local-server-output', message);
-    }
-  }
-  
-  // 以追加模式写入日志
-  fs.appendFile(logPath, logEntry, (err) => {
-    if (err) {
-      console.error('写入日志文件失败:', err);
-    }
-  });
-};
 
 // 解码数据，使用GBK编码
 const decodeData = (data) => {
@@ -161,9 +165,11 @@ ipcMain.on('start-local-server', (event) => {
     return;
   }
 
-  const domainPath = path.join(__dirname, 'domain');
+  const basePath = process.resourcesPath || path.join(__dirname, 'resources');
+  const domainPath = path.join(basePath, 'domain');
   const dllPath = path.join(domainPath, 'Krypton.LocalServer.dll');
-  
+  let dotnetPath = path.join(basePath, 'dotnet', 'dotnet.exe');
+
   // 先检查文件是否存在
   if (!fs.existsSync(domainPath)) {
     const errorMsg = 'domain目录不存在';
@@ -176,7 +182,7 @@ ipcMain.on('start-local-server', (event) => {
     });
     return;
   }
-  
+
   if (!fs.existsSync(dllPath)) {
     const errorMsg = 'Krypton.LocalServer.dll文件不存在';
     writeLogToFile(`[ERROR] ${errorMsg}`);
@@ -188,12 +194,22 @@ ipcMain.on('start-local-server', (event) => {
     });
     return;
   }
+
+  // 检查dotnet.exe是否存在，如果不存在则回退到系统默认的dotnet
+  if (!fs.existsSync(dotnetPath)) {
+    writeLogToFile(`[WARN] 未找到本地dotnet.exe: ${dotnetPath}`);
+    dotnetPath = 'dotnet'; // 回退到系统 dotnet
+    writeLogToFile(`[INFO] 回退到系统默认dotnet命令`);
+  } else {
+    writeLogToFile(`[INFO] 找到dotnet.exe: ${dotnetPath}`);
+  }
+
+  writeLogToFile(`[INFO] 正在启动服务器: ${dotnetPath} "${dllPath}"`);
   
-  // 使用spawn启动进程，而不是exec
   try {
-    writeLogToFile(`[INFO] 正在启动服务器: dotnet "${dllPath}"`);
-    serverProcess = spawn('dotnet', [dllPath], { 
-      cwd: __dirname,
+    // 使用spawn启动进程
+    serverProcess = spawn(dotnetPath, [dllPath], { 
+      cwd: domainPath,
       windowsHide: false
     });
     
@@ -261,10 +277,6 @@ ipcMain.on('start-local-server', (event) => {
       console.log(message);
       writeLogToFile(`[INFO] ${message}`);
       serverProcess = null;
-      // 如果进程在启动后关闭，需要通知前端
-      if (started) {
-        // 可以通过其他方式通知前端服务器已关闭
-      }
     });
     
     // 监听进程错误事件

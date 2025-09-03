@@ -10,16 +10,26 @@ import 'mdui/components/list.js';
 import 'mdui/components/list-item.js';
 import 'mdui/components/button.js';
 import 'mdui/components/circular-progress.js';
+import 'mdui/components/radio.js';
+import 'mdui/components/radio-group.js';
+import 'mdui/components/text-field.js';
 import { getAvailableRegions } from './AuthService';
 
-const SettingsPage = () => {
+const SettingsPage = ({ serverPort }) => {
   const [selectedChip, setSelectedChip] = useState('random'); // 'random' or 'custom'
-  const [isRegionDialogOpen, setIsRegionDialogOpen] = useState(false);
+  const [showRegionSelector, setShowRegionSelector] = useState(false);
+  const [showCustomProxyInputs, setShowCustomProxyInputs] = useState(false);
   const [regionsData, setRegionsData] = useState([]);
   const [groupedRegions, setGroupedRegions] = useState({});
   const [loading, setLoading] = useState(false);
   const [selectedRegion, setSelectedRegion] = useState('');
   const [selectedRegionInfo, setSelectedRegionInfo] = useState(null);
+  
+  // 自定义代理IP的状态
+  const [customProxyIp, setCustomProxyIp] = useState('');
+  const [customProxyPort, setCustomProxyPort] = useState('');
+  const [customProxyUsername, setCustomProxyUsername] = useState('');
+  const [customProxyPassword, setCustomProxyPassword] = useState('');
 
   const handleRandomChipClick = () => {
     setSelectedChip('random');
@@ -30,8 +40,16 @@ const SettingsPage = () => {
   };
 
   const handleSelectRegionClick = () => {
-    setIsRegionDialogOpen(true);
-    loadRegionsData();
+    setShowRegionSelector(!showRegionSelector);
+    if (!showRegionSelector) {
+      loadRegionsData();
+    }
+    setShowCustomProxyInputs(false);
+  };
+
+  const handleCustomProxyClick = () => {
+    setShowCustomProxyInputs(!showCustomProxyInputs);
+    setShowRegionSelector(false);
   };
 
   const loadRegionsData = async () => {
@@ -67,11 +85,7 @@ const SettingsPage = () => {
     const regionInfo = regionsData.find(item => item.region === region);
     setSelectedRegion(region);
     setSelectedRegionInfo(regionInfo);
-    setIsRegionDialogOpen(false);
-  };
-
-  const closeRegionDialog = () => {
-    setIsRegionDialogOpen(false);
+    setShowRegionSelector(false);
   };
 
   return (
@@ -123,50 +137,106 @@ const SettingsPage = () => {
                   选我
                 </mdui-chip>
               }
-              actions={<mdui-button variant="text">配置节点</mdui-button>}
+              actions={<mdui-button variant="text" onClick={handleCustomProxyClick}>配置节点</mdui-button>}
             />
           </div>
+          
+          {/* 地区选择区域 */}
+          {showRegionSelector && (
+            <div style={{ 
+              display: 'flex',
+              justifyContent: 'center',
+              width: '100%',
+              marginTop: '24px'
+            }}>
+              <div style={{ width: '60%' }}>
+                <SuCard
+                  title="选择地区"
+                  body={
+                    loading ? (
+                      <div style={{ display: 'flex', justifyContent: 'center', padding: '20px' }}>
+                        <mdui-circular-progress></mdui-circular-progress>
+                      </div>
+                    ) : (
+                      <div style={{ maxHeight: '300px', overflowY: 'auto' }}>
+                        <mdui-radio-group value={selectedRegion} onChange={(e) => handleRegionSelect(e.target.value)}>
+                          {Object.entries(groupedRegions).map(([province, cities]) => (
+                            <div key={province}>
+                              <h3 style={{ margin: '10px 0 5px 0' }}>{province}</h3>
+                              <div style={{ 
+                                display: 'flex', 
+                                flexWrap: 'wrap', 
+                                gap: '12px',
+                                marginBottom: '12px'
+                              }}>
+                                {cities.map((item, index) => (
+                                  <mdui-radio 
+                                    key={index}
+                                    value={item.region}
+                                    style={{ 
+                                      display: 'inline-block',
+                                      minWidth: '80px',
+                                      padding: '8px 0'
+                                    }}
+                                  >
+                                    {item.city}
+                                  </mdui-radio>
+                                ))}
+                              </div>
+                            </div>
+                          ))}
+                        </mdui-radio-group>
+                      </div>
+                    )
+                  }
+                />
+              </div>
+            </div>
+          )}
+          
+          {/* 自定义代理IP输入区域 */}
+          {showCustomProxyInputs && (
+            <div style={{ 
+              display: 'flex',
+              justifyContent: 'center',
+              width: '100%',
+              marginTop: '24px'
+            }}>
+              <div style={{ width: '60%' }}>
+                <SuCard
+                  title="配置代理"
+                  body={
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                      <mdui-text-field 
+                        label="代理IP地址" 
+                        value={customProxyIp}
+                        onChange={(e) => setCustomProxyIp(e.target.value)}
+                      ></mdui-text-field>
+                      <mdui-text-field 
+                        label="端口" 
+                        value={customProxyPort}
+                        onChange={(e) => setCustomProxyPort(e.target.value)}
+                      ></mdui-text-field>
+                      <mdui-text-field 
+                        label="用户名" 
+                        value={customProxyUsername}
+                        onChange={(e) => setCustomProxyUsername(e.target.value)}
+                      ></mdui-text-field>
+                      <mdui-text-field 
+                        label="密码" 
+                        type="password"
+                        value={customProxyPassword}
+                        onChange={(e) => setCustomProxyPassword(e.target.value)}
+                      ></mdui-text-field>
+                    </div>
+                  }
+                />
+              </div>
+            </div>
+          )}
         </mdui-tab-panel>
         <mdui-tab-panel slot="panel" value="tab-2">Panel 2</mdui-tab-panel>
       </mdui-tabs>
-      
-      {/* 地区选择对话框 */}
-      <mdui-dialog 
-        open={isRegionDialogOpen}
-        onClosed={closeRegionDialog}
-        style={{ width: '80%', maxWidth: '600px' }}
-      >
-        <div style={{ padding: '20px' }}>
-          <h2 style={{ marginTop: 0 }}>选择地区</h2>
-          {loading ? (
-            <div style={{ display: 'flex', justifyContent: 'center', padding: '20px' }}>
-              <mdui-circular-progress></mdui-circular-progress>
-            </div>
-          ) : (
-            <div style={{ maxHeight: '400px', overflowY: 'auto' }}>
-              {Object.entries(groupedRegions).map(([province, cities]) => (
-                <div key={province}>
-                  <h3 style={{ margin: '10px 0 5px 0' }}>{province}</h3>
-                  <mdui-list>
-                    {cities.map((item, index) => (
-                      <mdui-list-item 
-                        key={index}
-                        onClick={() => handleRegionSelect(item.region)}
-                        style={{ cursor: 'pointer' }}
-                      >
-                        {item.city}
-                      </mdui-list-item>
-                    ))}
-                  </mdui-list>
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
-        <div slot="action">
-          <mdui-button variant="text" onClick={closeRegionDialog}>取消</mdui-button>
-        </div>
-      </mdui-dialog>
     </div>
   );
 };
