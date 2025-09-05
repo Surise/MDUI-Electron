@@ -348,7 +348,7 @@ const ConnectPage = ({ serverPort }) => {
               <mdui-select 
                 value={roleName}
                 onInput={(e) => setRoleName(e.target.value)}
-                label="角色名称"
+                label="选择角色名（如果为空请先添加）"
                 style={{ width: '100%' }}
               >
                 {roleNames.map((name, index) => (
