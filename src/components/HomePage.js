@@ -13,8 +13,10 @@ import 'mdui/components/dialog.js';
 import 'mdui/components/circular-progress.js';
 import { snackbar } from 'mdui/functions/snackbar.js';
 import { login4399, loginSAuth, loginOfficial } from './AuthService';
+import { useUser } from './UserContext';
 
 const HomePage = ({ serverPort }) => {
+  const { updateUserData } = useUser();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [showLoginCard, setShowLoginCard] = useState(false);
   const [username, setUsername] = useState('');
@@ -138,6 +140,8 @@ const HomePage = ({ serverPort }) => {
   const handleLoginResult = (result) => {
     if (result.code === 0) {
       // 登录成功
+      console.log(result);
+      updateUserData(result.data);
       setIsLoggedIn(true);
       setShowLoginCard(false);
       setUsername('');
