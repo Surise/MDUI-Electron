@@ -7,18 +7,19 @@ import 'mdui/components/dialog.js';
 import 'mdui/components/button.js';
 import 'mdui/components/select.js';
 import 'mdui/components/menu-item.js';
-import { checkOnlineAccounts, fetchGameList } from './AuthService';
+import { checkOnlineAccounts, fetchGameList, fetchGameCharacters, addGameCharacter } from './AuthService';
 import { useServerCache } from './ServerCacheContext';
+import { useUser } from './UserContext';
 
 const ConnectPage = ({ serverPort }) => {
-  const [servers, setServers] = useState([]); // 使用从API获取的真实数据
+  const { userData } = useUser();
+  const [servers, setServers] = useState([]); 
   const [searchTerm, setSearchTerm] = useState('');
-  const [hasOnlineAccounts, setHasOnlineAccounts] = useState(true); // 默认假设存在在线账号
+  const [hasOnlineAccounts, setHasOnlineAccounts] = useState(true); 
   const [loading, setLoading] = useState(true);
-  const [progress, setProgress] = useState({ current: 0, total: 5 }); // 添加进度状态
-  const { cachedServers, updateCachedServers } = useServerCache(); // 使用全局缓存
+  const [progress, setProgress] = useState({ current: 0, total: 5 });
+  const { cachedServers, updateCachedServers } = useServerCache(); 
   
-  // 添加服务器设置对话框的状态
   const [showServerSettings, setShowServerSettings] = useState(false);
   const [selectedServer, setSelectedServer] = useState(null);
   const [roleName, setRoleName] = useState('');
@@ -28,8 +29,9 @@ const ConnectPage = ({ serverPort }) => {
     '狂笑的Daniel写论文',
     '狂笑的郑洋写散文'
   ]);
+  
+  const [roleNameMap, setRoleNameMap] = useState({});
 
-  // 根据搜索词筛选服务器
   const filteredServers = useMemo(() => {
     if (!searchTerm) return servers;
     return servers.filter(server => 
@@ -37,27 +39,20 @@ const ConnectPage = ({ serverPort }) => {
     );
   }, [servers, searchTerm]);
 
-  // 检查在线账号并获取游戏列表
   useEffect(() => {
     const initialize = async () => {
       if (serverPort) {
         setLoading(true);
-        setProgress({ current: 0, total: 5 }); // 初始化进度
+        setProgress({ current: 0, total: 5 });
         try {
-          // 检查在线账号
           const onlineResult = await checkOnlineAccounts(serverPort);
           setHasOnlineAccounts(onlineResult);
           
-          // 如果有在线账号，则获取游戏列表
           if (onlineResult) {
-            // 如果缓存数据为空，则获取新数据
-            // 如果缓存数据不为空，则使用缓存数据
             if (cachedServers.length === 0) {
               const gameList = await fetchGameList(serverPort, 250, 50, (current, total) => {
-                // 更新进度
                 setProgress({ current, total });
               });
-              // 将获取到的数据转换为组件需要的格式
               const formattedServers = gameList.map((game) => ({
                 id: game.entity_id,
                 name: game.name,
@@ -66,9 +61,9 @@ const ConnectPage = ({ serverPort }) => {
                 players: game.online_count
               }));
               setServers(formattedServers);
-              updateCachedServers(formattedServers); // 更新全局缓存
+              updateCachedServers(formattedServers);
             } else {
-              setServers(cachedServers); // 使用全局缓存数据
+              setServers(cachedServers);
             }
           }
         } catch (error) {
@@ -81,11 +76,34 @@ const ConnectPage = ({ serverPort }) => {
     };
 
     initialize();
-  }, [serverPort]); // 只依赖 serverPort
+  }, [serverPort]);
 
-  const handleServerClick = (server) => {
+  const handleServerClick = async (server) => {
     console.log('点击了服务器:', server);
     setSelectedServer(server);
+    
+      try {
+        const result = await fetchGameCharacters(
+          serverPort, 
+          userData, 
+          server.id, 
+          2
+        );
+        
+        if (result.code === 0 && result.data && Array.isArray(result.data)) {
+          const names = result.data.map(item => item.name);
+          setRoleNames(names);
+          const map = {};
+          result.data.forEach(item => {
+            map[item.entity_id] = item.name;
+          });
+          setRoleNameMap(map);
+        }
+      } catch (error) {
+        console.error('获取角色列表失败:', error);
+      }
+    
+    
     setShowServerSettings(true);
   };
 
@@ -93,16 +111,87 @@ const ConnectPage = ({ serverPort }) => {
     setSearchTerm(e.target.value);
   };
 
-  const handleAddRoleName = () => {
-    if (customRoleName.trim() !== '') {
-      setRoleNames(prev => [...prev, customRoleName.trim()]);
-      setCustomRoleName('');
+  const handleAddRoleName = async () => {
+    if (customRoleName.trim() !== '' && selectedServer && serverPort) {
+      try {
+        const result = await addGameCharacter(serverPort, selectedServer.id, customRoleName.trim());
+        
+        if (result.code === 0) {
+          setRoleNames(prev => [...prev, customRoleName.trim()]);
+          setCustomRoleName('');
+        } else {
+          console.error('添加角色失败:', result.msg);
+        }
+      } catch (error) {
+        console.error('添加角色时发生错误:', error);
+      }
     }
   };
 
-  const handleRandomRoleName = () => {
-    const randomIndex = Math.floor(Math.random() * roleNames.length);
-    setRoleName(roleNames[randomIndex]);
+  const generateRandomUsername = () => {
+    const adjectives = [
+      '快乐的', '开心的', '可爱的', '活泼的', '温柔的', '聪明的', '勇敢的', '善良的', '机智的', '优雅的',
+      '调皮的', '安静的', '热情的', '开朗的', '乐观的', '自信的', '坚强的', '独立的', '友善的', '真诚的'
+    ];
+
+    const nouns = [
+      '小猫', '小狗', '小兔', '小鸟', '小鹿', '小象', '小马', '小羊', '小牛', '小虎',
+      '小树', '小花', '小草', '小云', '小星', '小月', '小风', '小雨', '小雪', '小露'
+    ];
+
+    const verbs = [
+      '在跳舞', '在唱歌', '在画画', '在读书', '在玩耍', '在奔跑', '在跳跃', '在飞翔', '在游泳', '在睡觉'
+    ];
+
+    const getRandomItem = (array) => array[Math.floor(Math.random() * array.length)];
+    
+    const adjective = getRandomItem(adjectives);
+    const noun = getRandomItem(nouns);
+    const verb = getRandomItem(verbs);
+    let username = adjective + noun + verb;
+
+    if (username.length !== 8) {
+      return '获取失败';
+    }
+
+    const positions = new Set();
+    while (positions.size < 2) {
+      positions.add(Math.floor(Math.random() * 8));
+    }
+
+    const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const numbers = '0123456789';
+    const allChars = letters + numbers;
+    
+    let result = username.split('');
+    positions.forEach(pos => {
+      const isLetter = Math.random() > 0.5;
+      const charSet = isLetter ? letters : numbers;
+      result[pos] = charSet[Math.floor(Math.random() * charSet.length)];
+    });
+
+    return result.join('');
+  };
+
+  const handleRandomRoleName = async () => {
+    if (selectedServer && serverPort) {
+      const randomName = generateRandomUsername();
+      
+      if (randomName !== '获取失败') {
+        try {
+          const result = await addGameCharacter(serverPort, selectedServer.id, randomName);
+          
+          if (result.code === 0) {
+            setRoleNames(prev => [...prev, randomName]);
+            setRoleName(randomName);
+          } else {
+            console.error('添加角色失败:', result.msg);
+          }
+        } catch (error) {
+          console.error('添加角色时发生错误:', error);
+        }
+      }
+    }
   };
 
   const handleCloseServerSettings = () => {
@@ -112,7 +201,6 @@ const ConnectPage = ({ serverPort }) => {
   };
 
   const handleSaveServerSettings = () => {
-    // 这里可以添加保存服务器设置的逻辑
     console.log('保存服务器设置:', {
       server: selectedServer,
       roleName,
