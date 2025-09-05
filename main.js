@@ -110,7 +110,7 @@ ipcMain.handle('check-local-server', (event) => {
   if (!fs.existsSync(domainPath)) {
     return {
       exists: false,
-      error: 'domain目录不存在',
+      error: `domain目录不存在${domainPath}`,
       path: domainPath
     };
   }

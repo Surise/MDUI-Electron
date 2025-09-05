@@ -3,6 +3,10 @@ import 'mdui/components/text-field.js';
 import 'mdui/components/card.js';
 import 'mdui/components/divider.js';
 import 'mdui/components/circular-progress.js';
+import 'mdui/components/dialog.js';
+import 'mdui/components/button.js';
+import 'mdui/components/select.js';
+import 'mdui/components/menu-item.js';
 import { checkOnlineAccounts, fetchGameList } from './AuthService';
 import { useServerCache } from './ServerCacheContext';
 
@@ -13,6 +17,17 @@ const ConnectPage = ({ serverPort }) => {
   const [loading, setLoading] = useState(true);
   const [progress, setProgress] = useState({ current: 0, total: 5 }); // 添加进度状态
   const { cachedServers, updateCachedServers } = useServerCache(); // 使用全局缓存
+  
+  // 添加服务器设置对话框的状态
+  const [showServerSettings, setShowServerSettings] = useState(false);
+  const [selectedServer, setSelectedServer] = useState(null);
+  const [roleName, setRoleName] = useState('');
+  const [customRoleName, setCustomRoleName] = useState('');
+  const [roleNames, setRoleNames] = useState([
+    '狂笑的赵轩海写黄文',
+    '狂笑的Daniel写论文',
+    '狂笑的郑洋写散文'
+  ]);
 
   // 根据搜索词筛选服务器
   const filteredServers = useMemo(() => {
@@ -69,11 +84,40 @@ const ConnectPage = ({ serverPort }) => {
 
   const handleServerClick = (server) => {
     console.log('点击了服务器:', server);
-    // 这里可以添加点击服务器后的操作
+    setSelectedServer(server);
+    setShowServerSettings(true);
   };
 
   const handleSearchChange = (e) => {
     setSearchTerm(e.target.value);
+  };
+
+  const handleAddRoleName = () => {
+    if (customRoleName.trim() !== '') {
+      setRoleNames(prev => [...prev, customRoleName.trim()]);
+      setCustomRoleName('');
+    }
+  };
+
+  const handleRandomRoleName = () => {
+    const randomIndex = Math.floor(Math.random() * roleNames.length);
+    setRoleName(roleNames[randomIndex]);
+  };
+
+  const handleCloseServerSettings = () => {
+    setShowServerSettings(false);
+    setSelectedServer(null);
+    setRoleName('');
+  };
+
+  const handleSaveServerSettings = () => {
+    // 这里可以添加保存服务器设置的逻辑
+    console.log('保存服务器设置:', {
+      server: selectedServer,
+      roleName,
+      customRoleName
+    });
+    handleCloseServerSettings();
   };
 
   return (
@@ -196,6 +240,67 @@ const ConnectPage = ({ serverPort }) => {
           ))}
         </div>
       )}
+      
+      {/* 服务器账号设置对话框 */}
+      <mdui-dialog 
+        open={showServerSettings}
+        onClose={handleCloseServerSettings}
+      >
+        {selectedServer && (
+          <div style={{ padding: '20px' }}>
+            <h2 style={{ marginTop: 0 }}>服务器账号设置</h2>
+            
+            <div style={{ marginBottom: '20px' }}>
+              <h3>服务器名: {selectedServer.name}</h3>
+              <p>服务器IP: {selectedServer.ip}</p>
+            </div>
+            
+            <div style={{ marginBottom: '20px' }}>
+              <mdui-select 
+                value={roleName}
+                onInput={(e) => setRoleName(e.target.value)}
+                label="角色名称"
+                style={{ width: '100%' }}
+              >
+                {roleNames.map((name, index) => (
+                  <mdui-menu-item key={index} value={name}>{name}</mdui-menu-item>
+                ))}
+              </mdui-select>
+            </div>
+            
+            <div style={{ 
+              display: 'flex', 
+              gap: '10px', 
+              marginBottom: '20px',
+              alignItems: 'center'
+            }}>
+              <mdui-text-field 
+                value={customRoleName}
+                onInput={(e) => setCustomRoleName(e.target.value)}
+                label="添加角色名称"
+                variant="outlined"
+                maxlength="11"
+                clearable
+                style={{ flex: 1 }}
+              ></mdui-text-field>
+              <mdui-button onClick={handleAddRoleName} variant="filled">添加</mdui-button>
+            </div>
+            
+            <div style={{ marginBottom: '20px' }}>
+              <mdui-button onClick={handleRandomRoleName} variant="outlined" style={{ width: '100%' }}>
+                随机角色名
+              </mdui-button>
+            </div>
+
+          </div>
+        )}
+        
+        <div slot="action" style={{display: 'flex',padding: '10px',gap: '10px'}}>
+          <mdui-button variant="text" onClick={handleCloseServerSettings}>取消</mdui-button>
+          <mdui-button variant="filled" onClick={handleSaveServerSettings}>开启白端模式</mdui-button>
+          <mdui-button variant="filled" onClick={handleSaveServerSettings}>开启服务器代理服务</mdui-button>
+        </div>
+      </mdui-dialog>
     </div>
   );
 };
