@@ -61,6 +61,7 @@ const ConnectPage = ({ serverPort }) => {
               const formattedServers = gameList.map((game) => ({
                 id: game.entity_id,
                 name: game.name,
+                version: game.mc_version_name,
                 description: game.brief_summary,
                 players: game.online_count
               }));
@@ -252,7 +253,7 @@ const ConnectPage = ({ serverPort }) => {
             
             <div style={{ marginBottom: '20px' }}>
               <h3>服务器名: {selectedServer.name}</h3>
-              <p>服务器IP: {selectedServer.ip}</p>
+              <p>在线人数: {selectedServer.players}人</p>
             </div>
             
             <div style={{ marginBottom: '20px' }}>
@@ -297,7 +298,7 @@ const ConnectPage = ({ serverPort }) => {
         
         <div slot="action" style={{display: 'flex',padding: '10px',gap: '10px'}}>
           <mdui-button variant="text" onClick={handleCloseServerSettings}>取消</mdui-button>
-          <mdui-button variant="filled" onClick={handleSaveServerSettings}>开启白端模式</mdui-button>
+          <mdui-button variant="tonal" onClick={handleSaveServerSettings}>开启白端模式</mdui-button>
           <mdui-button variant="filled" onClick={handleSaveServerSettings}>开启服务器代理服务</mdui-button>
         </div>
       </mdui-dialog>
