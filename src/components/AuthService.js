@@ -2,7 +2,7 @@
  * 账号登录认证服务
  * 提供多种登录方式的封装
  */
-
+import { useUser } from './UserContext';
 /**
  * 检查在线账户列表
  * @param {string} serverPort - 服务器端口
@@ -163,6 +163,56 @@ export async function loginOfficial(serverPort, account, password, deviceID = ''
       password,
       deviceID,
       deviceKey
+    })
+  });
+  
+  return await response.json();
+}
+
+/**
+ * 获取游戏中角色列表
+ * @param {string} serverPort - 服务器端口
+ * @param {number} userId - 用户ID，来自UserContext中的userData
+ * @param {number} gameId - 游戏ID
+ * @param {number} gameType - 游戏类型
+ * @param {number} offset - 偏移量，默认为0
+ * @param {number} length - 获取数量，默认为3
+ * @returns {Promise<Object>} 角色列表响应数据
+ */
+export async function fetchGameCharacters(serverPort, userId, gameId, gameType, offset = 0, length = 3) {
+  const response = await fetch(`http://127.0.0.1:${serverPort}/Netease/Character/NetGame/List`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      offset,
+      length,
+      user_id: userId,
+      game_id: gameId,
+      game_type: gameType
+    })
+  });
+  
+  return await response.json();
+}
+
+/**
+ * 添加游戏角色
+ * @param {string} serverPort - 服务器端口
+ * @param {number} gameId - 游戏ID
+ * @param {string} name - 角色名称
+ * @returns {Promise<Object>} 添加角色响应数据
+ */
+export async function addGameCharacter(serverPort, gameId, name) {
+  const response = await fetch(`http://127.0.0.1:${serverPort}/Netease/Character/NetGame/Add`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      game_id: gameId,
+      name: name
     })
   });
   

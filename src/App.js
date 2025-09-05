@@ -14,6 +14,7 @@ import TopBar from './components/TopBar';
 import NavigationRail from './components/NavigationRail';
 import LoginPage from './components/LoginPage';
 import { ServerCacheProvider } from './components/ServerCacheContext';
+import { UserProvider } from './components/UserContext';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -73,46 +74,38 @@ function App() {
   }
 
   return (
-    <ServerCacheProvider>
-      <div className="app-container">
-        <mdui-layout style={{ height: '100%' }}>
-          {/* 顶部应用栏 */}
-          <mdui-layout-item>
-            <TopBar onLogout={handleLogout} />
-          </mdui-layout-item>
-          
-          {/* 导航栏 */}
-          {isDrawerOpen && (
-            <mdui-layout-item placement="left" style={{ width: 'auto', height: '100%' }} className="scrollable-hidden">
-              <NavigationRail 
-                key={showLabels ? 'labels-shown' : 'labels-hidden'}
-                activePage={activePage} 
-                onPageChange={handlePageChange} 
-                showLabels={showLabels}
-                onToggleLabels={toggleLabels}
-              />
+    <UserProvider>
+      <ServerCacheProvider>
+        <div className="app-container">
+          <mdui-layout style={{ height: '100%' }}>
+            {/* 顶部应用栏 */}
+            <mdui-layout-item>
+              <TopBar onLogout={handleLogout} />
             </mdui-layout-item>
-          )}
-          
-          {/* 主要内容区域 */}
-          <mdui-layout-main style={{ overflow: 'hidden', height: '100%' }}>
-            <div style={{ height: '100%' }}>
-              {renderPage()}
-            </div>
             
-            {/* FAB 按钮 */}
-            {activePage === 'home' && (
-              <mdui-fab
-                icon="add"
-                variant="primary"
-                className="floating-button"
-                onClick={() => window.electron.ipcRenderer.send('open-dev-tools')}
-              ></mdui-fab>
+            {/* 导航栏 */}
+            {isDrawerOpen && (
+              <mdui-layout-item placement="left" style={{ width: 'auto', height: '100%' }} className="scrollable-hidden">
+                <NavigationRail 
+                  key={showLabels ? 'labels-shown' : 'labels-hidden'}
+                  activePage={activePage} 
+                  onPageChange={handlePageChange} 
+                  showLabels={showLabels}
+                  onToggleLabels={toggleLabels}
+                />
+              </mdui-layout-item>
             )}
-          </mdui-layout-main>
-        </mdui-layout>
-      </div>
-    </ServerCacheProvider>
+            
+            {/* 主要内容区域 */}
+            <mdui-layout-main style={{ overflow: 'hidden', height: '100%' }}>
+              <div style={{ height: '100%' }}>
+                {renderPage()}
+              </div>
+            </mdui-layout-main>
+          </mdui-layout>
+        </div>
+      </ServerCacheProvider>
+    </UserProvider>
   );
 }
 
