@@ -218,3 +218,251 @@ export async function addGameCharacter(serverPort, gameId, name) {
   
   return await response.json();
 }
+
+/**
+ * 获取游戏地址信息
+ * @param {string} serverPort - 服务器端口
+ * @param {number} itemId - 商品ID
+ * @returns {Promise<{ip: string, port: number} | null>} IP和端口信息，失败时返回null
+ */
+export async function fetchGameAddress(serverPort, serverItemId) {
+  try {
+    // 添加参数验证
+    if (!serverPort) {
+      console.error('服务器端口不能为空');
+      return null;
+    }
+    
+    if (!serverItemId) {
+      console.error('商品ID不能为空');
+      return null;
+    }
+
+    console.log('发送请求到地址:', `http://127.0.0.1:${serverPort}/Netease/Game/NetGame/Address`);
+    console.log('发送的数据:', { item_id: serverItemId });
+
+    const response = await fetch(`http://127.0.0.1:${serverPort}/Netease/Game/NetGame/Address`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        item_id: serverItemId
+      })
+    });
+
+    console.log('响应状态:', response.status);
+    console.log('响应状态文本:', response.statusText);
+
+    // 检查响应状态
+    if (!response.ok) {
+      console.error(`HTTP错误! 状态: ${response.status}`);
+      return null;
+    }
+
+    const result = await response.json();
+    console.log('响应数据:', result);
+
+    // 检查响应是否成功并包含所需数据
+    if (result.code === 0 && result.data && result.data.ip && result.data.port) {
+      return {
+        ip: result.data.ip,
+        port: result.data.port
+      };
+    }
+
+    console.error('获取游戏地址信息失败:', result.msg || '未知错误');
+    return null;
+  } catch (error) {
+    console.error('获取游戏地址信息时发生错误:', error);
+    return null;
+  }
+}
+
+/**
+ * 获取游戏版本名称
+ * @param {string} serverPort - 服务器端口
+ * @param {number} itemId - 商品ID
+ * @returns {Promise<string|null>} 版本名称，失败时返回null
+ */
+export async function fetchGameVersionName(serverPort, serverItemId) {
+  try {
+    const versionResponse = await fetch(`http://127.0.0.1:${serverPort}/Netease/Game/Version`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        item_id: serverItemId
+      })
+    });
+
+    const versionResult = await versionResponse.json();
+
+    if (versionResult.code !== 0 || !versionResult.data || !Array.isArray(versionResult.data) || versionResult.data.length === 0) {
+      console.error('获取游戏版本信息失败:', versionResult.msg || '未知错误');
+      return null;
+    }
+
+    const mcVersionId = versionResult.data[0].mc_version_id;
+    
+    if (mcVersionId === 12) {
+      return '1.8.9';
+    }
+
+    const versionsResponse = await fetch('https://x19apigatewayobt.nie.netease.com/mc-version');
+    const versionsResult = await versionsResponse.json();
+
+    if (versionsResult.code !== 0 || !versionsResult.entities || !Array.isArray(versionsResult.entities)) {
+      console.error('获取版本列表失败:', versionsResult.message || '未知错误');
+      return null;
+    }
+
+    const matchedVersion = versionsResult.entities.find(entity => 
+      entity.entity_id === mcVersionId.toString()
+    );
+
+    if (matchedVersion) {
+      return matchedVersion.name;
+    } else {
+      console.error(`未找到匹配的版本名称，mc_version_id: ${mcVersionId}`);
+      return null;
+    }
+  } catch (error) {
+    console.error('获取游戏版本名称时发生错误:', error);
+    return null;
+  }
+}
+
+/**
+ * 发送游戏加入预请求
+ * @param {string} serverPort - 服务器端口
+ * @param {string} gameId - 游戏ID
+ * @param {string} roleName - 角色名称
+ * @returns {Promise<string|null>} 成功时返回data字段，失败时返回null
+ */
+export async function sendGameJoinPreRequest(serverPort, serverItemId, roleName) {
+  try {
+    const response = await fetch(`http://127.0.0.1:${serverPort}/Netease/Game/Join/Pre`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        gameId: serverItemId,
+        roleName: roleName,
+        gameType: 2
+      })
+    });
+
+    const result = await response.json();
+
+    // 检查响应是否成功，如果成功则返回data字段
+    if (result.code === 0) {
+      return result.msg;
+    } else {
+      console.error('发送游戏加入预请求失败:', result.msg || '未知错误');
+      return null;
+    }
+  } catch (error) {
+    console.error('发送游戏加入预请求时发生错误:', error);
+    return null;
+  }
+}
+
+/**
+ * 启动游戏代理
+ * @param {string} serverPort - 服务器端口
+ * @param {string} serverItemId - 服务器商品ID
+ * @param {string} roleId - 角色ID
+ * @param {string} roleName - 角色名称
+ * @param {string} serverIp - 服务器IP
+ * @param {number} port - 服务器端口
+ * @returns {Promise<Object|null>} 成功时返回data对象，失败时返回null
+ */
+export async function startGameProxy(serverPort, serverItemId, roleId, roleName, serverIp, port) {
+  try {
+    const response = await fetch(`http://127.0.0.1:${serverPort}/Netease/Game/Proxy/Start`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        serverItemId: serverItemId,
+        roleId: roleId,
+        roleName: roleName,
+        serverIp: serverIp,
+        serverPort: port
+      })
+    });
+
+    const result = await response.json();
+
+    // 检查响应是否成功，如果成功则返回data字段
+    if (result.code === 0) {
+      return result.data;
+    } else {
+      console.error('启动游戏代理失败:', result.msg || '未知错误');
+      return null;
+    }
+  } catch (error) {
+    console.error('启动游戏代理时发生错误:', error);
+    return null;
+  }
+}
+
+/**
+ * 执行游戏代理启动的主流程
+ * @param {string} serverPort - 服务器端口
+ * @param {string} serverItemId - 服务器商品ID，同时用作gameId和itemId
+ * @param {string} roleId - 角色ID
+ * @param {string} roleName - 角色名称
+ * @param {string} gameId - 游戏ID
+ * @param {number} itemId - 商品ID
+ * @returns {Promise<Object|null>} 成功时返回最终的代理数据，失败时返回null
+ */
+export async function ProxyStartDoMain(serverPort, serverItemId, roleId, roleName) {
+  try {
+    console.log('开始执行游戏代理启动的主流程...',
+      + `\nserverPort: ${serverPort}`
+      + `\nserverItemId: ${serverItemId}`
+      + `\nroleId: ${roleId}`
+      + `\nroleName: ${roleName}`
+    );
+    // 第一步：调用fetchGameAddress获取ip和port
+    const addressInfo = await fetchGameAddress(serverPort, serverItemId);
+    if (!addressInfo) {
+      console.error('获取游戏地址信息失败');
+      return null;
+    }
+
+    const { ip, port } = addressInfo;
+
+    // 第二步：调用fetchGameVersionName获取游戏版本号
+    const versionName = await fetchGameVersionName(serverPort, serverItemId);
+    if (!versionName) {
+      console.error('获取游戏版本名称失败');
+      return null;
+    }
+
+    // 第三步：调用sendGameJoinPreRequest
+    const joinPreData = await sendGameJoinPreRequest(serverPort, serverItemId, roleName);
+    if (!joinPreData) {
+      console.error('发送游戏加入预请求失败');
+      return null;
+    }
+
+    // 第四步：调用startGameProxy
+    const proxyData = await startGameProxy(serverPort, serverItemId, roleId, roleName, ip, port);
+    if (!proxyData) {
+      console.error('启动游戏代理失败');
+      return null;
+    }
+
+    // 返回最终的代理数据
+    return proxyData;
+  } catch (error) {
+    console.error('执行代理启动主流程时发生错误:', error);
+    return null;
+  }
+}

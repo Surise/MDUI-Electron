@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useEffect } from 'react';
+import React, { useState, useMemo, useEffect, useRef } from 'react';
 import 'mdui/components/text-field.js';
 import 'mdui/components/card.js';
 import 'mdui/components/divider.js';
@@ -7,7 +7,7 @@ import 'mdui/components/dialog.js';
 import 'mdui/components/button.js';
 import 'mdui/components/select.js';
 import 'mdui/components/menu-item.js';
-import { checkOnlineAccounts, fetchGameList, fetchGameCharacters, addGameCharacter } from './AuthService';
+import { checkOnlineAccounts, fetchGameList, fetchGameCharacters, addGameCharacter, ProxyStartDoMain } from './AuthService';
 import { useServerCache } from './ServerCacheContext';
 import { useUser } from './UserContext';
 
@@ -31,6 +31,14 @@ const ConnectPage = ({ serverPort }) => {
   ]);
   
   const [roleNameMap, setRoleNameMap] = useState({});
+  const [roleNamesLoading, setRoleNamesLoading] = useState(false);
+  const [proxyStarting, setProxyStarting] = useState(false); // 添加代理启动状态
+  const roleNameRef = useRef(null);
+
+  // 添加调试日志，监视 roleName 的变化
+  useEffect(() => {
+    console.log('RoleName changed:', roleName);
+  }, [roleName]);
 
   const filteredServers = useMemo(() => {
     if (!searchTerm) return servers;
@@ -81,30 +89,32 @@ const ConnectPage = ({ serverPort }) => {
   const handleServerClick = async (server) => {
     console.log('点击了服务器:', server);
     setSelectedServer(server);
-    
-      try {
-        const result = await fetchGameCharacters(
-          serverPort, 
-          userData, 
-          server.id, 
-          2
-        );
-        
-        if (result.code === 0 && result.data && Array.isArray(result.data)) {
-          const names = result.data.map(item => item.name);
-          setRoleNames(names);
-          const map = {};
-          result.data.forEach(item => {
-            map[item.entity_id] = item.name;
-          });
-          setRoleNameMap(map);
-        }
-      } catch (error) {
-        console.error('获取角色列表失败:', error);
-      }
-    
-    
     setShowServerSettings(true);
+    
+    // 先显示对话框，然后加载角色名
+    setRoleNamesLoading(true);
+    try {
+      const result = await fetchGameCharacters(
+        serverPort, 
+        userData, 
+        server.id, 
+        2
+      );
+      
+      if (result.code === 0 && result.data && Array.isArray(result.data)) {
+        const names = result.data.map(item => item.name);
+        setRoleNames(names);
+        const map = {};
+        result.data.forEach(item => {
+          map[item.entity_id] = item.name;
+        });
+        setRoleNameMap(map);
+      }
+    } catch (error) {
+      console.error('获取角色列表失败:', error);
+    } finally {
+      setRoleNamesLoading(false);
+    }
   };
 
   const handleSearchChange = (e) => {
@@ -200,13 +210,82 @@ const ConnectPage = ({ serverPort }) => {
     setRoleName('');
   };
 
-  const handleSaveServerSettings = () => {
+  const handleSaveServerSettings = async () => {
+    const currentRoleName = roleNameRef.current ? roleNameRef.current.value : roleName;
     console.log('保存服务器设置:', {
       server: selectedServer,
-      roleName,
+      roleName: currentRoleName,
       customRoleName
     });
-    handleCloseServerSettings();
+    
+    setProxyStarting(true);
+    
+    console.log('RoleNameMap:', roleNameMap);
+    console.log('Current roleName:', currentRoleName);
+    
+    let selectedRoleId = null;
+    for (const [id, name] of Object.entries(roleNameMap)) {
+      console.log(`检查角色映射: ID=${id}, Name=${name}`);
+      if (name === currentRoleName) {
+        selectedRoleId = id;
+        console.log(`找到匹配的角色ID: ${selectedRoleId}`);
+        break;
+      }
+    }
+    
+    if (!selectedRoleId) {
+      console.log('未找到精确匹配，尝试部分匹配');
+      for (const [id, name] of Object.entries(roleNameMap)) {
+        if (name.includes(currentRoleName) || currentRoleName.includes(name)) {
+          selectedRoleId = id;
+          console.log(`通过部分匹配找到角色ID: ${selectedRoleId}`);
+          break;
+        }
+      }
+    }
+    
+    console.log('解析参数:', {
+      serverPort,
+      selectedServer,
+      roleName: currentRoleName,
+      selectedRoleId
+    });
+    
+    // 调用ProxyStartDoMain函数
+    if (selectedRoleId && selectedServer && serverPort) {
+      try {
+        console.log('调用ProxyStartDoMain函数:',serverPort,
+          selectedServer.id, // serverItemId
+          selectedRoleId, // roleId
+          currentRoleName, // roleName
+        );
+        const result = await ProxyStartDoMain(
+          serverPort,
+          selectedServer.id, // serverItemId
+          selectedRoleId, // roleId
+          currentRoleName // roleName
+        );
+        
+        if (result) {
+          console.log('代理启动成功:', result);
+          // 可以在这里添加成功后的处理逻辑，比如显示提示或更新UI
+        } else {
+          console.error('代理启动失败');
+          // 可以在这里添加失败后的处理逻辑，比如显示错误提示
+        }
+      } catch (error) {
+        console.error('启动代理时发生错误:', error);
+      }
+    } else {
+      console.warn('缺少必要参数，无法启动代理:', {
+        hasSelectedRoleId: !!selectedRoleId,
+        hasSelectedServer: !!selectedServer,
+        hasServerPort: !!serverPort
+      });
+    }
+    
+    // 恢复按钮状态
+    setProxyStarting(false);
   };
 
   return (
@@ -344,43 +423,61 @@ const ConnectPage = ({ serverPort }) => {
               <p>在线人数: {selectedServer.players}人</p>
             </div>
             
-            <div style={{ marginBottom: '20px' }}>
-              <mdui-select 
-                value={roleName}
-                onInput={(e) => setRoleName(e.target.value)}
-                label="选择角色名（如果为空请先添加）"
-                style={{ width: '100%' }}
-              >
-                {roleNames.map((name, index) => (
-                  <mdui-menu-item key={index} value={name}>{name}</mdui-menu-item>
-                ))}
-              </mdui-select>
-            </div>
-            
-            <div style={{ 
-              display: 'flex', 
-              gap: '10px', 
-              marginBottom: '20px',
-              alignItems: 'center'
-            }}>
-              <mdui-text-field 
-                value={customRoleName}
-                onInput={(e) => setCustomRoleName(e.target.value)}
-                label="添加角色名称"
-                variant="outlined"
-                maxlength="11"
-                clearable
-                style={{ flex: 1 }}
-              ></mdui-text-field>
-              <mdui-button onClick={handleAddRoleName} variant="filled">添加</mdui-button>
-            </div>
-            
-            <div style={{ marginBottom: '20px' }}>
-              <mdui-button onClick={handleRandomRoleName} variant="outlined" style={{ width: '100%' }}>
-                随机角色名
-              </mdui-button>
-            </div>
-
+            {roleNamesLoading ? (
+              <div style={{ 
+                display: 'flex', 
+                flexDirection: 'column', 
+                alignItems: 'center', 
+                justifyContent: 'center',
+                padding: '20px'
+              }}>
+                <mdui-circular-progress style={{ width: '40px', height: '40px', marginBottom: '16px' }}></mdui-circular-progress>
+                <p>正在加载角色列表...</p>
+              </div>
+            ) : (
+              <>
+                <div style={{ marginBottom: '20px' }}>
+                  <mdui-select 
+                    ref={roleNameRef}
+                    value={roleName}
+                    change={(e) => {
+                      console.log('Select value changed:', e.target.value);
+                      setRoleName(e.target.value);
+                    }}
+                    label="选择角色名（如果为空请先添加）"
+                    style={{ width: '100%' }}
+                  >
+                    {roleNames.map((name, index) => (
+                      <mdui-menu-item key={index} value={name}>{name}</mdui-menu-item>
+                    ))}
+                  </mdui-select>
+                </div>
+                
+                <div style={{ 
+                  display: 'flex', 
+                  gap: '10px', 
+                  marginBottom: '20px',
+                  alignItems: 'center'
+                }}>
+                  <mdui-text-field 
+                    value={customRoleName}
+                    onInput={(e) => setCustomRoleName(e.target.value)}
+                    label="添加角色名称"
+                    variant="outlined"
+                    maxlength="11"
+                    clearable
+                    style={{ flex: 1 }}
+                  ></mdui-text-field>
+                  <mdui-button onClick={handleAddRoleName} variant="filled">添加</mdui-button>
+                </div>
+                
+                <div style={{ marginBottom: '20px' }}>
+                  <mdui-button onClick={handleRandomRoleName} variant="outlined" style={{ width: '100%' }}>
+                    随机角色名
+                  </mdui-button>
+                </div>
+              </>
+            )}
           </div>
         )}
         
