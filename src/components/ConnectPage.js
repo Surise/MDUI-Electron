@@ -270,7 +270,7 @@ const ConnectPage = ({ serverPort }) => {
           console.log('代理启动成功:', result);
           // 可以在这里添加成功后的处理逻辑，比如显示提示或更新UI
         } else {
-          console.error('代理启动失败');
+          console.error('代理启动失败:', result);
           // 可以在这里添加失败后的处理逻辑，比如显示错误提示
         }
       } catch (error) {

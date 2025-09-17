@@ -433,7 +433,7 @@ export async function ProxyStartDoMain(serverPort, serverItemId, roleId, roleNam
     const addressInfo = await fetchGameAddress(serverPort, serverItemId);
     if (!addressInfo) {
       console.error('获取游戏地址信息失败');
-      return null;
+      return '获取游戏地址信息失败';
     }
 
     const { ip, port } = addressInfo;
@@ -442,21 +442,21 @@ export async function ProxyStartDoMain(serverPort, serverItemId, roleId, roleNam
     const versionName = await fetchGameVersionName(serverPort, serverItemId);
     if (!versionName) {
       console.error('获取游戏版本名称失败');
-      return null;
+      return `获取游戏版本名称失败${versionName}`;
     }
 
     // 第三步：调用sendGameJoinPreRequest
     const joinPreData = await sendGameJoinPreRequest(serverPort, serverItemId, roleName);
     if (!joinPreData) {
       console.error('发送游戏加入预请求失败');
-      return null;
+      return `发送游戏加入预请求失败${joinPreData}`;
     }
 
     // 第四步：调用startGameProxy
     const proxyData = await startGameProxy(serverPort, serverItemId, roleId, roleName, ip, port);
     if (!proxyData) {
       console.error('启动游戏代理失败');
-      return null;
+      return `启动游戏代理失败:${proxyData}`;
     }
 
     // 返回最终的代理数据
